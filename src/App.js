@@ -1,21 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+
+import LandingPage from "./pages/Landing/Landing.jsx";
+import HomePage from "./pages/Home/Home.jsx";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Divya sucks</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Route exact path="/" render={() => <LandingPage />} />
+        <Route exact path="/home" component={HomePage} />
+      </BrowserRouter>
     </div>
   );
 }
