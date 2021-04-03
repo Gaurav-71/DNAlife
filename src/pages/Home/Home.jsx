@@ -1,5 +1,11 @@
 import React from "react";
+import NavBar from "../../components/NavBar/NavBar.jsx";
+import "./Home.scss";
 
 export default function Home() {
-  return <div>Hello Home</div>;
+  return (
+    <div className="home">
+      <NavBar />
+    </div>
+  );
 }
