@@ -5,7 +5,7 @@ import "./Home.scss";
 
 export default function Home() {
   return (
-    <div className="home">
+    <div className="page">
       <NavBar />
       <div className="dummy"></div>
       <Footer />

@@ -1,20 +1,33 @@
 .footer {
-  background-color: rgb(34, 34, 34);
-  padding: 5rem;
+  background: transparent;
+  position: relative;
+  padding: 2rem 4rem;
   font-size: 15px;
   line-height: 24px;
   color: #737373;
+  margin: 0;
+}
+.footer::before {
+  background: url("../../assets/Images/footer-soil.jpeg");
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: grayscale(0.5) brightness(50%);
+  z-index: -1;
 }
 
 .footer-information-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #afafaf;
 }
 
-.contact-info-column {
+.contact-info-row-container {
   display: flex;
   flex-direction: column;
 }
@@ -23,10 +36,10 @@
   display: flex;
 }
 
-.follow-us-column {
+.follow-us-icons-row {
   display: flex;
-  flex-direction: column;
-  padding-right: 100px;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .icon-container {
@@ -35,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #737373;
+  background-color: rgb(81, 255, 0);
   border-radius: 1.5rem;
   text-decoration: none;
   margin: 10px;
@@ -43,32 +56,92 @@
 
 .la-envelope {
   font-size: 2rem;
-  color: #afafaf;
+  color: black;
 }
 
 .la-facebook-f {
   font-size: 2rem;
-  color: #afafaf;
+  color: black;
 }
 
 .la-instagram {
   font-size: 2.5rem;
-  color: #afafaf;
+  color: black;
+}
+
+.la-telegram {
+  font-size: 2rem;
+  color: black;
+}
+
+.la-twitter {
+  font-size: 2rem;
+  color: black;
+  z-index: 1;
 }
 
 .icon-container:hover {
-  background-color: #e7e7e7;
+  background-color: white;
   transition: all 0.2s ease;
 
   .la-facebook-f {
-    color: #4267b2;
+    color: hsl(220, 46%, 48%);
+    font-size: 2.5rem;
+    transition: all 0.2s ease;
   }
 
   .la-instagram {
     color: rgb(245, 33, 252);
+    font-size: 3rem;
+    transition: all 0.2s ease;
   }
 
   .la-envelope {
     color: rgb(194, 0, 0);
+    font-size: 2.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .la-telegram {
+    color: #0084c5;
+    font-size: 2.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .la-twitter {
+    color: #1e9cea;
+    font-size: 2.5rem;
+    transition: all 0.2s ease;
+  }
+}
+
+.copyright-line {
+  color: #737373;
+  height: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-information-container {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .follow-us-column {
+    margin-top: 1rem;
   }
 }
