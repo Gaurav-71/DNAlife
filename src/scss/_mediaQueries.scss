@@ -1,0 +1,35 @@
+// breakpoints
+
+$small-phone: "(max-width: 375px)";
+$phone: "(max-width: 414px)";
+$tablet-portrait: "(max-width: 991px)";
+$tablet-landscape: "(max-width: 1112px)";
+
+$combo: "combo";
+
+//conditional media query mixin
+
+@mixin responsive($point) {
+  @if $point == $combo {
+    // combo of all devices
+    @media (max-width: 1112px) {
+      @content;
+    }
+  } @else if $point == $tablet-landscape {
+    @media (max-width: 1112px) and (min-width: 991px) {
+      @content;
+    }
+  } @else if $point == $tablet-portrait {
+    @media (max-width: 991px) and (min-width: 500px) {
+      @content;
+    }
+  } @else if $point == $phone {
+    @media (max-width: 414px) {
+      @content;
+    }
+  } @else if $point == $small-phone {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+}

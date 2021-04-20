@@ -3,6 +3,9 @@ import "./NavBar.scss";
 import { MenuItems } from "./MenuItems";
 import { BarsIcon, TimesIcon } from "react-line-awesome";
 import { findAllByDisplayValue } from "@testing-library/dom";
+import { shadows } from '@material-ui/system';
+
+import logo from "../../assets/Logo/logo.png";
 
 export default function NavBar() {
   const [clicked, setClicked] = useState(false);
@@ -25,10 +28,13 @@ export default function NavBar() {
   return (
     <div>
       <nav className={navbar || clicked ? "navbar active" : "navbar"}>
+        <div className="black-fill">
+        <div className="name">
+        <img src={logo} alt="logo"/>
         <h1 className="main-title">
           DNA <span className="thin">life </span>
         </h1>
-
+        </div>
         <div className="menu-icon" onClick={handleClick}>
           {clicked ? <TimesIcon /> : <BarsIcon />}
         </div>
@@ -44,6 +50,7 @@ export default function NavBar() {
             );
           })}
         </ul>
+        </div>
       </nav>
     </div>
   );

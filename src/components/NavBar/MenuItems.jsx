@@ -10,12 +10,12 @@ export const MenuItems = [
     cName: "nav-links",
   },
   {
-    title: "Biodiversity",
+    title: "Announcements",
     url: "#",
     cName: "nav-links",
   },
   {
-    title: "Announcements",
+    title: "Education",
     url: "#",
     cName: "nav-links",
   },
@@ -25,13 +25,14 @@ export const MenuItems = [
     cName: "nav-links",
   },
   {
-    title: "Join Us",
-    url: "#",
-    cName: "nav-links",
-  },
-  {
     title: "Contact Us",
     url: "/contactUs",
     cName: "nav-links",
   },
+  {
+    title: "Join Us",
+    url: "#",
+    cName: "nav-links btn",
+  },
+  
 ];

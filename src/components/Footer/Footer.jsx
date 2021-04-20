@@ -14,54 +14,62 @@ export default function Footer() {
   return (
     <div>
       <section className="footer">
-        <div className="footer-information-container">
-          <div className="contact-info-column">
-            <h2>Contact Information</h2>
-            <hr class="hr-slash" />
-            <div className="contact-info-row-container">
-              <div className="contact-info-row">
-                <a className="icon-container" href="mailto:info@dnalife.org">
-                  <EnvelopeIcon />
-                </a>
-                <h3>info@dnalife.org</h3>
+        <div className="black-fill">
+          <div className="footer-information-container">
+            <div className="contact-info-column">
+              <h2>Contact Information</h2>
+              <div className="multiple-slashes">
+                <hr className="hr-slash" /><hr className="hr-slash extra-slash" />
               </div>
-              <div className="contact-info-row">
+              <div className="contact-info-row-container">
+                <div className="contact-info-row">
+                  <a className="icon-container" target="_blank" href="mailto:info@dnalife.org">
+                    <EnvelopeIcon />
+                  </a>
+                  <h3>info@dnalife.org</h3>
+                </div>
+                <div className="contact-info-row tele">
+                  <a
+                    className="icon-container"
+                    href="https://t.me/joinchat/VRArWP6kveTm6tWu"
+                    target="_blank"
+                  >
+                    <TelegramIcon />
+                  </a>
+                  <h3>DNA Life 🌳 RainForest 🌨</h3>
+                </div>
+              </div>
+            </div>
+            <div className="follow-us-column">
+              <h2>Follow Us</h2>
+              <hr className="hr-slash" />
+              <div className="follow-us-icons-row">
                 <a
                   className="icon-container"
-                  href="https://t.me/joinchat/VRArWP6kveTm6tWu"
+                  href="https://www.facebook.com/dnalifeorg"
+                  target="_blank"
                 >
-                  <TelegramIcon />
+                  <FacebookFIcon />
                 </a>
-                <h3>DNA Life🌳RainForest🌨</h3>
+                <a
+                  className="icon-container"
+                  href="https://instagram.com/dnalifeorg?igshid=qgfaubpq5ttq"
+                  target="_blank"
+                >
+                  <InstagramIcon />
+                </a>
+                <a
+                  className="icon-container"
+                  href="https://mobile.twitter.com/dnalifeorg"
+                  target="_blank"
+                >
+                  <TwitterIcon />
+                </a>
               </div>
             </div>
           </div>
-          <div className="follow-us-column">
-            <h2>Follow Us</h2>
-            <hr class="hr-slash" />
-            <div className="follow-us-icons-row">
-              <a
-                className="icon-container"
-                href="https://www.facebook.com/dnalifeorg"
-              >
-                <FacebookFIcon />
-              </a>
-              <a
-                className="icon-container"
-                href="https://instagram.com/dnalifeorg?igshid=qgfaubpq5ttq"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                className="icon-container"
-                href="https://mobile.twitter.com/dnalifeorg"
-              >
-                <TwitterIcon />
-              </a>
-            </div>
-          </div>
+          <div className="copyright-line">Copyright © 2021 DNALife</div>
         </div>
-        <div className="copyright-line">Copyright © 2021 DNALife</div>
       </section>
     </div>
   );
