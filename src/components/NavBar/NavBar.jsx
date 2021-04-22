@@ -33,12 +33,12 @@ export default function NavBar() {
     <div>
       <nav className="navbar">
         <div className="black-fill">
-          <div className="name">
+          <Link to="/" className="name">
             <img src={logo} alt="logo"/>
             <h1 className="main-title">
               DNA <span className="thin">life </span>
             </h1>
-          </div>
+          </Link>
           <div className="menu-icon" onClick={handleClick}>
             {clicked ? <TimesIcon /> : <BarsIcon />}
           </div>
