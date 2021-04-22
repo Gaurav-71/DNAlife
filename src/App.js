@@ -1,18 +1,35 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import LandingPage from "./pages/Landing/Landing.jsx";
-import HomePage from "./pages/Home/Home.jsx";
-import ContactUsPage from "./pages/ContactUs/ContactUs.jsx";
+import "./App.scss";
+
+import ScrollToTop from "./ScrollToTop";
+
+import Header from "./components/NavBar/NavBar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+
+// pages
+
+import Landing from "./pages/Landing/Landing.jsx";
+import Home from "./pages/Home/Home.jsx";
+import ContactUs from "./pages/ContactUs/ContactUs.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Route exact path="/" render={() => <LandingPage />} />
-        <Route exact path="/home" component={HomePage} />
-        <Route exact path="/contactUs" component={ContactUsPage} />
-      </BrowserRouter>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="routes">
+          <ScrollToTop>
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/contact-us" component={ContactUs} />
+            </Switch>
+          </ScrollToTop>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

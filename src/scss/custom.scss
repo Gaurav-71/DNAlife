@@ -1,0 +1,7 @@
+@import "./colors";
+@import "./mediaQueries";
+
+.page {
+  min-height: 100vh;
+  background: $background;
+}

@@ -1,89 +1,149 @@
+@import "../../scss/colors";
+@import "../../scss/mediaQueries";
+
 .navbar {
-  background: transparent;
+  background: $background;
+  z-index: 1000;
+  border-bottom: 2px solid $accent;
   height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: fixed;
   width: 100vw;
-  transition: all 0.5s ease;
-
-  .main-title {
-    margin: 0;
-    padding: 0;
-    color: #f9f1e9;
-  }
-
-  .main-title .thin {
-    font-weight: 200;
-  }
-}
-
-.navbar.active {
-  background: linear-gradient(
-    90deg,
-    rgb(110, 94, 254) 0%,
-    rgba(73, 63, 252, 1) 100%
-  );
-  transition: all 0.5s ease;
-}
-
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(8, auto);
-  grid-gap: 30px;
-  list-style: none;
-  text-align: center;
-  width: 85vw;
-  justify-content: end;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links {
-  font-family: "Raleway", sans-serif;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem, 0.5rem;
-  font-size: 17px;
-  transition: all 0.2s ease-out;
-}
-
-.nav-links:hover {
-  font-size: 19px;
-  color: rgb(92, 170, 92);
-  transition: all 0.2s ease-out;
-}
-
-.la-bars {
-  color: white;
-}
-
-.la-times {
-  color: white;
-}
-
-.menu-icon {
-  display: none;
-}
-
-@media screen and (max-width: 1156px) {
-  .navbar {
-    position: fixed;
-  }
-
-  .nav-menu {
-    background-color: #73737373;
+  position: fixed;
+  .black-fill {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    grid-gap: 0px;
-    width: 100vw;
-    position: absolute;
-    top: 80px;
-    left: -100%;
+    //background-color: rgba($color: #000000, $alpha: 0.5);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
     transition: all 0.5s ease;
+    .name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      img {
+        width: 75px;
+        height: auto;
+        margin: 0 1.25rem 0 1.5rem;
+      }
+      .main-title {
+        width: max-content;
+        margin: 0;
+        //margin-top: 0.5rem;
+        padding: 0;
+        .thin {
+          font-weight: 200;
+        }
+      }
+    }
+    .menu-icon {
+      display: none;
+      @include responsive($combo) {
+        display: block;
+        font-size: 1.8rem;
+        margin-right: 1.5rem;
+        cursor: pointer;
+        color: $accent;
+      }
+    }
+    .nav-menu {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      grid-gap: 30px;
+      list-style: none;
+      text-align: center;
+      justify-content: end;
+      align-items: center;
+      margin: 0;
+      margin-right: 1.25rem;
+      padding: 0;
+      @include responsive($combo) {
+        display: none;
+      }
+      .nav-links {
+        font-family: "Raleway", sans-serif;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        transition: all 0.2s ease-out;
+        z-index: 999 !important;
+      }
+      .nav-links:hover {
+        color: $accent;
+        font-size: 19px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+      }
+      .btn {
+        text-decoration: none;
+        color: white;
+        background-color: $accent;
+        padding: 0.5rem 2rem;
+        border-radius: 1.5rem;
+        font-size: medium;
+        box-shadow: 1px;
+      }
+      .btn:hover {
+        color: white;
+        cursor: pointer;
+        background: lighten($color: $accent, $amount: 5%);
+        font-size: 17.5px;
+        transition: all 0.2s ease-out;
+      }
+    }
+    .mobile-nav {
+      //width: 100vw;
+      height: max-content;
+      display: block;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 90px;
+      right: 10px;
+      background: $primary;
+      border-radius: 1rem;
+      //transition: left 0.5s ease;
+      .nav-links {
+        color: white;
+        text-decoration: none;
+        padding: 2rem 7rem 2rem 2rem;
+        border-bottom: 0.5px solid $accent;
+        @include responsive($phone) {
+          padding: 1.25rem 4rem 1.25rem 2rem;
+          font-size: small;
+        }
+      }
+      .nav-links:nth-child(7) {
+        border-bottom: 0;
+      }
+    }
+    .hide {
+      display: none;
+    }
+  }
+}
+
+.smthn {
+  @include responsive($combo) {
+    display: none;
+    background-color: red;
+    grid-gap: 0px;
+  }
+
+  //links
+
+  @include responsive($combo) {
+    display: none;
+    background-color: red;
+    text-align: center;
+    padding: 1.2rem 0;
+    width: 100%;
+    display: block;
   }
 
   .nav-menu.active {
@@ -95,30 +155,8 @@
     transition: all 0.5s ease;
     position: absolute;
     z-index: 10;
-  }
-
-  .nav-links {
-    text-align: center;
-    padding: 1.2rem 0;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-links:hover {
-    background-color: #73737373;
-    border-radius: 0;
-    font-size: 19px;
-    color: rgb(92, 170, 92);
-    transition: all 0.2s ease-out;
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
+    @include responsive($combo) {
+      display: block !important;
+    }
   }
 }

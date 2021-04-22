@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, TweenLite } from "gsap";
 
+import {Link} from "react-router-dom";
+
+import logo from '../../assets/Logo/logo.png';
+
 import "./Landing.scss";
+import "../../scss/_colors.scss"
 
 export default function Landing() {
   useEffect(() => {
@@ -178,7 +183,7 @@ export default function Landing() {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(p.closest[i].x, p.closest[i].y);
-        ctx.strokeStyle = "rgba(156,217,249," + p.active + ")";
+        ctx.strokeStyle = "rgba(18,73,65," + p.active + ")";
         ctx.stroke();
       }
     }
@@ -197,7 +202,7 @@ export default function Landing() {
         if (!_this.active) return;
         ctx.beginPath();
         ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = "rgba(156,217,249," + _this.active + ")";
+        ctx.fillStyle = "rgba(18,73,65," + _this.active + ")";
         ctx.fill();
       };
     }
@@ -208,20 +213,18 @@ export default function Landing() {
     }
   }, []);
 
-  function routeToHome() {
-    window.location.href = "/home";
-  }
-
   return (
-    <div className="landing" onClick={routeToHome}>
+    <Link to="/home" className="landing" >
       <div id="large-header" className="large-header">
         <canvas id="demo-canvas"></canvas>
-        <h1 className="main-title">
-          DNA <span className="thin">life </span>
-        </h1>
+        <div className="main-title">
+        <img src={logo}  alt="logo"  />
+        <div className="name">DNA <span className="thin">life </span></div>
+        <p>Conservation is humanity caring for nature
+        </p>
+        <button>Welcome</button>
+        </div>
       </div>
-
-      <section className="about"></section>
-    </div>
+    </Link>
   );
 }
