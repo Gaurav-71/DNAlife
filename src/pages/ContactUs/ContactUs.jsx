@@ -1,13 +1,14 @@
 import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
+
+import Heading from "../../components/Heading/Heading";
+
 import "./ContactUs.scss";
 import "../../scss/custom.scss";
 
 export default function ContactUs() {
   return (
     <div className="page">
-      <NavBar />
+      <Heading pageTitle={"Contact Us"} />
       <div className="contact-us">
         <div className="phone-address">
           <h2>Locate Us.</h2>
@@ -46,7 +47,6 @@ export default function ContactUs() {
           />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

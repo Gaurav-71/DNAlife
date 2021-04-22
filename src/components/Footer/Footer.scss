@@ -1,18 +1,19 @@
 @import "../../scss/custom.scss";
 
 .footer {
-  background: transparent;
+  position: absolute;
   background: url("../../assets/Footer/footer-soil.jpeg");
   font-size: 15px;
   line-height: 24px;
   color: #737373;
-  margin: 0;
+  margin-top: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: -1;
+  border-top: 2px solid $accent;
   .black-fill {
     width: 100%;
     padding: 6rem 0 0;
@@ -41,7 +42,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $header-color;
+        background-color: $primary;
         border-radius: 1.5rem;
         text-decoration: none;
         margin: 0;

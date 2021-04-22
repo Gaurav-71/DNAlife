@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+
 import "./NavBar.scss";
+
+import {Link} from "react-router-dom";
+
 import { MenuItems } from "./MenuItems";
 import { BarsIcon, TimesIcon } from "react-line-awesome";
-import { findAllByDisplayValue } from "@testing-library/dom";
-import { shadows } from '@material-ui/system';
 
-import logo from "../../assets/Logo/logo.png";
+
+import logo from "../../assets/Logo/whitelogo.png";
 
 export default function NavBar() {
   const [clicked, setClicked] = useState(false);
@@ -25,31 +28,39 @@ export default function NavBar() {
     window.addEventListener("scroll", changeBackground);
   }, []);
 
+  
   return (
     <div>
-      <nav className={navbar || clicked ? "navbar active" : "navbar"}>
+      <nav className="navbar">
         <div className="black-fill">
-        <div className="name">
-        <img src={logo} alt="logo"/>
-        <h1 className="main-title">
-          DNA <span className="thin">life </span>
-        </h1>
-        </div>
-        <div className="menu-icon" onClick={handleClick}>
-          {clicked ? <TimesIcon /> : <BarsIcon />}
-        </div>
-
-        <ul className={clicked ? "nav-menu active" : "nav-menu"}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a href={item.url} className={item.cName}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+          <Link to="/" className="name">
+            <img src={logo} alt="logo"/>
+            <h1 className="main-title">
+              DNA <span className="thin">life </span>
+            </h1>
+          </Link>
+          <div className="menu-icon" onClick={handleClick}>
+            {clicked ? <TimesIcon /> : <BarsIcon />}
+          </div>
+          <div className="nav-menu"> 
+            {MenuItems.map((item, index) => {
+              return (
+                <Link className={item.cName}  to={item.url} key={index} >
+                    {item.title}
+                </Link>
+                
+              );
+            })}
+          </div>
+          <div className={clicked ? "mobile-nav" : "hide" } >
+            {MenuItems.map((item, index) => {
+              return (
+                <Link className={item.cName}  to={item.url} key={index} onClick={handleClick} >
+                    {item.title}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </nav>
     </div>
