@@ -1,11 +1,16 @@
 import React from "react";
+import "./Heading.scss";
 
-export default function Heading({ imageSource, pageTitle }) {
-  let bg = { backgroundImage: `url(${imageSource})` };
+import background from "../../assets/Header/blur2.png";
+
+export default function Heading({pageTitle }) {
+  let bg = { backgroundImage: `url(${background})` };
 
   return (
-    <div className="heading" style={bg}>
-      <h1>{pageTitle}</h1>
+    <div className="customHeading" style={bg} >
+      <div className="blur-bg">
+      <div className="title">{pageTitle}</div>
+      </div>
     </div>
   );
 }
