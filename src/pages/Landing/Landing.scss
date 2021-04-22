@@ -1,3 +1,5 @@
+@import "../../scss/custom.scss";
+
 .landing {
   .large-header {
     position: relative;
@@ -13,7 +15,7 @@
       position: absolute;
       margin: 0;
       padding: 1rem 3rem;
-      border-radius: 1rem;
+      border-radius: 3rem;
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
       color: #f9f1e9;
@@ -21,11 +23,26 @@
       font-size: 3rem;
       top: 47.5%;
       left: 50%;
-      -webkit-transform: translate3d(-50%, -47.5%, 0);
-      transform: translate3d(-50%, -47.5%, 0);
+      -webkit-transform: translate3d(-50%, -70%, 0);
+      transform: translate3d(-50%, -70%, 0);
+
       img {
         width: 135px;
         height: auto;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: medium;
+      }
+      button {
+        background-color: transparent;
+        padding: 0.5rem 3rem;
+        border-radius: 3rem;
+        border-color: $accent;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        color: white;
+        outline: none;
       }
       .thin {
         font-weight: 200;

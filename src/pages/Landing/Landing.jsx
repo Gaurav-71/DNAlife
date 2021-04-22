@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, TweenLite } from "gsap";
 
+import {Link} from "react-router-dom";
+
 import logo from '../../assets/Logo/logo.png';
 
 import "./Landing.scss";
@@ -211,21 +213,18 @@ export default function Landing() {
     }
   }, []);
 
-  function routeToHome() {
-    window.location.href = "/home";
-  }
-
   return (
-    <div className="landing" onClick={routeToHome}>
+    <Link to="/home" className="landing" >
       <div id="large-header" className="large-header">
         <canvas id="demo-canvas"></canvas>
         <div className="main-title">
         <img src={logo}  alt="logo"  />
         <div className="name">DNA <span className="thin">life </span></div>
+        <p>Conservation is humanity caring for nature
+        </p>
+        <button>Welcome</button>
         </div>
       </div>
-
-    
-    </div>
+    </Link>
   );
 }
