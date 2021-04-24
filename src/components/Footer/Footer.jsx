@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import "../common.scss";
+import "../../scss/custom.scss";
 import { Link } from "react-router-dom";
 import {
   EnvelopeIcon,
@@ -19,11 +19,16 @@ export default function Footer() {
             <div className="contact-info-column">
               <h2>Contact Information</h2>
               <div className="multiple-slashes">
-                <hr className="hr-slash" /><hr className="hr-slash extra-slash" />
+                <hr className="hr-slash" />
+                <hr className="hr-slash extra-slash" />
               </div>
               <div className="contact-info-row-container">
                 <div className="contact-info-row">
-                  <a className="icon-container" target="_blank" href="mailto:info@dnalife.org">
+                  <a
+                    className="icon-container"
+                    target="_blank"
+                    href="mailto:info@dnalife.org"
+                  >
                     <EnvelopeIcon />
                   </a>
                   <h3>info@dnalife.org</h3>
