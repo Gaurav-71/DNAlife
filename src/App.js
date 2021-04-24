@@ -21,8 +21,7 @@ function App() {
         <div className="routes">
           <ScrollToTop>
             <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/contact-us" component={ContactUs} />
             </Switch>
           </ScrollToTop>

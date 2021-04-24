@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import logo from '../../assets/Logo/logo.png';
 
 import "./Landing.scss";
+
 import "../../scss/_colors.scss"
 
 export default function Landing() {
@@ -214,17 +215,18 @@ export default function Landing() {
   }, []);
 
   return (
-    <Link to="/home" className="landing" >
-      <div id="large-header" className="large-header">
+    <div  className="landing  " >
+      <div id="large-header" className="large-header parallax-container ">
+      <div className="parallax-wrap">
+          <div className="parallax-inner"></div>
+      </div>
         <canvas id="demo-canvas"></canvas>
         <div className="main-title">
-        <img src={logo}  alt="logo"  />
-        <div className="name">DNA <span className="thin">life </span></div>
-        <p>Conservation is humanity caring for nature
-        </p>
-        <button>Welcome</button>
+          <img src={logo}  alt="logo"  />
+          <div className="name">DNA <span className="thin">life </span></div>
+          <p>Conservation is humanity caring for nature</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

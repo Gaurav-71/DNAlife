@@ -2,6 +2,11 @@
 @import "./mediaQueries";
 
 .page {
+  width: 100%;
   min-height: 100vh;
   background: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 }
