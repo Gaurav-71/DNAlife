@@ -5,155 +5,623 @@
   section {
     width: 100%;
     color: white;
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      @include responsive($phone) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+      }
+      div {
+        padding: 3rem 2rem;
+        width: 100%;
+        height: 100%;
+        @include responsive($phone) {
+          padding: 1rem 1.5rem;
+        }
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      .title {
+        flex-basis: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        @include responsive($phone) {
+          flex-basis: 100%;
+        }
+        h1 {
+          width: 100%;
+          font-size: 2rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-align: center;
+          color: $accent;
+          @include responsive($tablet-portrait) {
+            font-size: 1.7rem;
+          }
+        }
+        img {
+          margin-top: 1rem;
+          width: 60%;
+        }
+      }
+      .body {
+        flex-basis: 80%;
+        font-size: large;
+        line-height: 1.8rem;
+        padding-right: 6rem;
+        @include responsive($tablet-landscape) {
+          padding-right: 3rem;
+        }
+        @include responsive($tablet-portrait) {
+          padding-right: 3rem;
+        }
+        @include responsive($phone) {
+          flex-basis: 100%;
+          padding-right: 1.5rem;
+        }
+      }
+    }
   }
   .black {
+    // border-top: 1.5px solid $accent;
+    // border-bottom: 1.5px solid $accent;
     .parallax-wrap {
       .parallax-inner {
         background: $black;
       }
     }
   }
-  .about {
+  .common {
     background: inherit;
     .content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      div {
-        padding: 3rem 2rem;
-        width: 100%;
-        height: 100%;
-      }
-      .title {
-        flex-basis: 15%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        @include responsive($tablet-portrait) {
-          flex-basis: 25%;
-        }
-        h1 {
-          width: 100%;
-          font-size: 2rem;
-          text-transform: uppercase;
-          font-weight: bold;
-          text-align: center;
-          color: $accent;
-          @include responsive($tablet-portrait) {
-            font-size: 1.7rem;
-          }
-        }
-        img {
-          margin-top: 1rem;
-          width: 60%;
-        }
-      }
       .body {
-        flex-basis: 85%;
-        font-size: large;
-        line-height: 1.8rem;
-        @include responsive($tablet-portrait) {
-          flex-basis: 80%;
+        @include responsive($phone) {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        p {
+          margin-bottom: 1.5rem;
+        }
+        .about-button {
+          background: transparent;
+          text-decoration: none;
+          padding: 0.5rem 2rem;
+          color: $accent2;
+          border-radius: 2rem;
+          border: 2px solid $accent;
+          cursor: pointer;
+          font-size: small;
+          text-transform: uppercase;
+        }
+        .about-button:hover {
+          background: $accent;
+          color: white;
+          transition: all 0.4s ease-in;
         }
       }
     }
   }
   .activities {
-    .parallax-wrap {
-      .parallax-inner {
-        background-image: url("../../assets/Landing/pexels-pixabay-414171.jpg");
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      .rect {
+        transition-delay: 1s;
+        flex-basis: 50%;
+        height: 45vh;
+        text-decoration: none;
+        @include responsive($phone) {
+          min-height: 40vh;
+        }
+        .rect-content {
+          height: 100%;
+          width: 100%;
+          background: rgba($color: $primary, $alpha: 0.3);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h2 {
+            width: 100%;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: rgba(black, 0.65);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            backdrop-filter: blur(3px);
+            //border-top: 2px solid $accent;
+            //border-bottom: 2px solid $accent;
+            color: $accent2;
+          }
+          .info-snippet {
+            display: flex;
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            padding: 0;
+            //font-size: 0;
+            transition: background-color 0.3s ease-in;
+            .transparent-button {
+              background-color: transparent;
+              text-decoration: none;
+
+              color: $accent2;
+              border-radius: 1rem;
+            }
+            .transparent-button:hover {
+              background: $accent;
+              color: white;
+              transition: all 0.4s ease-in;
+            }
+          }
+        }
+      }
+      .rect:hover {
+        .rect-content {
+          justify-content: space-around;
+          .info-snippet {
+            visibility: visible;
+            height: auto;
+            width: auto;
+            font-size: medium;
+            padding: 2rem 0;
+            background-color: rgba(black, 0.65);
+            backdrop-filter: blur(3px);
+            p {
+              padding: 1rem;
+            }
+            .transparent-button {
+              border: 2px solid $accent;
+              padding: 0.5rem 2rem;
+              cursor: pointer;
+              font-size: small;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      .one {
+        border-right: 1px solid $accent;
+        border-bottom: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/edu.jpg");
+            background-origin: padding-box;
+          }
+        }
+      }
+      .two {
+        border-left: 1px solid $accent;
+        border-bottom: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/project.jpg");
+            background-origin: padding-box;
+            @include responsive($phone) {
+              background-position: -60% 0;
+            }
+          }
+        }
+      }
+      .three {
+        border-top: 1px solid $accent;
+        border-right: 1px solid $accent;
+        border: none;
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/p2.jpg");
+            background-origin: padding-box;
+            @include responsive($phone) {
+              background-position: 30% 0;
+            }
+          }
+        }
+      }
+      .four {
+        border-top: 1px solid $accent;
+        border-left: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/cleaning.jpg");
+            background-origin: padding-box;
+            @include responsive($phone) {
+              background-position: -45% 0;
+            }
+          }
+        }
       }
     }
   }
   .partners-section {
     background: inherit;
     .content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      div {
-        padding: 3rem 2rem;
-        width: 100%;
-        height: 100%;
-      }
-      .title {
-        flex-basis: 15%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        @include responsive($tablet-portrait) {
-          flex-basis: 25%;
-        }
-        h1 {
-          width: 100%;
-          font-size: 2rem;
-          text-transform: uppercase;
-          font-weight: bold;
-          text-align: center;
-          color: $accent;
-          @include responsive($tablet-portrait) {
-            font-size: 1.7rem;
-          }
-        }
-        img {
-          margin-top: 1rem;
-          width: 60%;
-        }
-      }
       .body {
-        flex-basis: 85%;
-        font-size: large;
-        line-height: 1.8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        @include responsive($tablet-portrait) {
-          flex-basis: 80%;
-        }
+        overflow: hidden;
         p {
           width: 100%;
           text-align: left;
+          @include responsive($tablet-landscape) {
+            font-size: medium;
+          }
         }
         .partners {
           display: flex;
           justify-content: space-between;
           margin-top: 2rem;
-          padding-right: 3rem;
+          @include responsive($tablet-portrait) {
+            animation: marquee 7s linear infinite;
+            //justify-content: center;
+          }
+          @include responsive($phone) {
+            animation: marquee-phone 9s linear infinite;
+          }
+          padding-right: 0rem !important;
           img {
             width: 150px;
             height: 150px;
-            border-radius: 0.8rem;
-            //margin-right: 4rem;
+            border-radius: 50%;
+            @include responsive($tablet-landscape) {
+              height: 100px;
+              width: 100px;
+            }
+            @include responsive($tablet-portrait) {
+              height: 100px;
+              width: 100px;
+              margin: 0 2rem;
+            }
+            @include responsive($phone) {
+              height: 80px;
+              width: 80px;
+              margin: 0 2rem;
+            }
           }
         }
       }
     }
   }
-  .join-us {
+  .nelson {
     .parallax-wrap {
       .parallax-inner {
-        background-image: url("../../assets/Landing/pexels-pixabay-414171.jpg");
+        background-image: url("../../assets/Home/center.jpg");
+      }
+    }
+    .content {
+      padding: 6rem 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: $primary, $alpha: 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      //backdrop-filter: blur(3px);
+      h2 {
+        width: 100%;
+        text-align: center;
+        background: rgba($color: black, $alpha: 0.5);
+        backdrop-filter: blur(3px);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        color: $accent2;
+        padding-top: 3rem;
+        @include responsive($phone) {
+          padding: 2rem;
+        }
+      }
+      p {
+        width: 100%;
+        backdrop-filter: blur(3px);
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        background: rgba($color: black, $alpha: 0.5);
+        padding: 1rem 3rem 3rem;
+        @include responsive($phone) {
+          padding: 1.5rem;
+          padding-bottom: 2rem;
+          font-size: medium;
+        }
+      }
+      .btn-container {
+        width: 100%;
+        margin: 0;
+        padding: 0rem 0 4rem;
+        backdrop-filter: blur(3px);
+        text-align: center;
+        background: rgba($color: black, $alpha: 0.5);
+        @include responsive($phone) {
+          padding-bottom: 3rem;
+        }
+        .transparent-button {
+          background-color: $accent;
+          text-decoration: none;
+          color: white;
+          border-radius: 1rem;
+          border: 2px solid $accent;
+          padding: 0.5rem 2rem;
+          cursor: pointer;
+          font-size: small;
+          text-transform: uppercase;
+        }
+        .transparent-button:hover {
+          background: lighten($accent, 10%);
+
+          transition: all 0.4s ease-in;
+        }
       }
     }
   }
   .team {
     background: inherit;
-  }
-  .education {
-    .parallax-wrap {
-      .parallax-inner {
-        background-image: url("../../assets/Landing/pexels-pixabay-414171.jpg");
+    .content {
+      .body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .members-wrap {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 2rem;
+          @include responsive($tablet-portrait) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+          @include responsive($phone) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+          }
+          .member {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+              width: 180px;
+              height: 180px;
+              border-radius: 0.8rem;
+              @include responsive($tablet-landscape) {
+                width: 160px;
+                height: 160px;
+              }
+              @include responsive($tablet-portrait) {
+                // margin-right: 2rem;
+                width: 220px;
+                height: 220px;
+              }
+              @include responsive($phone) {
+                width: 130px;
+                height: 130px;
+              }
+            }
+            h3 {
+              margin-top: 1rem;
+              color: $accent;
+              @include responsive($phone) {
+                font-size: medium;
+                margin-bottom: 0;
+                padding: 0;
+              }
+            }
+            h5 {
+              font-weight: lighter;
+              color: white;
+              @include responsive($tablet-portrait) {
+                margin-bottom: 1.5rem;
+              }
+              @include responsive($phone) {
+                font-size: small;
+                margin-top: 0;
+                padding: 0;
+                margin-bottom: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .more {
+      width: 100% !important;
+      background: $accent2;
+      font-size: medium;
+      padding: 0.4rem;
+      margin: 0;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include responsive($tablet-landscape) {
+        font-size: small;
+      }
+      @include responsive($tablet-portrait) {
+        font-size: x-small;
+      }
+      @include responsive($phone) {
+        text-align: left;
+        font-size: x-small;
+        padding: 0.5rem;
+        line-height: 14px;
+      }
+      .link {
+        text-decoration: none;
+        color: white;
+        padding: 0.3rem 0.3rem;
+        font-weight: bold;
+        border-radius: 0.3rem;
+        @include responsive($phone) {
+          margin-left: 0.5rem;
+        }
+      }
+      .link:hover {
+        background: rgba($color: white, $alpha: 0.2);
       }
     }
   }
-  .testimonials {
-    background: inherit;
+  .education {
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include responsive($phone) {
+        flex-direction: column;
+      }
+      .rect {
+        text-decoration: none;
+        flex-basis: calc(100vw / 3);
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        @include responsive($phone) {
+          flex-basis: 100%;
+          min-height: 45vh;
+        }
+        .rect-content {
+          height: 100%;
+          width: 100%;
+          background: rgba($color: $primary, $alpha: 0.2);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h2 {
+            width: 100%;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: rgba(black, 0.65);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            backdrop-filter: blur(3px);
+            //border-top: 2px solid $accent;
+            //border-bottom: 2px solid $accent;
+            color: $accent2;
+          }
+          .info-snippet {
+            display: flex;
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            padding: 0;
+            //font-size: 0;
+            transition: background-color 0.3s ease-in;
+            .transparent-button {
+              background-color: transparent;
+              text-decoration: none;
+
+              color: $accent2;
+              border-radius: 1rem;
+            }
+            .transparent-button:hover {
+              background: $accent;
+              color: white;
+              transition: all 0.4s ease-in;
+            }
+          }
+        }
+      }
+      .rect:hover {
+        .rect-content {
+          justify-content: center;
+          .info-snippet {
+            visibility: visible;
+            height: auto;
+            width: auto;
+            font-size: medium;
+            padding: 2rem 0;
+            background-color: rgba(black, 0.65);
+            backdrop-filter: blur(3px);
+            border-top: 2px solid $accent;
+            p {
+              padding: 0 1rem;
+            }
+
+            .transparent-button {
+              border: 2px solid $accent;
+              padding: 0.5rem 2rem;
+              margin-top: 1.5rem;
+              cursor: pointer;
+              font-size: small;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      .one {
+        border-right: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/inty.jpg");
+            background-origin: padding-box;
+          }
+        }
+      }
+      .two {
+        border-right: 1px solid $accent;
+        border-left: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/training.jpg");
+            background-origin: padding-box;
+          }
+        }
+      }
+      .three {
+        border-left: 1px solid $accent;
+        @include responsive($phone) {
+          border: none;
+        }
+        .parallax-wrap {
+          .parallax-inner {
+            background-image: url("../../assets/Home/courses.jpg");
+            background-origin: padding-box;
+          }
+        }
+      }
+    }
   }
   .gallery {
     .parallax-wrap {
@@ -162,7 +630,22 @@
       }
     }
   }
-  .contactus {
-    background: inherit;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-phone {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

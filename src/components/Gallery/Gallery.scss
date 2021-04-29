@@ -1,0 +1,14 @@
+@import "../../scss/custom.scss";
+
+.slider {
+  height: 80vh;
+  @include responsive($tablet-landscape) {
+    height: 50vh;
+  }
+  @include responsive($tablet-portrait) {
+    height: 50vh;
+  }
+  @include responsive($phone) {
+    height: 60vh;
+  }
+}
