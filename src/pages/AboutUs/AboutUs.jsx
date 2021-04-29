@@ -8,7 +8,7 @@ export default function AboutUs() {
   return (
     <div className="page">
       <Heading pageTitle={"About Us"} />
-      <div className="about-us">
+      <div className="about-us-page">
         <div className="image">
 
         </div>

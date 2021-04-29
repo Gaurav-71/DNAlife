@@ -1,6 +1,13 @@
 @import "./colors";
 @import "./mediaQueries";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 .page {
   width: 100%;
   min-height: 100vh;
