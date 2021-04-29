@@ -2,12 +2,14 @@
 
 .customHeading {
   width: 100%;
+  background-color: $background;
   background-size: 100vw auto;
   background-repeat: no-repeat;
   background-position: 0px -17rem;
   overflow-x: hidden;
+  
   // border-bottom: 2px solid $accent;
-  @include responsive($phone) {
+  @include responsive($tablet-portrait) {
     background-size: auto;
   }
   .blur-bg {
@@ -22,6 +24,7 @@
     }
     .title {
       font-family: "Raleway", sans-serif;
+      font-weight: 600;
       color: white;
       padding: 0;
       margin: 0;

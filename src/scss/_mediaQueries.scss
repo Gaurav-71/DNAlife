@@ -23,6 +23,7 @@ $combo: "combo";
     @media (max-width: 991px) and (min-width: 500px) {
       @content;
     }
+    
   } @else if $point == $phone {
     @media (max-width: 414px) {
       @content;

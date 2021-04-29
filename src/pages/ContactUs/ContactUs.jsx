@@ -18,19 +18,24 @@ export default function ContactUs() {
               loading="lazy"
             ></iframe>
           </div>
-          <hr className="hr-plain-white" />
+          
+          <div className="address">
           <h3>Address</h3>
           <hr className="hr-slash" />
           <h5>310 President Leon, Duo Marvel Layout,</h5>
           <h5>Ananthapura Road, Yelahanka, </h5>
           <h5>Bengaluru, Karnataka-560064, India</h5>
-          <hr className="hr-plain-white" />
+          </div>
+          
+          <div className="phone">
           <h3>Phone</h3>
           <hr className="hr-slash" />
           <h5>Prof. Malali Gowda (Founder and President): +91-9901002211</h5>
           <h5>
             Mr. Mahantesh Veerapur (Trustee and Secretary): +91-9886680132
           </h5>
+          </div>
+          
         </div>
         <div className="contact-message">
           <h2>Get In Touch.</h2>
@@ -41,10 +46,13 @@ export default function ContactUs() {
             placeholder="Your Email Address"
           />
           <textarea
-            rows="5"
             className="textarea-message"
             placeholder="Your Message"
           />
+
+          <button className="btn-orange">
+            Send
+          </button>
         </div>
       </div>
     </div>

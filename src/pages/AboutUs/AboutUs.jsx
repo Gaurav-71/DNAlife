@@ -1,33 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import "./AboutUs.scss";
+import Heading from "../../components/Heading/Heading";
 
 export default function AboutUs() {
-  function lerp({ x, y }, { x: targetX, y: targetY }) {
-    const fraction = 0.1;
-
-    x += (targetX - x) * fraction;
-    y += (targetY - y) * fraction;
-
-    return { x, y };
-  }
-
-  const sliderDiv = useRef();
+  
 
   return (
-    <div className="slider" id="slider">
-      <div className="slider__content" id="slider-content">
-        <div className="slider__images">
-          <div className="slider__images-item--active">
-            <img
-              src="https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h766"
-              alt=""
-            />
-          </div>
+    <div className="page">
+      <Heading pageTitle={"About Us"} />
+      <div className="about-us">
+        <div className="image">
+
         </div>
-        <div className="slider__text">
-          <div className="slider__text-item slider__text-item--active">
-            <div className="slider__text-item-info">
-              <p>
+        <div className="text">
+        <p>
                 Given the burgeoning human population in India in particular and
                 world in general, many decisions taken in the ‘interest of
                 society’, invariably spell doom to the natural wealth of the
@@ -101,8 +87,6 @@ export default function AboutUs() {
                 over the last five years of our existence. We welcome your
                 feedback and look forward to your participation!
               </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

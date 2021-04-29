@@ -15,7 +15,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, p {
   font-family: "Raleway", sans-serif;
   color: white;
   text-decoration: none;
@@ -51,6 +51,28 @@ h6 {
   width: 80%;
   text-align: left;
   margin-left: 0;
+}
+
+.hr-orange{
+  background-color: $accent;
+  width: 100vw;
+  height: 4px;
+}
+
+.btn-orange {
+  text-decoration: none;
+  color: white;
+  background-color: $accent;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+  font-size: medium;
+}
+.btn-orange:hover {
+  color: white;
+  cursor: pointer;
+  background: lighten($color: $accent, $amount: 5%);
+  font-size: 17.5px;
+  transition: all 0.2s ease-out;
 }
 
 @media screen and (max-width: 350px) {
