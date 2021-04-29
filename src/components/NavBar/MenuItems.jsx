@@ -6,12 +6,12 @@ export const MenuItems = [
   },
   {
     title: "Activities",
-    url: "#",
+    url: "/activities",
     cName: "nav-links",
   },
   {
     title: "Announcements",
-    url: "#",
+    url: "/announcements",
     cName: "nav-links",
   },
   {
@@ -31,7 +31,7 @@ export const MenuItems = [
   },
   {
     title: "Join Us",
-    url: "#",
+    url: "/join-us",
     cName: "nav-links btn",
   },
   

@@ -12,6 +12,11 @@ import Landing from "./pages/Landing/Landing.jsx";
 import Home from "./pages/Home/Home.jsx";
 import ContactUs from "./pages/ContactUs/ContactUs.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
+import Team from "./pages/Team/Team.jsx";
+
+// temp
+
+import Gallery from "./components/Gallery/Gallery.jsx";
 
 function App() {
   return (
@@ -24,6 +29,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/contact-us" component={ContactUs} />
               <Route exact path="/about-us" component={AboutUs} />
+              <Route exact path="/team" component={Team} />
             </Switch>
           </ScrollToTop>
         </div>

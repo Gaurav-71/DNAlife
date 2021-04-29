@@ -1,40 +1,38 @@
 @import "../../scss/custom.scss";
 
-.about-us{
+.about-us {
   width: 90%;
   padding: 2rem;
   display: flex;
   justify-content: center;
 
-  .text{
+  .text {
     width: 90%;
     justify-content: center;
 
-    @include responsive($tablet-portrait){
+    @include responsive($tablet-portrait) {
       width: 100%;
     }
 
-    p{
+    p {
       font-size: 18px;
       line-height: 27px;
       margin: 2rem;
       text-align: justify;
 
-      @include responsive($tablet-portrait){
+      @include responsive($tablet-portrait) {
         margin: 1rem;
       }
 
-      @include responsive($phone){
+      @include responsive($phone) {
         font-size: 15px;
         line-height: 20px;
       }
 
-      @include responsive($small-phone){
+      @include responsive($small-phone) {
         font-size: 12px;
         line-height: 17px;
       }
     }
-
   }
 }
-
