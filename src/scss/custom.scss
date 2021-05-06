@@ -7,16 +7,17 @@
   box-sizing: border-box;
 }
 
-
 .page {
   width: 100%;
   min-height: 100vh;
-  background: $background;
+  background: $black ;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,

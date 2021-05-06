@@ -14,6 +14,16 @@ import ContactUs from "./pages/ContactUs/ContactUs.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 import Team from "./pages/Team/Team.jsx";
 
+// activities
+
+// education
+
+import Internship from "./pages/Education/Internship/Internship.jsx";
+import MS from "./pages/Education/MS/Ms.jsx";
+import Training from "./pages/Education/Training/Training.jsx";
+
+
+
 // temp
 
 import Gallery from "./components/Gallery/Gallery.jsx";
@@ -30,6 +40,9 @@ function App() {
               <Route exact path="/contact-us" component={ContactUs} />
               <Route exact path="/about-us" component={AboutUs} />
               <Route exact path="/team" component={Team} />
+              <Route exact path="/education/ms-program/nelson-institute-for-environmental-studies" component={MS} />
+              <Route exact path="/education/trainings" component={Training} />
+              <Route exact path="education/internships" component={Internship} />
             </Switch>
           </ScrollToTop>
         </div>

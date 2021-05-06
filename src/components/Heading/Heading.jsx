@@ -1,7 +1,7 @@
 import React from "react";
 import "./Heading.scss";
 
-import background from "../../assets/Header/blur2.png";
+import background from "../../assets/Header/1.jpg";
 
 export default function Heading({pageTitle }) {
   let bg = { backgroundImage: `url(${background})` };

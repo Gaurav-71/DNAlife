@@ -12,8 +12,8 @@ export const MenuItems = [
     hasChildRoutes : true,
     childRoutes : [
       {
-        title: "Education Drives",
-        url: "/activities/educational-drives",
+        title: "Educational Tours",
+        url: "/activities/educational-tours",
         cName: "child-links",
       },{
         title: "Eco Projects",
@@ -24,8 +24,8 @@ export const MenuItems = [
         url: "/activities/plantation-drives",
         cName: "child-links",
       },{
-        title: "Cleaning Drives",
-        url: "/activities/cleaning-drives",
+        title: "Cleaning Movements",
+        url: "/activities/cleaning-movements",
         cName: "child-links",
       }
     ]
@@ -43,7 +43,7 @@ export const MenuItems = [
     hasChildRoutes : true,
     childRoutes: [
       {
-        title: "MSProgram",
+        title: "MS Program",
         url: "/education/ms-program/nelson-institute-for-environmental-studies",
         cName: "child-links",
       },{

@@ -5,9 +5,8 @@
   background-color: $background;
   background-size: 100vw auto;
   background-repeat: no-repeat;
-  background-position: 0px -17rem;
+  background-position: 0px -10rem;
   overflow-x: hidden;
-
   // border-bottom: 2px solid $accent;
   @include responsive($tablet-portrait) {
     background-size: auto;
@@ -15,8 +14,11 @@
   .blur-bg {
     width: 100%;
     height: 100%;
-    padding: 6rem 0 1.5rem 2rem;
-    backdrop-filter: blur(5px);
+    padding: 5.5rem 0 1.5rem 2rem;
+    //border-bottom: 2px solid $accent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    backdrop-filter: grayscale(0.4) opacity(0.8) blur(7px);
     @include responsive($tablet-portrait) {
       padding: 4rem 0 2rem 2rem;
     }
@@ -25,9 +27,10 @@
     }
     .title {
       font-family: "Raleway", sans-serif;
-      text-transform: uppercase;
+      text-transform: none;
       font-weight: bold;
       color: white;
+      //color: $accent;
       padding: 0;
       margin: 0;
       //text-transform: uppercase;

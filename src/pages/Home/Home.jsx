@@ -12,7 +12,6 @@ import {Members} from "../Team/Home";
 
 import line from "../../assets/Home/line.png";
 
-
 //partners
 
 import yene from "../../assets/Partners/yene.png";
@@ -24,7 +23,7 @@ import sgi from "../../assets/Partners/sgi.png";
 
 export default function Home() {
   return (
-    <div className="page"    >
+    <div className="page home-page"    >
       <Landing />
       <section className="common parallax-container black">
         <div className="parallax-wrap">
