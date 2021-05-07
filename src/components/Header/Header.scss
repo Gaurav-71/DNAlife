@@ -107,6 +107,7 @@
       right: 10px;
       background: $primary;
       border-radius: 1rem;
+
       //transition: left 0.5s ease;
       .nav-links {
         color: white;
@@ -169,6 +170,10 @@
   margin: 0;
   border-bottom: 0.5px solid $accent;
   transition: all 0.2s ease-out;
+  @include responsive($combo) {
+    border-bottom: 0.5px solid white;
+    background: $accent2;
+  }
   @include responsive($phone) {
     padding: 1rem 2rem;
     font-size: small;
