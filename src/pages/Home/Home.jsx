@@ -128,7 +128,7 @@ export default function Home() {
             Courses in Madison,Wisconsin, at Nelson Institute, USA
           </p>
           <div className="btn-container">
-            <Link className="transparent-button">Know More</Link>
+            <Link to="/education/ms-program/nelson-institute-for-environmental-studies" className="transparent-button">Know More</Link>
           </div>
         </section>
       </section>

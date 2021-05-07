@@ -2,6 +2,7 @@
 
 $small-phone: "(max-width: 375px)";
 $phone: "(max-width: 414px)";
+$duo: "(max-width: 550px)";
 $tablet-portrait: "(max-width: 991px)";
 $tablet-landscape: "(max-width: 1112px)";
 
@@ -20,12 +21,11 @@ $combo: "combo";
       @content;
     }
   } @else if $point == $tablet-portrait {
-    @media (max-width: 991px) and (min-width: 500px) {
+    @media (max-width: 991px) and (min-width: 550px) {
       @content;
     }
-    
   } @else if $point == $phone {
-    @media (max-width: 414px) {
+    @media (max-width: 550px) {
       @content;
     }
   } @else if $point == $small-phone {

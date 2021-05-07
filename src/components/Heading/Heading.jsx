@@ -11,7 +11,6 @@ export default function Heading({pageTitle }) {
       <div className="blur-bg">
       <div className="title">{pageTitle}</div>
       </div>
-      
     </div>
   );
 }

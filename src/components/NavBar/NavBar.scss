@@ -64,7 +64,7 @@
       @include responsive($combo) {
         display: none;
       }
-      .nav-links{
+      .nav-links {
         font-family: "Raleway", sans-serif;
         padding: 10px;
         color: white;
@@ -161,7 +161,7 @@
   }
 }
 
-.child-links{
+.child-links {
   width: 100% !important;
   color: white;
   text-decoration: none;
@@ -175,6 +175,6 @@
   }
 }
 
-.child-links:hover{
+.child-links:hover {
   background-color: $accent;
 }

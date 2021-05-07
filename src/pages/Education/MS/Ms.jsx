@@ -62,7 +62,7 @@ June through December - Courses in Madison,
 Wisconsin, at Nelson Institute, USA</li>
               <li>January through August - Online program of
 courses from Madison, and research work in
-June, July and August with DNA Life in India</li>
+June, July and August with DNA Life in India</li> 
   <li>We help you to craft your dream project
 and learn with the pioneers in the field
 to make the world a better place</li>

@@ -10,6 +10,10 @@
     justify-content: space-around;
     align-items: flex-start;
     overflow: hidden;
+    @include responsive($phone) {
+      padding: 0 1.5rem;
+      padding-top: 1rem;
+    }
     img {
       width: 40rem;
       height: auto;
@@ -27,6 +31,11 @@
         margin-bottom: 1.5rem;
         font-size: xx-large;
         color: $accent2;
+        @include responsive($phone) {
+          line-height: 2.3rem;
+          //font-weight: normal;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
@@ -36,10 +45,35 @@
     padding: 1.5rem 2rem;
     justify-content: space-between;
     align-items: stretch;
+    @include responsive($tablet-landscape) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include responsive($tablet-portrait) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    @include responsive($phone) {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1.5rem;
+    }
     .MuiCard-root {
       border-bottom: 2px solid $accent;
       border-bottom-left-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
+      @include responsive($tablet-landscape) {
+        margin: 0 0.6rem;
+        margin-bottom: 1.5rem;
+      }
+      @include responsive($tablet-portrait) {
+        margin-bottom: 2rem;
+      }
+      @include responsive($phone) {
+        margin: 0;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
       .card-content {
         h1 {
           padding: 1rem 0 0.5rem;
@@ -72,6 +106,9 @@
     padding: 1.5rem 2rem;
     flex-direction: column;
     align-items: flex-start;
+    @include responsive($phone) {
+      padding: 0 1.5rem;
+    }
     h1 {
       color: $accent2;
       padding-bottom: 1.5rem;
@@ -85,6 +122,18 @@
       padding: 1.5rem 0;
       justify-content: space-between;
       align-items: stretch;
+      @include responsive($tablet-landscape) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      @include responsive($tablet-portrait) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      @include responsive($phone) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
       .admin {
         display: flex;
         justify-content: flex-start;
@@ -94,12 +143,29 @@
         border: 1px solid $accent;
         overflow: hidden;
         width: 27rem;
+        @include responsive($tablet-landscape) {
+          margin-bottom: 1.5rem;
+          width: 100%;
+        }
+        @include responsive($tablet-portrait) {
+          margin-bottom: 1.5rem;
+          width: 100%;
+        }
+        @include responsive($phone) {
+          margin-bottom: 1.5rem;
+          flex-direction: column;
+          width: 100%;
+        }
         img {
           margin: 0;
           padding: 0;
           width: 150px;
           height: 150px;
-
+          @include responsive($phone) {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid $accent;
+          }
           // border-radius: 50%;
         }
         .admin-details {
