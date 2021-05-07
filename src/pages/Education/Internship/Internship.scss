@@ -1,0 +1,60 @@
+@import "../../../scss/custom.scss";
+
+.internship-page {
+  .page-content {
+    width: 100%;
+    height: calc(100vh - 11rem - 80px);
+    display: flex;
+    align-items: center;
+    .left {
+      flex-basis: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .right {
+      flex-basis: 60%;
+      height: 100%;
+      padding: 0 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      h1 {
+        font-size: 2.8rem;
+        color: $accent;
+      }
+      h4 {
+        color: $accent2;
+        font-weight: normal;
+        margin-top: 0.25rem;
+      }
+      p {
+        line-height: 1.8rem;
+      }
+      button {
+        margin-top: 2rem;
+        background: transparent;
+        text-decoration: none;
+        padding: 0.5rem 2rem;
+        color: $accent2;
+        border-radius: 2rem;
+        border: 2px solid $accent;
+        cursor: pointer;
+        font-size: small;
+        text-transform: uppercase;
+      }
+      button:hover {
+        background: $accent;
+        color: white;
+        transition: all 0.4s ease-in;
+      }
+    }
+  }
+}

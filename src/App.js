@@ -22,6 +22,7 @@ import Team from "./pages/Team/Team.jsx";
 import Internship from "./pages/Education/Internship/Internship.jsx";
 import MS from "./pages/Education/MS/Ms.jsx";
 import Training from "./pages/Education/Training/Training.jsx";
+import Courses from "./pages/Education/Courses/Courses.jsx";
 
 // temp
 
@@ -47,8 +48,13 @@ function App() {
               <Route exact path="/education/trainings" component={Training} />
               <Route
                 exact
-                path="education/internships"
+                path="/education/internships"
                 component={Internship}
+              />
+              <Route
+                exact
+                path="/education/certificate-courses"
+                component={Courses}
               />
             </Switch>
           </ScrollToTop>

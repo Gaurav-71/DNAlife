@@ -15,7 +15,6 @@ import "./Header.scss";
 
 import {Link} from "react-router-dom";
 
-import { MenuItems } from "../NavBar/MenuItems";
 import { BarsIcon, TimesIcon } from "react-line-awesome";
 
 import Menu from '@material-ui/core/Menu';
@@ -247,6 +246,11 @@ export default function Header() {
                     Internships
                   </Link>
                 </StyledMenuItem>
+                <StyledMenuItem onClick={handleClose2}>
+                  <Link style={linkStyle} className="child-links" to="/education/certificate-courses">
+                    Certificate Courses
+                  </Link>
+                </StyledMenuItem>
               </StyledMenu>
         </ListItem>
         <Divider style={dividerStyle} />
@@ -349,6 +353,11 @@ export default function Header() {
                 <StyledMenuItem onClick={handleClose2}>
                   <Link className="child-links" to="/education/internships">
                     Internships
+                  </Link>
+                </StyledMenuItem>
+                <StyledMenuItem onClick={handleClose2}>
+                  <Link style={linkStyle} className="child-links" to="/education/certificate-courses">
+                    Certificate Courses
                   </Link>
                 </StyledMenuItem>
               </StyledMenu>
