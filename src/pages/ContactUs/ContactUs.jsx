@@ -9,7 +9,7 @@ export default function ContactUs() {
   return (
     <div className="page">
       <Heading pageTitle={"Contact Us"} />
-      <div className="contact-us">
+      <div className="contact-us-page">
         <div className="phone-address">
           <h2>Locate Us.</h2>
           <div className="location-box">
@@ -18,24 +18,23 @@ export default function ContactUs() {
               loading="lazy"
             ></iframe>
           </div>
-          
+
           <div className="address">
-          <h3>Address</h3>
-          <hr className="hr-slash" />
-          <h5>310 President Leon, Duo Marvel Layout,</h5>
-          <h5>Ananthapura Road, Yelahanka, </h5>
-          <h5>Bengaluru, Karnataka-560064, India</h5>
+            <h3>Address</h3>
+            <hr className="hr-slash" />
+            <h5>310 President Leon, Duo Marvel Layout,</h5>
+            <h5>Ananthapura Road, Yelahanka, </h5>
+            <h5>Bengaluru, Karnataka-560064, India</h5>
           </div>
-          
+
           <div className="phone">
-          <h3>Phone</h3>
-          <hr className="hr-slash" />
-          <h5>Prof. Malali Gowda (Founder and President): +91-9901002211</h5>
-          <h5>
-            Mr. Mahantesh Veerapur (Trustee and Secretary): +91-9886680132
-          </h5>
+            <h3>Phone</h3>
+            <hr className="hr-slash" />
+            <h5>Prof. Malali Gowda (Founder and President): +91-9901002211</h5>
+            <h5>
+              Mr. Mahantesh Veerapur (Trustee and Secretary): +91-9886680132
+            </h5>
           </div>
-          
         </div>
         <div className="contact-message">
           <h2>Get In Touch.</h2>
@@ -45,14 +44,9 @@ export default function ContactUs() {
             className="input"
             placeholder="Your Email Address"
           />
-          <textarea
-            className="textarea-message"
-            placeholder="Your Message"
-          />
+          <textarea className="textarea-message" placeholder="Your Message" />
 
-          <button className="btn-orange">
-            Send
-          </button>
+          <button className="btn-orange">Send</button>
         </div>
       </div>
     </div>
