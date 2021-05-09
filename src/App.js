@@ -17,6 +17,11 @@ import Team from "./pages/Team/Team.jsx";
 
 // activities
 
+import Cleaning from "./pages/Activities/Cleaning Movements/Cleaning.jsx";
+import Education from "./pages/Activities/Educational Tours/Educational.jsx";
+import Eco from "./pages/Activities/Eco Projects/Eco.jsx";
+import Plantation from "./pages/Activities/Plantation Drives/Plantation.jsx";
+
 // education
 
 import Internship from "./pages/Education/Internship/Internship.jsx";
@@ -55,6 +60,22 @@ function App() {
                 exact
                 path="/education/certificate-courses"
                 component={Courses}
+              />
+              <Route
+                exact
+                path="/activities/educational-tours"
+                component={Education}
+              />
+              <Route exact path="/activities/eco-projects" component={Eco} />
+              <Route
+                exact
+                path="/activities/plantation-drives"
+                component={Plantation}
+              />
+              <Route
+                exact
+                path="/activities/cleaning-movements"
+                component={Cleaning}
               />
             </Switch>
           </ScrollToTop>
