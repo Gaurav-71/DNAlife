@@ -6,6 +6,18 @@
   display: flex;
   justify-content: center;
 
+  @include responsive($tablet-portrait) {
+    padding: 2rem 1rem;
+  }
+
+  @include responsive($phone) {
+    padding: 1.5rem 0rem;
+  }
+
+  @include responsive($small-phone) {
+    padding: 1.5rem 0rem;
+  }
+
   .text {
     width: 90%;
     justify-content: center;
@@ -21,17 +33,19 @@
       text-align: justify;
 
       @include responsive($tablet-portrait) {
-        margin: 1rem;
+        margin: 1rem 0;
       }
 
       @include responsive($phone) {
         font-size: 15px;
         line-height: 20px;
+        margin: 1rem 0;
       }
 
       @include responsive($small-phone) {
         font-size: 12px;
         line-height: 17px;
+        margin: 1rem 0;
       }
     }
   }
