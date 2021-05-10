@@ -16,6 +16,7 @@ export default function ContactUs() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.7241679456542!2d77.57132811482347!3d13.116652490760838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA2JzYwLjAiTiA3N8KwMzQnMjQuNyJF!5e0!3m2!1sen!2sin!4v1618672394742!5m2!1sen!2sin"
               loading="lazy"
+              title="location"
             ></iframe>
           </div>
 

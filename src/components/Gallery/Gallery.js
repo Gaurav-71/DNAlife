@@ -10,7 +10,6 @@ import img7 from "../../assets/Gallery/IMG-20190916-WA0001.jpg";
 import img8 from "../../assets/Gallery/IMG-20190927-WA0003.jpg";
 
 import React from "react";
-import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -23,7 +22,7 @@ export default function Gallery() {
   return (
     <Carousel infiniteLoop autoPlay stopOnHover={false}>
       {images.map(function (image, i) {
-        return <img src={image} key={i} />;
+        return <img src={image} alt={"gallery-image-" + (i + 1)} key={i} />;
       })}
     </Carousel>
   );

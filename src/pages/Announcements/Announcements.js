@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./Announcements.scss";
 import Heading from "../../components/Heading/Heading";
 
