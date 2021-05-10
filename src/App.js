@@ -3,35 +3,30 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 
 import ScrollToTop from "./ScrollToTop";
-import Header from "./components/Header/Header.jsx";
-//import Header from "./components/NavBar/NavBar.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 // pages
 
-import Landing from "./pages/Landing/Landing.jsx";
-import Home from "./pages/Home/Home.jsx";
-import ContactUs from "./pages/ContactUs/ContactUs.jsx";
-import AboutUs from "./pages/AboutUs/AboutUs.jsx";
-import Team from "./pages/Team/Team.jsx";
+import Home from "./pages/Home/Home.js";
+import ContactUs from "./pages/ContactUs/ContactUs.js";
+import AboutUs from "./pages/AboutUs/AboutUs.js";
+import Team from "./pages/Team/Team.js";
+import Announcements from "./pages/Announcements/Announcements.js";
 
 // activities
 
-import Cleaning from "./pages/Activities/Cleaning Movements/Cleaning.jsx";
-import Education from "./pages/Activities/Educational Tours/Educational.jsx";
-import Eco from "./pages/Activities/Eco Projects/Eco.jsx";
-import Plantation from "./pages/Activities/Plantation Drives/Plantation.jsx";
+import Cleaning from "./pages/Activities/Cleaning Movements/Cleaning.js";
+import Education from "./pages/Activities/Educational Tours/Educational.js";
+import Eco from "./pages/Activities/Eco Projects/Eco.js";
+import Plantation from "./pages/Activities/Plantation Drives/Plantation.js";
 
 // education
 
-import Internship from "./pages/Education/Internship/Internship.jsx";
-import MS from "./pages/Education/MS/Ms.jsx";
-import Training from "./pages/Education/Training/Training.jsx";
-import Courses from "./pages/Education/Courses/Courses.jsx";
-
-// temp
-
-import Gallery from "./components/Gallery/Gallery.jsx";
+import Internship from "./pages/Education/Internship/Internship.js";
+import MS from "./pages/Education/MS/Ms.js";
+import Training from "./pages/Education/Training/Training.js";
+import Courses from "./pages/Education/Courses/Courses.js";
 
 function App() {
   return (
@@ -77,6 +72,7 @@ function App() {
                 path="/activities/cleaning-movements"
                 component={Cleaning}
               />
+              <Route exact path="/announcements" component={Announcements} />
             </Switch>
           </ScrollToTop>
         </div>

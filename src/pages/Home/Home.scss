@@ -156,7 +156,8 @@
             background-color: transparent;
             flex-direction: column;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
+            text-align: center;
             visibility: hidden;
             height: 0;
             width: 0;
@@ -180,13 +181,16 @@
       }
       .rect:hover {
         .rect-content {
+          width: 100%;
           justify-content: space-around;
           .info-snippet {
+            width: 100% !important;
             visibility: visible;
             height: auto;
             width: auto;
             font-size: medium;
             padding: 2rem 0;
+            line-height: 1.6rem;
             background-color: rgba(black, 0.65);
             backdrop-filter: blur(3px);
             p {
@@ -561,6 +565,9 @@
         .rect-content {
           justify-content: center;
           .info-snippet {
+            width: 100% !important;
+            line-height: 1.6rem;
+            text-align: center;
             visibility: visible;
             height: auto;
             width: auto;
@@ -572,7 +579,6 @@
             p {
               padding: 0 1rem;
             }
-
             .transparent-button {
               border: 2px solid $accent;
               padding: 0.5rem 2rem;

@@ -1,13 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { gsap, TweenLite } from "gsap";
 
-import {Link} from "react-router-dom";
-
-import logo from '../../assets/Logo/logo.png';
+import logo from "../../assets/Logo/logo.png";
 
 import "./Landing.scss";
 
-import "../../scss/_colors.scss"
+import "../../scss/_colors.scss";
 
 export default function Landing() {
   useEffect(() => {
@@ -213,17 +211,18 @@ export default function Landing() {
       return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
   }, []);
-
   return (
-    <div  className="landing  " >
+    <div className="landing  ">
       <div id="large-header" className="large-header parallax-container ">
-      <div className="parallax-wrap">
+        <div className="parallax-wrap">
           <div className="parallax-inner"></div>
-      </div>
+        </div>
         <canvas id="demo-canvas"></canvas>
         <div className="main-title">
-          <img src={logo}  alt="logo"  />
-          <div className="name">DNA <span className="thin">life </span></div>
+          <img src={logo} alt="logo" />
+          <div className="name">
+            DNA <span className="thin">life </span>
+          </div>
           <p>Conservation is humanity caring for nature</p>
         </div>
       </div>
