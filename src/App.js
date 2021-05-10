@@ -13,6 +13,7 @@ import ContactUs from "./pages/ContactUs/ContactUs.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Team from "./pages/Team/Team.js";
 import Announcements from "./pages/Announcements/Announcements.js";
+import JoinUs from "./pages/JoinUs/JoinUs.js";
 
 // activities
 
@@ -40,6 +41,7 @@ function App() {
               <Route exact path="/contact-us" component={ContactUs} />
               <Route exact path="/about-us" component={AboutUs} />
               <Route exact path="/team" component={Team} />
+              <Route exact path="/join-us" component={JoinUs} />
               <Route
                 exact
                 path="/education/ms-program/nelson-institute-for-environmental-studies"

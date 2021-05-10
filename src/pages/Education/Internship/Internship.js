@@ -16,7 +16,7 @@ export default function Internship() {
           <img src={graphic} alt="internship" />
         </div>
         <div className="right">
-          <h1>Join Us. Be you.</h1>
+          <h1>Intern and Learn</h1>
           <h4>An open invitation to open and innovative minds.</h4>
           <Divider
             style={{

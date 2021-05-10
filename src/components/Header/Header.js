@@ -327,7 +327,7 @@ export default function Header() {
           onKeyDown={toggleDrawer(anchor, false)}
           style={customStyle}
         >
-          <Link style={linkStyle} className="nav-links btn" to="/">
+          <Link style={linkStyle} className="nav-links btn" to="/join-us">
             Join Us
           </Link>
         </ListItem>
@@ -457,7 +457,7 @@ export default function Header() {
             <Link className="nav-links" to="/contact-us">
               Contact Us
             </Link>
-            <Link className="nav-links btn" to="/">
+            <Link className="nav-links btn" to="/join-us">
               Join Us
             </Link>
           </div>
