@@ -13,7 +13,7 @@ export default function Educational(){
       <Heading elevation={15} pageTitle="Educational Tours" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="educational" />
         </div>
         <div className="right">
           <h1>A Unique Learning Experience</h1>

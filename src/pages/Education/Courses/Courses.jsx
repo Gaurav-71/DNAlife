@@ -13,7 +13,7 @@ export default function Courses(){
       <Heading elevation={15} pageTitle="Certificate Courses" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="courses" />
         </div>
         <div className="right">
           <h1>Earn a career credential</h1>

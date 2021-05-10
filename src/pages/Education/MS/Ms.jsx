@@ -52,7 +52,7 @@ export default function Ms(){
           <CardMedia
               className={classes.media}
               image={high}
-              title="Contemplative Reptile"
+              title="MS Program Details"
           />
           <div className="card-content">
             <h1>Course Highlights</h1>
@@ -73,7 +73,7 @@ to make the world a better place</li>
           <CardMedia
               className={classes.media}
               image={course}
-              title="Contemplative Reptile"
+              title="MS Program Details"
           />
           <div className="card-content">
             <h1>Objectives</h1>
@@ -92,7 +92,7 @@ to make the world a better place</li>
           <CardMedia
               className={classes.media}
               image={why}
-              title="Contemplative Reptile"
+              title="MS Program Details"
           />
           <div className="card-content">
             <h1>Why this course ?</h1>
@@ -110,7 +110,7 @@ development and lasting global relationships</li>
           <CardMedia
               className={classes.media}
               image={univ}
-              title="Contemplative Reptile"
+              title="MS Program Details"
           />
           <div className="card-content">
             <h1>Know More</h1>
@@ -133,7 +133,7 @@ development and lasting global relationships</li>
         <p>We offer interdisciplinary graduate degree programs for students with exceptional interest in researching and solving the most pressing environmental challenges. Please contact the following for admissions.</p>
         <div className="all-admins">
           <div className="admin">
-            <img src={fatima} alt=""/>
+            <img src={fatima} alt="admission officer"/>
             <div className="admin-details">
               <h1 className="name">Fatima Tuz Zehra</h1>
               <div className="position">Admission Coordinator</div>
@@ -142,7 +142,7 @@ development and lasting global relationships</li>
             </div>
           </div>
           <div className="admin">
-            <img src={malali} alt=""/>
+            <img src={malali} alt="admission officer"/>
             <div className="admin-details">
               <h1 className="name">Malali Gowda</h1>
               <div className="position">Program Director</div>
@@ -151,7 +151,7 @@ development and lasting global relationships</li>
             </div>
           </div>
           <div className="admin">
-            <img src={nathan} alt=""/>
+            <img src={nathan} alt="admission officer"/>
             <div className="admin-details">
               <h1 className="name">Nathan chulfer</h1>
               <div className="position">Program Director</div>

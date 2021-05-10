@@ -13,7 +13,7 @@ export default function Plantation(){
       <Heading elevation={15} pageTitle="Plantation Drives" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="plantation" />
         </div>
         <div className="right">
           <h1>Plant For The Future</h1>

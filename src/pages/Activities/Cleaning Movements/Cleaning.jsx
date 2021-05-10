@@ -13,7 +13,7 @@ export default function Cleaning(){
       <Heading elevation={15} pageTitle="Cleaning Movements" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="cleaning" />
         </div>
         <div className="right">
           <h1>Clean India, Green India</h1>

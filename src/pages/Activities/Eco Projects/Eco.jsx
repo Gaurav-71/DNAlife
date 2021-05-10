@@ -13,7 +13,7 @@ export default function Eco(){
       <Heading elevation={15} pageTitle="Eco Projects" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="eco" />
         </div>
         <div className="right">
           <h1>Mother Earth Needs Us !</h1>

@@ -13,7 +13,7 @@ export default function Training(){
       <Heading elevation={15} pageTitle="Training" />
       <div className="page-content">
         <div className="left">
-          <img src={graphic} alt="internship" />
+          <img src={graphic} alt="Training" />
         </div>
         <div className="right">
           <h1>Learn and get inspired</h1>
