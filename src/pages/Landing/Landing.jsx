@@ -213,7 +213,6 @@ export default function Landing() {
       return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
   }, []);
-
   return (
     <div  className="landing  " >
       <div id="large-header" className="large-header parallax-container ">

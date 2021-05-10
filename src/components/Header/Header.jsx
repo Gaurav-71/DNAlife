@@ -213,7 +213,7 @@ export default function Header() {
         </ListItem>
         <Divider style={dividerStyle} />
         <ListItem onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)} style={customStyle}>
-          <Link style={linkStyle}  className="nav-links"  to="/">
+          <Link style={linkStyle}  className="nav-links"  to="/announcements">
               Announcements
           </Link> 
         </ListItem>
@@ -326,7 +326,7 @@ export default function Header() {
                 </StyledMenuItem>
             </StyledMenu>
           </div>
-          <Link  className="nav-links"  to="/">
+          <Link  className="nav-links"  to="/announcements">
               Announcements
           </Link> 
           <div>
