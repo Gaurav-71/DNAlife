@@ -1,9 +1,31 @@
 import React from "react";
+import emailjs from "emailjs-com";
 
 import Heading from "../../components/Heading/Heading";
 
 import "./ContactUs.scss";
 import "../../scss/custom.scss";
+
+function sendEmail(e) {
+  e.preventDefault();
+  console.log("e value : ", e);
+  emailjs
+    .sendForm(
+      "gmail",
+      "template_ic8mdm6",
+      e.target,
+      "user_u19q2l59CP6NPNZ1o7IYA"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  e.target.reset();
+}
 
 export default function ContactUs() {
   return (
@@ -37,18 +59,33 @@ export default function ContactUs() {
             </h5>
           </div>
         </div>
-        <div className="contact-message">
+        <form onSubmit={sendEmail} className="contact-message">
           <h2>Get In Touch.</h2>
-          <input type="text" className="input" placeholder="Your Name" />
           <input
+            id="username"
             type="text"
             className="input"
+            name="name"
+            placeholder="Your Name"
+          />
+          <input
+            id="userEmail"
+            type="text"
+            className="input"
+            name="email"
             placeholder="Your Email Address"
           />
-          <textarea className="textarea-message" placeholder="Your Message" />
+          <textarea
+            id="userMessage"
+            className="textarea-message"
+            name="message"
+            placeholder="Your Message"
+          />
 
-          <button className="btn-orange">Send</button>
-        </div>
+          <button type="submit" className="btn-orange">
+            Send
+          </button>
+        </form>
       </div>
     </div>
   );
