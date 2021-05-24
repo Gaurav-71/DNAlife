@@ -33,58 +33,85 @@ import MS from "./pages/Education/MS/Ms.js";
 import Training from "./pages/Education/Training/Training.js";
 import Courses from "./pages/Education/Courses/Courses.js";
 
+// admin
+
+import SignIn from "./pages/Admin/SignIn/Signin.js";
+import { AuthProvider } from "./contexts/AuthContext";
+import PrivateRoute from "./PrivateRoutes";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard.js";
+
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App">
-          <Header />
-          <div className="routes">
-            <ScrollToTop>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/contact-us" component={ContactUs} />
-                <Route exact path="/about-us" component={AboutUs} />
-                <Route exact path="/team" component={Team} />
-                <Route exact path="/join-us" component={JoinUs} />
-                <Route
-                  exact
-                  path="/education/ms-program/nelson-institute-for-environmental-studies"
-                  component={MS}
-                />
-                <Route exact path="/education/trainings" component={Training} />
-                <Route
-                  exact
-                  path="/education/internships"
-                  component={Internship}
-                />
-                <Route
-                  exact
-                  path="/education/certificate-courses"
-                  component={Courses}
-                />
-                <Route
-                  exact
-                  path="/activities/educational-tours"
-                  component={Education}
-                />
-                <Route exact path="/activities/eco-projects" component={Eco} />
-                <Route
-                  exact
-                  path="/activities/plantation-drives"
-                  component={Plantation}
-                />
-                <Route
-                  exact
-                  path="/activities/cleaning-movements"
-                  component={Cleaning}
-                />
-                <Route exact path="/announcements" component={Announcements} />
-              </Switch>
-            </ScrollToTop>
+        <AuthProvider>
+          <div className="App">
+            <Header />
+            <div className="routes">
+              <ScrollToTop>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/contact-us" component={ContactUs} />
+                  <Route exact path="/about-us" component={AboutUs} />
+                  <Route exact path="/team" component={Team} />
+                  <Route exact path="/join-us" component={JoinUs} />
+                  <Route
+                    exact
+                    path="/education/ms-program/nelson-institute-for-environmental-studies"
+                    component={MS}
+                  />
+                  <Route
+                    exact
+                    path="/education/trainings"
+                    component={Training}
+                  />
+                  <Route
+                    exact
+                    path="/education/internships"
+                    component={Internship}
+                  />
+                  <Route
+                    exact
+                    path="/education/certificate-courses"
+                    component={Courses}
+                  />
+                  <Route
+                    exact
+                    path="/activities/educational-tours"
+                    component={Education}
+                  />
+                  <Route
+                    exact
+                    path="/activities/eco-projects"
+                    component={Eco}
+                  />
+                  <Route
+                    exact
+                    path="/activities/plantation-drives"
+                    component={Plantation}
+                  />
+                  <Route
+                    exact
+                    path="/activities/cleaning-movements"
+                    component={Cleaning}
+                  />
+                  <Route
+                    exact
+                    path="/announcements"
+                    component={Announcements}
+                  />
+                  <Route exact path="/signIn" component={SignIn} />
+                  <PrivateRoute
+                    exact
+                    path="/admin-dashboard"
+                    component={Dashboard}
+                  />
+                </Switch>
+              </ScrollToTop>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </AuthProvider>
       </Router>
     </Provider>
   );
