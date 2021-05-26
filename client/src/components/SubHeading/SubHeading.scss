@@ -1,0 +1,16 @@
+@import "../../scss/custom.scss";
+
+.sub-heading {
+  //width: 100%;
+  //margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: $accent3 !important;
+  h1 {
+    color: $accent;
+  }
+  h5 {
+    margin-top: 0.5rem;
+    font-weight: normal;
+  }
+}

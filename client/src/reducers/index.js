@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import signInReducer from "./signInReducer";
+import announcementReducer from "./announcementReducer";
 
-export default combineReducers({ signInReducer });
+export default combineReducers({ announcementReducer });

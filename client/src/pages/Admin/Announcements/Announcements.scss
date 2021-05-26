@@ -1,0 +1,70 @@
+@import "../../../scss/custom.scss";
+
+.admin-annoucements {
+  .post-content {
+    width: 100%;
+    background: $accent3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    .tf-wrapper {
+      width: 98%;
+      margin: 1rem 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .input {
+        width: 100%;
+        margin-left: 1.5rem;
+      }
+    }
+    .actions {
+      margin: 1.5rem 0;
+      //padding-right: 1rem;
+      width: 98%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.paper {
+  width: 100%;
+  background: $accent3 !important;
+  margin: 1rem 0;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog {
+  width: 100%;
+  .dialog-title {
+    background: $accent3;
+    color: $accent !important;
+  }
+  .dialog-content {
+    background: $background;
+    .tf-wrapper {
+      width: 100%;
+      margin: 1rem 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .input {
+        width: 100%;
+        margin-left: 1.5rem;
+      }
+      .label {
+        background: rgba(grey, 0.2);
+        width: 100%;
+        margin-left: 1.5rem;
+        padding: 1rem;
+        border-radius: 0.3rem;
+        overflow-x: scroll;
+      }
+    }
+  }
+}

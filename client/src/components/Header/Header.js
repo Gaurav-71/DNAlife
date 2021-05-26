@@ -13,6 +13,8 @@ import { Link, useHistory } from "react-router-dom";
 
 import { BarsIcon, TimesIcon } from "react-line-awesome";
 
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
@@ -365,6 +367,7 @@ export default function Header() {
               color="primary"
               onClick={signOut}
               className={classes.submit}
+              startIcon={<ExitToAppIcon />}
               style={{ marginRight: "1rem", color: "white" }}
             >
               Sign Out

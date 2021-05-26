@@ -8,6 +8,7 @@ import {
   TelegramIcon,
   TwitterIcon,
 } from "react-line-awesome";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -72,7 +73,18 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="copyright-line">Copyright © 2021 DNALife</div>
+          <div className="copyright-line">
+            Copyright © 2021 DNALife
+            <span style={{ margin: "0 0.8rem" }}>|</span> Made by Gaurav V &
+            Divya <span style={{ margin: "0 0.8rem" }}>|</span>
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to="/signIn"
+            >
+              {" "}
+              Admin Login
+            </Link>
+          </div>
         </div>
       </section>
     </div>

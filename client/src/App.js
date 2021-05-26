@@ -39,6 +39,7 @@ import SignIn from "./pages/Admin/SignIn/Signin.js";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoutes";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard.js";
+import AdminAnnouncements from "./pages/Admin/Announcements/Announcements.js";
 
 function App() {
   return (
@@ -103,8 +104,13 @@ function App() {
                   <Route exact path="/signIn" component={SignIn} />
                   <PrivateRoute
                     exact
-                    path="/admin-dashboard"
+                    path="/admin/dashboard"
                     component={Dashboard}
+                  />
+                  <PrivateRoute
+                    exact
+                    path="/admin/announcements"
+                    component={AdminAnnouncements}
                   />
                 </Switch>
               </ScrollToTop>

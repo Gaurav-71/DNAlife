@@ -1,0 +1,46 @@
+@import "../../scss/custom.scss";
+
+.customHeading {
+  width: 100%;
+  background-color: $background;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  background-position: 0px -10rem;
+  overflow-x: hidden;
+  // border-bottom: 2px solid $accent;
+  @include responsive($tablet-portrait) {
+    background-size: auto;
+  }
+  @include responsive($phone) {
+    background-position: 0 0;
+  }
+  .blur-bg {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-bottom: 2px solid $accent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    backdrop-filter: grayscale(0.4) opacity(0.8) blur(7px);
+    @include responsive($tablet-portrait) {
+      padding: 2rem;
+    }
+    @include responsive($phone) {
+      padding: 2rem 0 2rem 1.5rem;
+    }
+    .title {
+      font-family: "Raleway", sans-serif;
+      text-transform: none;
+      font-weight: bold;
+      color: white;
+      //color: $accent;
+      padding: 0;
+      margin: 0;
+      //text-transform: uppercase;
+      font-size: 3.3rem;
+      @include responsive($phone) {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

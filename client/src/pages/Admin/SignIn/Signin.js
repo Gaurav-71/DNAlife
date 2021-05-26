@@ -44,8 +44,9 @@ export default function SignIn() {
     e.preventDefault();
     try {
       setLoading(true);
-      await login(email, password);
-      history.push("/admin-dashboard");
+      //await login(email, password);
+      await login("a@a.com", "123456"); // for dev
+      history.push("/admin/dashboard");
     } catch {
       alert("Failed to log in");
     }
