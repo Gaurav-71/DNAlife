@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/storage";
 
 const config = require("./privateKeys.js");
 
@@ -14,4 +15,5 @@ const app = firebase.initializeApp({
 });
 
 export const auth = app.auth();
+export const storage = firebase.storage();
 export default app;

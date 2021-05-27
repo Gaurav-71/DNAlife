@@ -95,6 +95,7 @@ export default function Create() {
               variant="filled"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              multiline
             />
           </div>
           <div className="tf-wrapper">

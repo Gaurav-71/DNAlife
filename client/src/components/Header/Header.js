@@ -355,12 +355,21 @@ export default function Header() {
     <div>
       <nav className="navbar">
         <div className="black-fill">
-          <Link to="/" className="name">
-            <img src={logo} alt="logo" />
-            <h1 className="main-title">
-              DNA <span className="thin">life </span>
-            </h1>
-          </Link>
+          {!currentUser ? (
+            <Link to="/" className="name">
+              <img src={logo} alt="logo" />
+              <h1 className="main-title">
+                DNA <span className="thin">life </span>
+              </h1>
+            </Link>
+          ) : (
+            <Link to="/admin/dashboard" className="name">
+              <img src={logo} alt="logo" />
+              <h2 className="main-title">
+                DNA <span className="thin">life </span>
+              </h2>
+            </Link>
+          )}
           {currentUser ? (
             <Button
               variant="contained"

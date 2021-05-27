@@ -180,7 +180,7 @@ export default function Edit() {
         className="dialog"
         fullWidth={fullWidth}
         maxWidth={maxWidth}
-        onClose={handleModalClose}
+        onClose={handleViewClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
@@ -260,6 +260,7 @@ export default function Edit() {
                 variant="filled"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                multiline
               />
             </div>
             <div className="tf-wrapper">
