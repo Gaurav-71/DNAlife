@@ -8,19 +8,22 @@ function singular(s) {
 }
 
 export const getData = (collection) => (dispatch) => {
+  console.log(baseUrl + collection);
   axios
     .get(baseUrl + collection)
     .then((res) => {
       dispatch({ type: "get" + collection, payload: res.data });
+      console.log(res.data);
       dispatch({ type: "setSuccess", payload: "true" });
     })
     .catch((error) => {
-      console.log("get error : ", error); //Logs a string: Error: Request failed with status code 404
+      console.log(collection, "| get error : ", error); //Logs a string: Error: Request failed with status code 404
       dispatch({ type: "setSuccess", payload: "false" });
     });
 };
 
 export const addData = (collection, announcement) => (dispatch) => {
+  console.log(baseUrl + collection);
   axios
     .post(baseUrl + collection, announcement)
     .then((res) => {
@@ -28,7 +31,7 @@ export const addData = (collection, announcement) => (dispatch) => {
       dispatch({ type: "setSuccess", payload: "true" });
     })
     .catch((error) => {
-      console.log("add error : ", error); //Logs a string: Error: Request failed with status code 404
+      console.log(collection, "| add error : ", error); //Logs a string: Error: Request failed with status code 404
       dispatch({ type: "setSuccess", payload: "false" });
     });
 };
@@ -41,7 +44,7 @@ export const updateData = (collection, data) => (dispatch) => {
       dispatch({ type: "setSuccess", payload: "true" });
     })
     .catch((error) => {
-      console.log("update error : ", error); //Logs a string: Error: Request failed with status code 404
+      console.log(collection, "| update error : ", error); //Logs a string: Error: Request failed with status code 404
       dispatch({ type: "setSuccess", payload: "false" });
     });
 };
@@ -54,7 +57,7 @@ export const deleteData = (collection, id) => (dispatch) => {
       dispatch({ type: "setSuccess", payload: "true" });
     })
     .catch((error) => {
-      console.log("delete error : ", error); //Logs a string: Error: Request failed with status code 404
+      console.log(collection, "| delete error : ", error); //Logs a string: Error: Request failed with status code 404
       dispatch({ type: "setSuccess", payload: "false" });
     });
 };

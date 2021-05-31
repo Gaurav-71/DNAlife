@@ -1,35 +1,35 @@
 const initialState = {
-  announcements: [],
+  activities: [],
   loading: false,
   successful: "no op",
 };
 
 const educationTourReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "getEducationTours":
+    case "getEducationalTours":
       return {
         ...state,
-        announcements: action.payload,
+        activities: action.payload,
         loading: false,
       };
-    case "addEducationTour":
+    case "addEducationalTour":
       return {
         ...state,
-        announcements: [action.payload, ...state.announcements],
+        activities: [action.payload, ...state.activities],
       };
-    case "deleteEducationTour":
+    case "deleteEducationalTour":
       return {
         ...state,
-        announcements: state.announcements.filter(
+        activities: state.activities.filter(
           (announcement) => announcement._id !== action.payload
         ),
       };
-    case "updateEducationTour":
+    case "updateEducationalTour":
       return {
         ...state,
-        announcements: [
+        activities: [
           action.payload,
-          ...state.announcements.filter(
+          ...state.activities.filter(
             (announcement) => announcement._id !== action.payload._id
           ),
         ],

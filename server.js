@@ -5,6 +5,10 @@ const cors = require("cors");
 const app = express();
 
 const announcements = require("./routes/db/Announcements");
+const educationalTours = require("./routes/db/EducationalTours");
+const cleaningMovements = require("./routes/db/CleaningMovements");
+const ecoProjects = require("./routes/db/EcoProjects");
+const plantationDrives = require("./routes/db/PlantationDrives");
 
 const config = require("./privateKeys");
 
@@ -24,7 +28,11 @@ mongo
   .catch((err) => console.log(err));
 
 // use routes
-app.use("/db/Announcements", announcements); // links all routes to announcements.js file in routes/db
+app.use("/db/Announcements", announcements);
+app.use("/db/EducationalTours", educationalTours);
+app.use("/db/CleaningMovements", cleaningMovements);
+app.use("/db/EcoProjects", ecoProjects);
+app.use("/db/PlantationDrives", plantationDrives);
 
 const PORT = process.env.PORT || 8080;
 

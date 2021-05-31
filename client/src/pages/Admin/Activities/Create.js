@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {storage} from "../../../firebase";
+import { storage } from "../../../firebase";
 
 import img from "../../../assets/Landing/pexels-pixabay-414171.jpg";
 
@@ -28,6 +28,7 @@ import Select from "@material-ui/core/Select";
 import TodayIcon from "@material-ui/icons/Today";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import UploadIcon from "@material-ui/icons/CloudUpload";
+import ImageIcon from "@material-ui/icons/Image";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -56,20 +57,18 @@ export default function Create() {
   const [link, setLink] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
-	const [isFilePicked, setIsFilePicked] = useState(false);
+  const [isFilePicked, setIsFilePicked] = useState(false);
   const [preview, setPreview] = useState(null);
   const [open, setOpen] = useState(false);
 
-  const isSuccess = useSelector(
-    (state) => state.announcementReducer.successful
-  );
+  let isSuccess = useSelector((state) => state.announcementReducer.successful);
 
-	const changeHandler = (event) => {
+  const changeHandler = (event) => {
     console.log("in change");
-		setSelectedFile(event.target.files[0]);
+    setSelectedFile(event.target.files[0]);
     handlePreview(event.target.files[0]);
-		setIsFilePicked(true);
-	};
+    setIsFilePicked(true);
+  };
   const handleType = (event) => {
     setType(event.target.value);
   };
@@ -86,9 +85,9 @@ export default function Create() {
     dispatch(setSuccess("no op"));
   };
   const handleSubmission = () => {
-    console.log("in handle")
-    console.log("submitted",selectedFile)
-	};
+    console.log("in handle");
+    console.log("submitted", selectedFile);
+  };
   const clear = () => {
     setType("");
     setTitle("");
@@ -101,33 +100,49 @@ export default function Create() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    if(selectedFile === '' || type === '' ) {
-      console.error("No image ")
-    } else{
-      let path="/"+type+"/"+selectedFile.name;
+    if (selectedFile === null || type === "") {
+      console.error("No image ");
+      alert("Please add image");
+      clear();
+    } else {
+      let path = "/" + type + "/" + selectedFile.name;
       const uploadTask = storage.ref(path).put(selectedFile);
-      uploadTask.on('state_changed', 
-      (snapShot) => {
-        //takes a snap shot of the process as it is happening
-        console.log(snapShot)
-      }, (err) => {
-        //catches the errors
-        console.log(err)
-      }, () => {
-        // gets the functions from storage refences the image storage in firebase by the children
-        // gets the download url then sets the image from firebase as the value for the imgUrl key:
-        storage.ref("/"+type).child(selectedFile.name).getDownloadURL()
-        .then(fireBaseUrl => {
-          let postData = {type, title, description, eventDate, link, url:fireBaseUrl};
-          dispatch(addData(type, postData));
-          setOpen(true);
-          clear();
-        })
-      })
+      uploadTask.on(
+        "state_changed",
+        (snapShot) => {
+          //takes a snap shot of the process as it is happening
+        },
+        (err) => {
+          //catches the errors
+          console.log(err);
+        },
+        () => {
+          // gets the functions from storage refences the image storage in firebase by the children
+          // gets the download url then sets the image from firebase as the value for the imgUrl key:
+          storage
+            .ref("/" + type)
+            .child(selectedFile.name)
+            .getDownloadURL()
+            .then((fireBaseUrl) => {
+              let postData = {
+                type,
+                title,
+                description,
+                eventDate,
+                link,
+                filename: selectedFile.name,
+                url: fireBaseUrl,
+              };
+              dispatch(addData(type, postData));
+              setOpen(true);
+              clear();
+            });
+        }
+      );
     }
   };
   return (
-    <div className="activities-create">
+    <div className="activities-create" style={{ padding: "1.5rem" }}>
       <div className="wrapper">
         <Paper
           className="post-wrapper"
@@ -165,7 +180,7 @@ export default function Create() {
                 </Select>
               </FormControl>
             </div>
-          
+
             <div className="tf-wrapper">
               <TitleIcon />
               <TextField
@@ -212,6 +227,21 @@ export default function Create() {
                 onChange={(e) => setLink(e.target.value)}
               />
             </div>
+            {selectedFile ? (
+              <div className="tf-wrapper">
+                <ImageIcon />
+                <TextField
+                  id="tf3"
+                  disabled
+                  className="input"
+                  label="Photo Filename"
+                  variant="filled"
+                  value={selectedFile.name}
+                />
+              </div>
+            ) : (
+              ""
+            )}
             <div className="actions">
               <div className="tf-wrapper1">
                 <input
@@ -259,21 +289,39 @@ export default function Create() {
           <Paper elevation={15} square className="preview-title">
             Post Preview
           </Paper>
-        { title || eventDate || preview || description || link ?  <Paper elevation={15} square  className="card">
-            {title || eventDate ? <div className="title">
-              <div className="details">
-                <h1>{title}</h1>
-                <h4>{eventDate}</h4>
-              </div>
-            </div> : ""}
-            {preview || description ? <div className="body">
-              <img src={preview} alt="" />
-              <p>{description}</p>
-            </div>:""}
-            { link ? <div className="actions">
-              <Button fullWidth variant="contained" color="primary">Register</Button>
-            </div>:""}
-          </Paper> : ""}
+          {title || eventDate || preview || description || link ? (
+            <Paper elevation={15} square className="card">
+              {title || eventDate ? (
+                <div className="title">
+                  <div className="details">
+                    <h1>{title}</h1>
+                    <h4>{eventDate}</h4>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+              {preview || description ? (
+                <div className="body">
+                  <img src={preview} alt="" />
+                  <p>{description}</p>
+                </div>
+              ) : (
+                ""
+              )}
+              {link ? (
+                <div className="actions">
+                  <Button fullWidth variant="contained" color="primary">
+                    Register
+                  </Button>
+                </div>
+              ) : (
+                ""
+              )}
+            </Paper>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       {isSuccess == "true" ? (

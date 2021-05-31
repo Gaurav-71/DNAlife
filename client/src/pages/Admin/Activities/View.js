@@ -3,7 +3,6 @@ import React from "react";
 import Heading from "../../../components/AdminHeading/Heading.js";
 
 import "./Activities.scss";
-import View from "./View";
 
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,7 +12,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-import Create from "./Create";
+import Activity from "./Edit";
 
 //var parse = require("html-react-parser");
 
@@ -29,7 +28,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box>
+        <Box paddingX={3}>
           <div>{children}</div>
         </Box>
       )}
@@ -57,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AdminActivities() {
+export default function ViewActivities() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -65,23 +64,38 @@ export default function AdminActivities() {
     setValue(newValue);
   };
   return (
-    <div className="page admin-activities">
-      <Heading pageTitle="Activities" />
-      <AppBar style={{ zIndex: 10 }} position="static">
+    <div className="">
+      <AppBar
+        style={{
+          zIndex: 10,
+          backgroundColor: "rgb(46, 46, 46)",
+          color: "white",
+        }}
+        position="static"
+      >
         <Tabs
           value={value}
           onChange={handleChange}
+          TabIndicatorProps={{ style: { backgroundColor: "#91b710" } }}
           aria-label="simple tabs example"
         >
-          <Tab label="Create" {...a11yProps(0)} />
-          <Tab label="View / Modify" {...a11yProps(1)} />
+          <Tab label="Educational Tours" {...a11yProps(0)} />
+          <Tab label="Eco Projects" {...a11yProps(1)} />
+          <Tab label="Plantation Drives" {...a11yProps(2)} />
+          <Tab label="Cleaning Movements" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel style={{ width: "100%" }} value={value} index={0}>
-        <Create />
+        <Activity key={0} activityType="EducationalTours" />
       </TabPanel>
       <TabPanel style={{ width: "100%" }} value={value} index={1}>
-        <View />
+        <Activity key={1} activityType="EcoProjects" />
+      </TabPanel>
+      <TabPanel style={{ width: "100%" }} value={value} index={2}>
+        <Activity key={2} activityType="PlantationDrives" />
+      </TabPanel>
+      <TabPanel style={{ width: "100%" }} value={value} index={3}>
+        <Activity key={3} activityType="CleaningMovements" />
       </TabPanel>
     </div>
   );

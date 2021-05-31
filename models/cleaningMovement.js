@@ -8,6 +8,7 @@ const CleaningMovementSchema = new Schema({
   description: { type: String },
   link: { type: String },
   eventDate: { type: String },
+  filename: { type: String },
   url: { type: String },
   date: { type: Date, default: Date.now },
 });

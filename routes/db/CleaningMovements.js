@@ -25,6 +25,7 @@ router.post("/", (req, res) => {
     description: req.body.description,
     link: req.body.link,
     eventDate: req.body.eventDate,
+    filename: req.body.filename,
     url: req.body.url,
   });
   newActivity
@@ -47,16 +48,17 @@ router.put("/:id", async (req, res) => {
     updatedActivity.title = req.body.title;
     updatedActivity.description = req.body.description;
     updatedActivity.link = req.body.link;
-    (updatedActivity.eventDate = req.body.eventDate),
-      (updatedActivity.url = req.body.url),
-      updatedActivity
-        .save()
-        .then((activity) => {
-          res.json(activity);
-        })
-        .catch((err) =>
-          res.status(500).json({ success: false, from: "save", err })
-        );
+    updatedActivity.eventDate = req.body.eventDate;
+    updatedActivity.filename = req.body.filename;
+    updatedActivity.url = req.body.url;
+    updatedActivity
+      .save()
+      .then((activity) => {
+        res.json(activity);
+      })
+      .catch((err) =>
+        res.status(500).json({ success: false, from: "save", err })
+      );
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false, from: "id query", err });
