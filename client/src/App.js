@@ -41,6 +41,7 @@ import PrivateRoute from "./PrivateRoutes";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard.js";
 import AdminAnnouncements from "./pages/Admin/Announcements/Announcements.js";
 import AdminActivities from "./pages/Admin/Activities/Activities.js";
+import AdminEducation from "./pages/Admin/Education/Education.js";
 
 function App() {
   return (
@@ -117,6 +118,11 @@ function App() {
                     exact
                     path="/admin/activities"
                     component={AdminActivities}
+                  />
+                  <PrivateRoute
+                    exact
+                    path="/admin/education"
+                    component={AdminEducation}
                   />
                 </Switch>
               </ScrollToTop>

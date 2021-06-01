@@ -5,10 +5,15 @@ const cors = require("cors");
 const app = express();
 
 const announcements = require("./routes/db/Announcements");
+
 const educationalTours = require("./routes/db/EducationalTours");
 const cleaningMovements = require("./routes/db/CleaningMovements");
 const ecoProjects = require("./routes/db/EcoProjects");
 const plantationDrives = require("./routes/db/PlantationDrives");
+
+const internships = require("./routes/db/Internships");
+const trainings = require("./routes/db/Trainings");
+const certificateCourses = require("./routes/db/CertificateCourses");
 
 const config = require("./privateKeys");
 
@@ -33,6 +38,10 @@ app.use("/db/EducationalTours", educationalTours);
 app.use("/db/CleaningMovements", cleaningMovements);
 app.use("/db/EcoProjects", ecoProjects);
 app.use("/db/PlantationDrives", plantationDrives);
+
+app.use("/db/Internships", internships);
+app.use("/db/Trainings", trainings);
+app.use("/db/CertificateCourses", certificateCourses);
 
 const PORT = process.env.PORT || 8080;
 

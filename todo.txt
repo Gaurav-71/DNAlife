@@ -1,7 +1,7 @@
-1. make item reducers for all activities
-2. test server code for activities
-3. make view / edit page for activities
-4. make complete admin pages for education stuff
+1. make item reducers for all activities ( done )
+2. test server code for activities ( done )
+3. make view / edit page for activities ( done )
+4. make complete admin pages for education stuff ( done )
 5. add a photos link kinda page as requested
 6. fix admissions on landing
 7. add microinteractions for adding, updating and loading
