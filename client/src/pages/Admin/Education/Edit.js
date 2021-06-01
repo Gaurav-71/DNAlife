@@ -32,6 +32,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import UploadIcon from "@material-ui/icons/CloudUpload";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -68,6 +70,8 @@ export default function AdminEduTour({ activityType }) {
   const [fullWidth, setFullWidth] = useState(true);
   const [maxWidth, setMaxWidth] = useState("md");
   const [action, setAction] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [del, setDel] = useState(false);
   const activityReducerData = useSelector((state) =>
     activityType === "Internships"
       ? state.internshipReducer
@@ -119,6 +123,7 @@ export default function AdminEduTour({ activityType }) {
   };
   let activities = activityReducerData.education;
   const deleteActivity = (id, type, filename) => {
+    setDel(true);
     const delOldImg = storageRef.child(type + "/" + filename);
     // Delete the file
     delOldImg
@@ -127,8 +132,12 @@ export default function AdminEduTour({ activityType }) {
         dispatch(deleteData(type, id));
         setAction("Delete");
         setOpen(true);
+        setDel(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setDel(false);
+      });
   };
   const handleClick = () => {
     setOpen(true);
@@ -160,7 +169,9 @@ export default function AdminEduTour({ activityType }) {
   };
   // for updating
   const onSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
+    let fileDate = Date.now();
     const data = {
       _id: instance._id,
       type: activityType,
@@ -176,7 +187,7 @@ export default function AdminEduTour({ activityType }) {
         .delete()
         .then(() => {
           // File deleted successfully
-          let path = "/" + data.type + "/" + selectedFile.name;
+          let path = "/" + data.type + "/" + selectedFile.name + fileDate;
           const uploadTask = storage.ref(path).put(selectedFile);
           uploadTask.on(
             "state_changed",
@@ -186,21 +197,23 @@ export default function AdminEduTour({ activityType }) {
             (err) => {
               //catches the errors
               console.log(err);
+              setLoading(false);
             },
             () => {
               // gets the functions from storage refences the image storage in firebase by the children
               // gets the download url then sets the image from firebase as the value for the imgUrl key:
               storage
                 .ref("/" + data.type)
-                .child(selectedFile.name)
+                .child(selectedFile.name + fileDate)
                 .getDownloadURL()
                 .then((fireBaseUrl) => {
-                  data.filename = selectedFile.name;
+                  data.filename = selectedFile.name + fileDate;
                   data.url = fireBaseUrl;
                   dispatch(updateData(data.type, data));
                   setAction("Update");
                   setOpen(true);
                   handleModalClose();
+                  setLoading(false);
                 });
             }
           );
@@ -208,6 +221,7 @@ export default function AdminEduTour({ activityType }) {
         .catch((error) => {
           // Uh-oh, an error occurred!
           console.log(error);
+          setLoading(false);
         });
     } else {
       data.filename = instance.filename;
@@ -216,6 +230,7 @@ export default function AdminEduTour({ activityType }) {
       setAction("Update");
       setOpen(true);
       handleModalClose();
+      setLoading(false);
     }
   };
   return (
@@ -407,53 +422,69 @@ export default function AdminEduTour({ activityType }) {
             ) : (
               ""
             )}
-            <DialogActions
-              style={{ background: "#0e1217", padding: "0.5rem 0 2rem 1.6rem" }}
-            >
-              <div className="tf-wrapper1">
-                <input
-                  accept="image/*"
-                  style={{ display: "none" }}
-                  id="contained-button-file"
-                  multiple
-                  type="file"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="contained-button-file">
+            {!loading ? (
+              <DialogActions
+                style={{
+                  background: "#0e1217",
+                  padding: "0.5rem 0 2rem 1.6rem",
+                }}
+              >
+                <div className="tf-wrapper1">
+                  <input
+                    accept="image/*"
+                    style={{ display: "none" }}
+                    id="contained-button-file"
+                    multiple
+                    type="file"
+                    onChange={changeHandler}
+                  />
+                  <label htmlFor="contained-button-file">
+                    <Button
+                      onClick={handleSubmission}
+                      startIcon={<UploadIcon />}
+                      variant="contained"
+                      component="span"
+                      style={{ marginLeft: "1.5rem" }}
+                    >
+                      Update Image
+                    </Button>
+                  </label>
+                </div>
+                <div className="main-actions" style={{ marginLeft: "auto" }}>
                   <Button
-                    onClick={handleSubmission}
-                    startIcon={<UploadIcon />}
+                    onClick={handleModalClose}
                     variant="contained"
-                    component="span"
-                    style={{ marginLeft: "1.5rem" }}
+                    startIcon={<ClearIcon />}
+                    color="secondary"
                   >
-                    Update Image
+                    Cancel
                   </Button>
-                </label>
-              </div>
-              <div className="main-actions" style={{ marginLeft: "auto" }}>
-                <Button
-                  onClick={handleModalClose}
-                  variant="contained"
-                  startIcon={<ClearIcon />}
-                  color="secondary"
-                >
-                  Cancel
-                </Button>
-                <Button
-                  type="submit"
+                  <Button
+                    type="submit"
+                    style={{
+                      backgroundColor: "#009688",
+                      color: "white",
+                      marginLeft: "0.5rem",
+                    }}
+                    variant="contained"
+                    startIcon={<SaveIcon />}
+                  >
+                    Save
+                  </Button>
+                </div>
+              </DialogActions>
+            ) : (
+              <div className="loading">
+                <CircularProgress
                   style={{
-                    backgroundColor: "#009688",
-                    color: "white",
+                    width: "30px",
+                    height: "30px",
                     marginLeft: "0.5rem",
                   }}
-                  variant="contained"
-                  startIcon={<SaveIcon />}
-                >
-                  Save
-                </Button>
+                />{" "}
+                <p style={{ paddingLeft: "1.5rem" }}>Saving Changes ...</p>
               </div>
-            </DialogActions>
+            )}
           </form>
         </DialogContent>
       </Dialog>
@@ -475,18 +506,27 @@ export default function AdminEduTour({ activityType }) {
       {isSuccess == "true" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="success">
-            Acivity {action + "d"} successfully !
+            Post {action + "d"} successfully !
           </Alert>
         </Snackbar>
       ) : isSuccess == "false" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Couldn't {action} activity !
+            Couldn't {action} post!
           </Alert>
         </Snackbar>
       ) : (
         ""
       )}
+      <Snackbar
+        open={del}
+        autoHideDuration={6000}
+        onClose={() => setDel(false)}
+      >
+        <Alert onClose={() => setDel(false)} severity="error">
+          Deleting ...
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

@@ -31,6 +31,7 @@ import UploadIcon from "@material-ui/icons/CloudUpload";
 import ImageIcon from "@material-ui/icons/Image";
 
 import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -60,6 +61,7 @@ export default function Create() {
   const [isFilePicked, setIsFilePicked] = useState(false);
   const [preview, setPreview] = useState(null);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   let isSuccess = useSelector((state) => state.announcementReducer.successful);
 
@@ -100,12 +102,17 @@ export default function Create() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
+    let fileDate = Date.now();
+    setLoading(true);
+    window.scrollTo(0, 0);
     if (selectedFile === null || type === "") {
       console.error("No image ");
       alert("Please add image");
       clear();
+      setLoading(false);
     } else {
-      let path = "/" + type + "/" + selectedFile.name;
+      let path = "/" + type + "/" + selectedFile.name + fileDate;
+
       const uploadTask = storage.ref(path).put(selectedFile);
       uploadTask.on(
         "state_changed",
@@ -115,27 +122,30 @@ export default function Create() {
         (err) => {
           //catches the errors
           console.log(err);
+          setLoading(false);
         },
         () => {
           // gets the functions from storage refences the image storage in firebase by the children
           // gets the download url then sets the image from firebase as the value for the imgUrl key:
           storage
             .ref("/" + type)
-            .child(selectedFile.name)
+            .child(selectedFile.name + fileDate)
             .getDownloadURL()
             .then((fireBaseUrl) => {
+              console.log("posted");
               let postData = {
                 type,
                 title,
                 description,
                 eventDate,
                 link,
-                filename: selectedFile.name,
+                filename: selectedFile.name + fileDate,
                 url: fireBaseUrl,
               };
               dispatch(addData(type, postData));
               setOpen(true);
               clear();
+              setLoading(false);
             });
         }
       );
@@ -144,147 +154,162 @@ export default function Create() {
   return (
     <div className="activities-create" style={{ padding: "1.5rem" }}>
       <div className="wrapper">
-        <Paper
-          className="post-wrapper"
-          square
-          variant="elevation"
-          elevation={15}
-          style={{ width: "100%" }}
-        >
-          <form onSubmit={onSubmit} className="post-content">
-            <div className="tf-wrapper">
-              <Type />
-              <FormControl
-                style={{ width: "100%", marginLeft: "1.5rem" }}
-                className={classes.formControl}
-              >
-                <InputLabel filled id="demo-simple-select-label">
-                  Activity Type
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={type}
-                  onChange={handleType}
-                >
-                  <MenuItem value="EducationalTours">
-                    Educational Tours
-                  </MenuItem>
-                  <MenuItem value="EcoProjects">Eco Projects</MenuItem>
-                  <MenuItem value="PlantationDrives">
-                    Plantation Drives
-                  </MenuItem>
-                  <MenuItem value="CleaningMovements">
-                    Cleaning Movements
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-
-            <div className="tf-wrapper">
-              <TitleIcon />
-              <TextField
-                id="tf1"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="input"
-                label="Post Title"
-                variant="filled"
-              />
-            </div>
-            <div className="tf-wrapper">
-              <TodayIcon />
-              <TextField
-                id="tf4"
-                className="input"
-                label="Activity Date"
-                variant="filled"
-                value={eventDate}
-                multiline
-                onChange={(e) => setEventDate(e.target.value)}
-              />
-            </div>
-            <div className="tf-wrapper">
-              <DescriptionIcon />
-              <TextField
-                id="tf2"
-                className="input"
-                label="Description"
-                variant="filled"
-                value={description}
-                multiline
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-            <div className="tf-wrapper">
-              <LinkIcon />
-              <TextField
-                id="tf3"
-                className="input"
-                label="Registration Link"
-                variant="filled"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-              />
-            </div>
-            {selectedFile ? (
+        {!loading ? (
+          <Paper
+            className="post-wrapper"
+            square
+            variant="elevation"
+            elevation={15}
+            style={{ width: "100%" }}
+          >
+            <form onSubmit={onSubmit} className="post-content">
               <div className="tf-wrapper">
-                <ImageIcon />
+                <Type />
+                <FormControl
+                  style={{ width: "100%", marginLeft: "1.5rem" }}
+                  className={classes.formControl}
+                >
+                  <InputLabel filled id="demo-simple-select-label">
+                    Activity Type
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={type}
+                    onChange={handleType}
+                  >
+                    <MenuItem value="EducationalTours">
+                      Educational Tours
+                    </MenuItem>
+                    <MenuItem value="EcoProjects">Eco Projects</MenuItem>
+                    <MenuItem value="PlantationDrives">
+                      Plantation Drives
+                    </MenuItem>
+                    <MenuItem value="CleaningMovements">
+                      Cleaning Movements
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+
+              <div className="tf-wrapper">
+                <TitleIcon />
+                <TextField
+                  id="tf1"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="input"
+                  label="Post Title"
+                  variant="filled"
+                />
+              </div>
+              <div className="tf-wrapper">
+                <TodayIcon />
+                <TextField
+                  id="tf4"
+                  className="input"
+                  label="Activity Date"
+                  variant="filled"
+                  value={eventDate}
+                  multiline
+                  onChange={(e) => setEventDate(e.target.value)}
+                />
+              </div>
+              <div className="tf-wrapper">
+                <DescriptionIcon />
+                <TextField
+                  id="tf2"
+                  className="input"
+                  label="Description"
+                  variant="filled"
+                  value={description}
+                  multiline
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+              <div className="tf-wrapper">
+                <LinkIcon />
                 <TextField
                   id="tf3"
-                  disabled
                   className="input"
-                  label="Photo Filename"
+                  label="Registration Link"
                   variant="filled"
-                  value={selectedFile.name}
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
                 />
               </div>
-            ) : (
-              ""
-            )}
-            <div className="actions">
-              <div className="tf-wrapper1">
-                <input
-                  accept="image/*"
-                  className={classes.input}
-                  id="contained-button-file"
-                  multiple
-                  type="file"
-                  onChange={changeHandler}
-                />
-                <label htmlFor="contained-button-file">
+              {selectedFile ? (
+                <div className="tf-wrapper">
+                  <ImageIcon />
+                  <TextField
+                    id="tf3"
+                    disabled
+                    className="input"
+                    label="Photo Filename"
+                    variant="filled"
+                    value={selectedFile.name}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+              <div className="actions">
+                <div className="tf-wrapper1">
+                  <input
+                    accept="image/*"
+                    className={classes.input}
+                    id="contained-button-file"
+                    multiple
+                    type="file"
+                    onChange={changeHandler}
+                  />
+                  <label htmlFor="contained-button-file">
+                    <Button
+                      onClick={handleSubmission}
+                      startIcon={<UploadIcon />}
+                      variant="contained"
+                      component="span"
+                    >
+                      Upload Image
+                    </Button>
+                  </label>
+                </div>
+                <div className="main-action">
                   <Button
-                    onClick={handleSubmission}
-                    startIcon={<UploadIcon />}
                     variant="contained"
-                    component="span"
+                    color="secondary"
+                    onClick={() => clear()}
+                    style={{ marginRight: "1rem" }}
+                    startIcon={<ClearIcon />}
                   >
-                    Upload Image
+                    Clear
                   </Button>
-                </label>
+                  <Button
+                    type="submit"
+                    style={{ backgroundColor: "#009688", color: "white" }}
+                    variant="contained"
+                    startIcon={<PublishIcon />}
+                  >
+                    Submit
+                  </Button>
+                </div>
               </div>
-              <div className="main-action">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => clear()}
-                  style={{ marginRight: "1rem" }}
-                  startIcon={<ClearIcon />}
-                >
-                  Clear
-                </Button>
-                <Button
-                  type="submit"
-                  style={{ backgroundColor: "#009688", color: "white" }}
-                  variant="contained"
-                  startIcon={<PublishIcon />}
-                >
-                  Submit
-                </Button>
-              </div>
+            </form>
+          </Paper>
+        ) : (
+          <div className="preview">
+            <div className="preview-title">
+              <CircularProgress
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  marginLeft: "0.5rem",
+                }}
+              />{" "}
+              <p style={{ paddingLeft: "1.5rem" }}>Uploading Post ...</p>
             </div>
-          </form>
-        </Paper>
+          </div>
+        )}
         <div className="preview">
           <Paper elevation={15} square className="preview-title">
             Post Preview
