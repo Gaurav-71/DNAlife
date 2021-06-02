@@ -27,12 +27,18 @@
         width: 75px;
         height: auto;
         margin: 0 1.25rem 0 1.5rem;
+        @include responsive($phone) {
+          width: 60px;
+        }
       }
       .main-title {
         width: max-content;
         margin: 0;
         //margin-top: 0.5rem;
         padding: 0;
+        @include responsive($phone) {
+          font-size: x-large;
+        }
         .thin {
           font-weight: 200;
         }

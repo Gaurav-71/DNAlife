@@ -2,7 +2,6 @@ import React from "react";
 
 import Heading from "../../../components/AdminHeading/Heading.js";
 
-import "./Education.scss";
 import View from "./View";
 
 import PropTypes from "prop-types";

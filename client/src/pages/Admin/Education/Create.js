@@ -261,6 +261,7 @@ export default function Create() {
                       startIcon={<UploadIcon />}
                       variant="contained"
                       component="span"
+                      className="upload-button"
                     >
                       Upload Image
                     </Button>
@@ -271,7 +272,7 @@ export default function Create() {
                     variant="contained"
                     color="secondary"
                     onClick={() => clear()}
-                    style={{ marginRight: "1rem" }}
+                    className="mr"
                     startIcon={<ClearIcon />}
                   >
                     Clear

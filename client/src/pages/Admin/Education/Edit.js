@@ -237,16 +237,14 @@ export default function AdminEduTour({ activityType }) {
     <div>
       {activities.map((activity) => (
         <Paper key={activity._id} elevation={15} square className="paper">
-          <Typography variant="h6" color="primary">
+          <Typography variant="h6" className="paper-title" color="primary">
             {activity.title}
           </Typography>
           <div className="actions">
             <Button
               type="submit"
-              style={{
-                marginRight: "1rem",
-              }}
               variant="contained"
+              className="action-btn mr"
               startIcon={<ViewIcon />}
               onClick={() => {
                 handleViewOpen(activity);
@@ -256,10 +254,10 @@ export default function AdminEduTour({ activityType }) {
             </Button>
             <Button
               type="submit"
+              className="action-btn mr"
               style={{
                 backgroundColor: "#009688",
                 color: "white",
-                marginRight: "1rem",
               }}
               variant="contained"
               startIcon={<EditIcon />}
@@ -272,6 +270,7 @@ export default function AdminEduTour({ activityType }) {
             <Button
               variant="contained"
               color="secondary"
+              className="action-btn"
               onClick={() => {
                 deleteActivity(activity._id, activity.type, activity.filename);
               }}
@@ -424,9 +423,9 @@ export default function AdminEduTour({ activityType }) {
             )}
             {!loading ? (
               <DialogActions
+                className="edit-dialog-content-actions"
                 style={{
                   background: "#0e1217",
-                  padding: "0.5rem 0 2rem 1.6rem",
                 }}
               >
                 <div className="tf-wrapper1">
@@ -444,27 +443,28 @@ export default function AdminEduTour({ activityType }) {
                       startIcon={<UploadIcon />}
                       variant="contained"
                       component="span"
-                      style={{ marginLeft: "1.5rem" }}
+                      className="upload-button ml"
                     >
                       Update Image
                     </Button>
                   </label>
                 </div>
-                <div className="main-actions" style={{ marginLeft: "auto" }}>
+                <div className="main-actions mla">
                   <Button
                     onClick={handleModalClose}
                     variant="contained"
                     startIcon={<ClearIcon />}
                     color="secondary"
+                    className="cancel-button"
                   >
                     Cancel
                   </Button>
                   <Button
                     type="submit"
+                    className="ml"
                     style={{
                       backgroundColor: "#009688",
                       color: "white",
-                      marginLeft: "0.5rem",
                     }}
                     variant="contained"
                     startIcon={<SaveIcon />}

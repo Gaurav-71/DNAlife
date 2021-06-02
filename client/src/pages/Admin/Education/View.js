@@ -2,8 +2,6 @@ import React from "react";
 
 import Heading from "../../../components/AdminHeading/Heading.js";
 
-import "./Education.scss";
-
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -23,8 +21,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -44,8 +42,8 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    id: `scrollable-auto-tab-${index}`,
+    "aria-controls": `scrollable-auto-tabpanel-${index}`,
   };
 }
 
@@ -77,7 +75,9 @@ export default function ViewActivities() {
           value={value}
           onChange={handleChange}
           TabIndicatorProps={{ style: { backgroundColor: "#91b710" } }}
-          aria-label="simple tabs example"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="scrollable auto tabs example"
         >
           <Tab label="Trainings" {...a11yProps(0)} />
           <Tab label="Internships" {...a11yProps(1)} />

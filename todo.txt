@@ -4,4 +4,10 @@
 4. make complete admin pages for education stuff ( done )
 5. add a photos link kinda page as requested
 6. fix admissions on landing
-7. add microinteractions for adding, updating and loading
+7. add microinteractions for adding, updating and loading ( done )
+
+
+1. Photos page and its backend
+2. Minor responsive changes to admin
+3. Displaying posts to client
+4. Updating landing page photos and few other minor things

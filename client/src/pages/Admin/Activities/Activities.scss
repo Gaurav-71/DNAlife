@@ -50,6 +50,11 @@
     grid-template-columns: 48% 48%;
     justify-content: space-between;
     align-items: flex-start;
+    @include responsive($phone) {
+      grid-template-columns: 100%;
+      justify-content: center;
+      align-items: center;
+    }
     .post-wrapper {
       width: 100%;
       display: flex;
@@ -68,8 +73,25 @@
         width: 95%;
         display: flex;
         justify-content: space-between;
+        @include responsive($phone) {
+          flex-direction: column;
+        }
         .tf-wrapper1 {
           margin-left: 3rem;
+          @include responsive($phone) {
+            margin: 0;
+            .upload-button {
+              width: 100%;
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+        @include responsive($phone) {
+          .main-action {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }
@@ -79,6 +101,9 @@
       flex-direction: column;
       align-items: center;
       overflow: hidden;
+      @include responsive($phone) {
+        margin-top: 1.5rem;
+      }
       .preview-title {
         width: 100%;
         padding: 1.25rem;
@@ -86,6 +111,11 @@
         color: white;
         font-size: x-large;
         font-weight: bold;
+        @include responsive($phone) {
+          display: flex;
+          align-items: center;
+          font-size: large;
+        }
       }
       .card {
         width: 100%;
@@ -139,4 +169,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.edit-dialog-content-actions {
+  padding: 1rem 0 2rem 1.6rem !important;
+  @include responsive($phone) {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    .tf-wrapper1 {
+      width: 100%;
+      .upload-button {
+        width: 100%;
+      }
+      margin-top: 1rem;
+    }
+    .main-actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      .cancel-button {
+        margin: 1rem 0 !important;
+      }
+    }
+  }
+}
+
+.ml {
+  margin-left: 1.5rem !important;
+  @include responsive($phone) {
+    margin: 0 !important;
+  }
+}
+
+.mla {
+  margin-left: auto !important;
+  @include responsive($phone) {
+    margin: 0 !important;
+  }
 }

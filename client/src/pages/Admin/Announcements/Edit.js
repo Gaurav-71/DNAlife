@@ -128,15 +128,13 @@ export default function Edit() {
     <div>
       {announcements.map((announcement) => (
         <Paper key={announcement._id} elevation={15} square className="paper">
-          <Typography variant="h6" color="primary">
+          <Typography variant="h6" className="paper-title" color="primary">
             {announcement.title}
           </Typography>
           <div className="actions">
             <Button
               type="submit"
-              style={{
-                marginRight: "1rem",
-              }}
+              className="action-btn mr"
               variant="contained"
               startIcon={<ViewIcon />}
               onClick={() => {
@@ -147,10 +145,10 @@ export default function Edit() {
             </Button>
             <Button
               type="submit"
+              className="action-btn mr"
               style={{
                 backgroundColor: "#009688",
                 color: "white",
-                marginRight: "1rem",
               }}
               variant="contained"
               startIcon={<EditIcon />}
@@ -163,6 +161,7 @@ export default function Edit() {
             <Button
               variant="contained"
               color="secondary"
+              className="action-btn"
               onClick={() => {
                 deleteAnnouncement(announcement._id);
               }}
