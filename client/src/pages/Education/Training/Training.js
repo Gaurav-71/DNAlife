@@ -6,6 +6,7 @@ import "./Training.scss";
 import graphic from "../../../assets/Training/undraw_creative_team_r90h.svg";
 
 import Heading from "../../../components/Heading/Heading";
+import { Link } from "react-router-dom";
 
 export default function Training() {
   return (
@@ -31,10 +32,12 @@ export default function Training() {
             DNA Life Organisation offers training on environmental awareness,
             agricultural practices, social forestry, mixed farming and rural
             livelihood. Join us to learn and implement eco-friendly practices
-            and contribute to the conservation of nature
+            and contribute to the conservation of nature.
           </p>
 
-          <button className="btn">View Oppurtunities</button>
+          <Link to="/education/trainings/posts" className="link-button btn">
+            View Oppurtunities
+          </Link>
         </div>
       </div>
     </div>

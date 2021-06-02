@@ -155,11 +155,11 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="nelson parallax-container">
+      <section className="landing-nelson parallax-container">
         <div className="parallax-wrap">
           <div className="parallax-inner"></div>
         </div>
-        <section className="content">
+        <section className="nelson-content">
           <h2>MS Program With Nelson Institute For Environmental Studies</h2>
           <p>
             The Nelson Institute is home to three interdisciplinary research

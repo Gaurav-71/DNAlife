@@ -15,6 +15,8 @@ const internships = require("./routes/db/Internships");
 const trainings = require("./routes/db/Trainings");
 const certificateCourses = require("./routes/db/CertificateCourses");
 
+const photos = require("./routes/db/Photos");
+
 const config = require("./privateKeys");
 
 // body parser middleware
@@ -42,6 +44,8 @@ app.use("/db/PlantationDrives", plantationDrives);
 app.use("/db/Internships", internships);
 app.use("/db/Trainings", trainings);
 app.use("/db/CertificateCourses", certificateCourses);
+
+app.use("/db/Photos", photos);
 
 const PORT = process.env.PORT || 8080;
 

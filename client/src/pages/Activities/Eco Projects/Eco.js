@@ -7,6 +7,8 @@ import graphic from "../../../assets/Eco Projects/Artboard 1.png";
 
 import Heading from "../../../components/Heading/Heading";
 
+import { Link } from "react-router-dom";
+
 export default function Eco() {
   return (
     <div className="page internship-page">
@@ -33,7 +35,9 @@ export default function Eco() {
             based Good Agricultural Practices (GAP) to improve the safety and
             quality of the produce while protecting the environment.
           </p>
-          <button className="btn">View Tours</button>
+          <Link to="/activities/eco-projects/posts" className="link-button btn">
+            View Projects
+          </Link>
         </div>
       </div>
     </div>

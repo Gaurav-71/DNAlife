@@ -7,6 +7,8 @@ import graphic from "../../../assets/Cleaning/Artboard 1.png";
 
 import Heading from "../../../components/Heading/Heading";
 
+import { Link } from "react-router-dom";
+
 export default function Cleaning() {
   return (
     <div className="page internship-page">
@@ -34,7 +36,12 @@ export default function Cleaning() {
             counts!
           </p>
 
-          <button className="btn">View Events</button>
+          <Link
+            to="/activities/cleaning-movements/posts"
+            className="link-button btn"
+          >
+            View Events
+          </Link>
         </div>
       </div>
     </div>

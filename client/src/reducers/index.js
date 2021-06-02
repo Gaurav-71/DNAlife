@@ -10,6 +10,8 @@ import certificateCourseReducer from "./Education/certificateCourses";
 import internshipReducer from "./Education/internships";
 import trainingReducer from "./Education/training";
 
+import photoReducer from "./photosReducer";
+
 export default combineReducers({
   announcementReducer,
   cleaningMovementReducer,
@@ -19,4 +21,5 @@ export default combineReducers({
   internshipReducer,
   trainingReducer,
   certificateCourseReducer,
+  photoReducer,
 });

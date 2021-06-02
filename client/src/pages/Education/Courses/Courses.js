@@ -6,6 +6,7 @@ import "./Courses.scss";
 import graphic from "../../../assets/Courses/undraw_online_cv_qy9w.svg";
 
 import Heading from "../../../components/Heading/Heading";
+import { Link } from "react-router-dom";
 
 export default function Courses() {
   return (
@@ -34,7 +35,12 @@ export default function Courses() {
             demonstration and interaction with farmers, environmentalists,
             conservationists and eco-educators.
           </p>
-          <button className="btn">View Oppurtunities</button>
+          <Link
+            to="/education/certificate-courses/posts"
+            className="link-button btn"
+          >
+            View Oppurtunities
+          </Link>
         </div>
       </div>
     </div>

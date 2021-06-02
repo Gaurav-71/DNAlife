@@ -60,23 +60,24 @@
       p {
         line-height: 1.8rem;
       }
-      button {
-        margin-top: 2rem;
-        background: transparent;
-        text-decoration: none;
-        padding: 0.5rem 2rem;
-        color: $accent2;
-        border-radius: 2rem;
-        border: 2px solid $accent;
-        cursor: pointer;
-        font-size: small;
-        text-transform: uppercase;
-      }
-      button:hover {
-        background: $accent;
-        color: white;
-        transition: all 0.4s ease-in;
-      }
     }
   }
+}
+
+.link-button {
+  margin-top: 2rem;
+  background: transparent;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  color: $accent2;
+  border-radius: 2rem;
+  border: 2px solid $accent;
+  cursor: pointer;
+  font-size: small;
+  text-transform: uppercase;
+}
+.link-button:hover {
+  background: $accent;
+  color: white;
+  transition: all 0.4s ease-in;
 }

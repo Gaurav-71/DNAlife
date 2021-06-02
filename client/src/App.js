@@ -18,20 +18,28 @@ import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Team from "./pages/Team/Team.js";
 import Announcements from "./pages/Announcements/Announcements.js";
 import JoinUs from "./pages/JoinUs/JoinUs.js";
+import Gallery from "./pages/Gallery/Gallery.js";
 
 // activities
 
 import Cleaning from "./pages/Activities/Cleaning Movements/Cleaning.js";
+import CleaningPosts from "./pages/Activities/Cleaning Movements/Posts.js";
 import Education from "./pages/Activities/Educational Tours/Educational.js";
+import EducationPosts from "./pages/Activities/Educational Tours/Posts.js";
 import Eco from "./pages/Activities/Eco Projects/Eco.js";
+import EcoPosts from "./pages/Activities/Eco Projects/Posts.js";
 import Plantation from "./pages/Activities/Plantation Drives/Plantation.js";
+import PlantationPosts from "./pages/Activities/Plantation Drives/Posts.js";
 
 // education
 
 import Internship from "./pages/Education/Internship/Internship.js";
+import InternshipPosts from "./pages/Education/Internship/Posts.js";
 import MS from "./pages/Education/MS/Ms.js";
 import Training from "./pages/Education/Training/Training.js";
+import TrainingPosts from "./pages/Education/Training/Posts.js";
 import Courses from "./pages/Education/Courses/Courses.js";
+import CoursesPosts from "./pages/Education/Courses/Posts.js";
 
 // admin
 
@@ -70,8 +78,18 @@ function App() {
                   />
                   <Route
                     exact
+                    path="/education/trainings/posts"
+                    component={TrainingPosts}
+                  />
+                  <Route
+                    exact
                     path="/education/internships"
                     component={Internship}
+                  />
+                  <Route
+                    exact
+                    path="/education/internships/posts"
+                    component={InternshipPosts}
                   />
                   <Route
                     exact
@@ -80,8 +98,18 @@ function App() {
                   />
                   <Route
                     exact
+                    path="/education/certificate-courses/posts"
+                    component={CoursesPosts}
+                  />
+                  <Route
+                    exact
                     path="/activities/educational-tours"
                     component={Education}
+                  />
+                  <Route
+                    exact
+                    path="/activities/educational-tours/posts"
+                    component={EducationPosts}
                   />
                   <Route
                     exact
@@ -90,8 +118,18 @@ function App() {
                   />
                   <Route
                     exact
+                    path="/activities/eco-projects/posts"
+                    component={EcoPosts}
+                  />
+                  <Route
+                    exact
                     path="/activities/plantation-drives"
                     component={Plantation}
+                  />
+                  <Route
+                    exact
+                    path="/activities/plantation-drives/posts"
+                    component={PlantationPosts}
                   />
                   <Route
                     exact
@@ -100,9 +138,15 @@ function App() {
                   />
                   <Route
                     exact
+                    path="/activities/cleaning-movements/posts"
+                    component={CleaningPosts}
+                  />
+                  <Route
+                    exact
                     path="/announcements"
                     component={Announcements}
                   />
+                  <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
                   <PrivateRoute
                     exact

@@ -332,6 +332,16 @@ export default function Header() {
           onKeyDown={toggleDrawer(anchor, false)}
           style={customStyle}
         >
+          <Link style={linkStyle} className="nav-links" to="/gallery">
+            Gallery
+          </Link>
+        </ListItem>
+        <Divider style={dividerStyle} />
+        <ListItem
+          onClick={toggleDrawer(anchor, false)}
+          onKeyDown={toggleDrawer(anchor, false)}
+          style={customStyle}
+        >
           <Link style={linkStyle} className="nav-links" to="/contact-us">
             Contact Us
           </Link>
@@ -493,6 +503,9 @@ export default function Header() {
               </div>
               <Link className="nav-links" to="/team">
                 Team
+              </Link>
+              <Link className="nav-links" to="/gallery">
+                Gallery
               </Link>
               <Link className="nav-links" to="/contact-us">
                 Contact Us

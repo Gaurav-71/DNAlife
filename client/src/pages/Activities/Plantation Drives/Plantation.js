@@ -7,6 +7,8 @@ import graphic from "../../../assets/Plantation/Artboard 3.png";
 
 import Heading from "../../../components/Heading/Heading";
 
+import { Link } from "react-router-dom";
+
 export default function Plantation() {
   return (
     <div className="page internship-page">
@@ -31,7 +33,12 @@ export default function Plantation() {
             of soil, desertification in semi-arid areas, global warming and
             hence enhancing the beauty and balance of the environment
           </p>
-          <button className="btn">View Oppurtunities</button>
+          <Link
+            to="/activities/plantation-drives/posts"
+            className="link-button btn"
+          >
+            View Drives
+          </Link>
         </div>
       </div>
     </div>

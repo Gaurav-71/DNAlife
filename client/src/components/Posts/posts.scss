@@ -1,0 +1,42 @@
+@import "../../scss/custom.scss";
+
+.all-type1-posts {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-card {
+  margin-bottom: 1.5rem;
+  width: 45vw;
+  height: auto;
+  background: $accent3;
+  .title {
+    padding: 1.5rem 1rem;
+    .details {
+      h1 {
+        color: $accent;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .body {
+    p {
+      padding: 1.5rem 1rem;
+      line-height: 1.8rem;
+    }
+  }
+  .actions {
+    padding: 0rem 1rem 2rem;
+    a {
+      color: $accent3;
+      text-decoration: none;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}

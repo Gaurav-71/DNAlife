@@ -6,6 +6,7 @@ import "./Internship.scss";
 import graphic from "../../../assets/Internship/undraw_a_moment_to_relax_bbpa.svg";
 
 import Heading from "../../../components/Heading/Heading";
+import { Link } from "react-router-dom";
 
 export default function Internship() {
   return (
@@ -36,7 +37,9 @@ export default function Internship() {
             Get discovered. Introduce yourself, and we’ll get in touch with you
             if there’s a role that seems like a good match.
           </p>
-          <button className="btn">View Oppurtunities</button>
+          <Link to="/education/internships/posts" className="link-button btn">
+            View Oppurtunities
+          </Link>
         </div>
       </div>
     </div>
