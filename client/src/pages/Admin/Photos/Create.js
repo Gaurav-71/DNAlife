@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addData, setSuccess } from "../../../actions";
 
-import SubHeading from "../../../components/SubHeading/SubHeading.js";
-
-import Fab from "@material-ui/core/Fab";
 import ClearIcon from "@material-ui/icons/Clear";
 import PublishIcon from "@material-ui/icons/Publish";
 import TitleIcon from "@material-ui/icons/Title";
@@ -29,12 +26,7 @@ export default function Create() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [link, setLink] = useState("");
-  const isSuccess = useSelector(
-    (state) => state.announcementReducer.successful
-  );
-  // useEffect(() => {
-  //   console.log(isSuccess);
-  // }, [isSuccess]); // for testing alerts
+  const isSuccess = useSelector((state) => state.photoReducer.successful);
   const clear = () => {
     setTitle("");
     setDescription("");
@@ -43,12 +35,12 @@ export default function Create() {
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {
-      type: "Announcements",
+      type: "Photos",
       title,
       description,
       link,
     };
-    dispatch(addData("Announcements", data));
+    dispatch(addData("Photos", data));
     clear();
     setOpen(true);
   };
@@ -64,10 +56,6 @@ export default function Create() {
   };
   return (
     <div style={{ width: "100%" }}>
-      {/* <SubHeading
-        title="Create Announcement"
-        subtitle="Publish and share relevant updates and information to your audience "
-      /> */}
       <Paper
         square
         variant="elevation"
@@ -110,23 +98,6 @@ export default function Create() {
             />
           </div>
           <div className="actions">
-            {/* <Fab
-              color="secondary"
-              style={{ marginRight: "1.5rem" }}
-              onClick={() => clear()}
-              variant="extended"
-            >
-              <ClearIcon />
-              Clear
-            </Fab>
-            <Fab
-              type="submit"
-              style={{ backgroundColor: "#009688", color: "white" }}
-              variant="extended"
-            >
-              <PublishIcon />
-              Publish
-            </Fab> */}
             <Button
               variant="contained"
               color="secondary"
@@ -150,13 +121,13 @@ export default function Create() {
       {isSuccess == "true" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="success">
-            Announcement posted succesfully !
+            Photo posted succesfully !
           </Alert>
         </Snackbar>
       ) : isSuccess == "false" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Couldn't save announcement, Please try again !
+            Couldn't save photo, Please try again !
           </Alert>
         </Snackbar>
       ) : (

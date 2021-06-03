@@ -59,18 +59,14 @@ export default function Edit() {
   const [fullWidth, setFullWidth] = useState(true);
   const [maxWidth, setMaxWidth] = useState("md");
   const [action, setAction] = useState("");
-  const isSuccess = useSelector(
-    (state) => state.announcementReducer.successful
-  );
+  const isSuccess = useSelector((state) => state.photoReducer.successful);
   useEffect(() => {
-    dispatch(getData("Announcements"));
+    dispatch(getData("Photos"));
   }, []);
   useEffect(() => {
     console.log(isSuccess);
   }, [isSuccess]); // for testing alerts
-  const announcementReducerData = useSelector(
-    (state) => state.announcementReducer
-  );
+  const photoReducerData = useSelector((state) => state.photoReducer);
   const handleModalOpen = (instance) => {
     setInstance(instance);
     setTitle(instance.title);
@@ -93,9 +89,9 @@ export default function Edit() {
     setView(false);
     setInstance([]);
   };
-  let announcements = announcementReducerData.announcements;
-  const deleteAnnouncement = (id) => {
-    dispatch(deleteData("Announcements", id));
+  let photos = photoReducerData.photos;
+  const deletePhoto = (id) => {
+    dispatch(deleteData("Photos", id));
     setAction("Delete");
     setOpen(true);
   };
@@ -114,24 +110,22 @@ export default function Edit() {
     e.preventDefault();
     const data = {
       _id: instance._id,
-      type: "Announcements",
+      type: "Photos",
       title,
       description,
       link,
     };
-    dispatch(updateData("Announcements", data));
+    dispatch(updateData("Photos", data));
     setAction("Update");
     setOpen(true);
     handleModalClose();
   };
   return (
     <div>
-      {announcements.map((announcement) => (
-        <Paper key={announcement._id} elevation={15} square className="paper">
+      {photos.map((photo) => (
+        <Paper key={photo._id} elevation={15} square className="paper">
           <Typography variant="h6" className="paper-title" color="primary">
-            {announcement.type === "Announcements"
-              ? announcement.title
-              : announcement.description}
+            {photo.title}
           </Typography>
           <div className="actions">
             <Button
@@ -140,7 +134,7 @@ export default function Edit() {
               variant="contained"
               startIcon={<ViewIcon />}
               onClick={() => {
-                handleViewOpen(announcement);
+                handleViewOpen(photo);
               }}
             >
               View
@@ -155,7 +149,7 @@ export default function Edit() {
               variant="contained"
               startIcon={<EditIcon />}
               onClick={() => {
-                handleModalOpen(announcement);
+                handleModalOpen(photo);
               }}
             >
               Edit
@@ -165,7 +159,7 @@ export default function Edit() {
               color="secondary"
               className="action-btn"
               onClick={() => {
-                deleteAnnouncement(announcement._id);
+                deletePhoto(photo._id);
               }}
               startIcon={<DeleteForever />}
             >
@@ -190,7 +184,7 @@ export default function Edit() {
           color="primary"
           id="alert-dialog-slide-title"
         >
-          View Announcement
+          View Photo
         </DialogTitle>
         <DialogContent className="dialog-content">
           <form className="post-content">
@@ -237,7 +231,7 @@ export default function Edit() {
           color="primary"
           id="alert-dialog-slide-title"
         >
-          Edit Announcement
+          Edit Photo
         </DialogTitle>
         <DialogContent className="dialog-content">
           <form onSubmit={onSubmit} className="post-content">
@@ -298,31 +292,16 @@ export default function Edit() {
           </form>
         </DialogContent>
       </Dialog>
-      {/* <ul>
-        {announcements.map(({ _id, title, description }) => (
-          <li style={{ marginBottom: "1rem" }} key={_id}>
-            <Button
-              onClick={() => {
-                deleteAnnouncement(_id);
-              }}
-              variant="contained"
-            >
-              Delete
-            </Button>
-            {_id} | {title} | {description}
-          </li>
-        ))}
-      </ul> */}
       {isSuccess == "true" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="success">
-            Announcement {action + "d"} succesfully !
+            Photo {action + "d"} succesfully !
           </Alert>
         </Snackbar>
       ) : isSuccess == "false" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Couldn't {action} announcement !
+            Couldn't {action} photo !
           </Alert>
         </Snackbar>
       ) : (

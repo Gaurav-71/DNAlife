@@ -141,6 +141,13 @@ export default function Create() {
                 url: fireBaseUrl,
               };
               dispatch(addData(type, postData));
+              let announcementData = {
+                type,
+                title: "",
+                description: title,
+                link,
+              };
+              dispatch(addData("Announcements", announcementData));
               setOpen(true);
               clear();
               setLoading(false);

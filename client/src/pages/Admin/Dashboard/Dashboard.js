@@ -6,6 +6,7 @@ import Heading from "../../../components/AdminHeading/Heading.js";
 import announcements from "../../../assets/Admin/Dashboard/undraw_ideas_flow_cy7b.svg";
 import education from "../../../assets/Admin/Dashboard/undraw_education_f8ru.svg";
 import activities from "../../../assets/Admin/Dashboard/undraw_Organizing_projects_0p9a.svg";
+import photos from "../../../assets/Admin/Dashboard/undraw_Photograph_re_up3b.svg";
 
 import "./Dashboard.scss";
 
@@ -41,6 +42,16 @@ export default function Dashboard() {
             <p>
               Add a new training, internship or certificate course post here and
               share it with your audience
+            </p>
+          </div>
+        </Link>
+        <Link to="/admin/photos" elevation={15} className="card">
+          <img src={photos} alt="announcements" />
+          <div className="card-content">
+            <h2>Photos</h2>
+            <p>
+              Share links to photos posted on your socials like facebook and
+              instagram
             </p>
           </div>
         </Link>

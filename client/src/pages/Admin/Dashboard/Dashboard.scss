@@ -7,7 +7,7 @@
     display: flex;
     padding: 1.5rem 2rem;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     @include responsive($tablet-landscape) {
       flex-wrap: wrap;
       justify-content: space-around;
@@ -27,10 +27,14 @@
       border-bottom: 2px solid $accent;
       border-radius: 0.5rem;
       width: 18rem;
+      height: 28rem;
       background: $background;
-      height: max-content;
+      //height: max-content;
       overflow: hidden;
       text-decoration: none;
+      @include responsive($tablet-landscape) {
+        margin: 1rem auto;
+      }
       @include responsive($tablet-portrait) {
         margin: 1rem auto;
       }
@@ -87,7 +91,7 @@
         //     rgba(5, 5, 5, 0.03) 100%
         //   ),
         //   linear-gradient(90deg, #ffffff, #ffffff);
-        background: darken($accent3, 6%);
+        // background: darken($accent3, 6%);
       }
       .card-content {
         h2 {

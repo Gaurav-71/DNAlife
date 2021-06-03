@@ -50,6 +50,7 @@ import Dashboard from "./pages/Admin/Dashboard/Dashboard.js";
 import AdminAnnouncements from "./pages/Admin/Announcements/Announcements.js";
 import AdminActivities from "./pages/Admin/Activities/Activities.js";
 import AdminEducation from "./pages/Admin/Education/Education.js";
+import AdminPhotos from "./pages/Admin/Photos/Photos.js";
 
 function App() {
   return (
@@ -167,6 +168,11 @@ function App() {
                     exact
                     path="/admin/education"
                     component={AdminEducation}
+                  />
+                  <PrivateRoute
+                    exact
+                    path="/admin/photos"
+                    component={AdminPhotos}
                   />
                 </Switch>
               </ScrollToTop>
