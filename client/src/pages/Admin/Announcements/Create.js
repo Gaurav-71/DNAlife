@@ -91,7 +91,7 @@ export default function Create() {
             <TextField
               id="tf2"
               className="input"
-              label="Description"
+              label="Description ( HTML Editable )"
               variant="filled"
               value={description}
               onChange={(e) => setDescription(e.target.value)}

@@ -200,7 +200,13 @@ export default function Edit() {
             </div>
             <div className="tf-wrapper">
               <DescriptionIcon />
-              <p className="label">{instance.description}</p>
+              <p className="label">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: instance.description,
+                  }}
+                />
+              </p>
             </div>
             <div className="tf-wrapper">
               <LinkIcon />
@@ -257,7 +263,7 @@ export default function Edit() {
               <TextField
                 id={"tf2" + instance._id}
                 className="input"
-                label="Description"
+                label="Description ( HTML Editable )"
                 variant="filled"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}

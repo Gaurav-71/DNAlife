@@ -207,7 +207,7 @@ export default function Create() {
                 <TextField
                   id="tf4"
                   className="input"
-                  label="Starting Date"
+                  label="Starting Date / Tagline"
                   variant="filled"
                   value={eventDate}
                   multiline
@@ -219,7 +219,7 @@ export default function Create() {
                 <TextField
                   id="tf2"
                   className="input"
-                  label="Description"
+                  label="Description ( HTML Editable )"
                   variant="filled"
                   value={description}
                   multiline
@@ -329,7 +329,13 @@ export default function Create() {
               {preview || description ? (
                 <div className="body">
                   <img src={preview} alt="" />
-                  <p>{description}</p>
+                  <p className="label">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: description,
+                      }}
+                    />
+                  </p>
                 </div>
               ) : (
                 ""

@@ -215,7 +215,7 @@ export default function Create() {
                 <TextField
                   id="tf4"
                   className="input"
-                  label="Activity Date"
+                  label="Activity Date / Tagline"
                   variant="filled"
                   value={eventDate}
                   multiline
@@ -227,7 +227,7 @@ export default function Create() {
                 <TextField
                   id="tf2"
                   className="input"
-                  label="Description"
+                  label="Description ( HTML Editable )"
                   variant="filled"
                   value={description}
                   multiline
@@ -313,7 +313,7 @@ export default function Create() {
                   height: "30px",
                   marginLeft: "0.5rem",
                 }}
-              />{" "}
+              />
               <p style={{ paddingLeft: "1.5rem" }}>Uploading Post ...</p>
             </div>
           </div>
@@ -337,7 +337,13 @@ export default function Create() {
               {preview || description ? (
                 <div className="body">
                   <img src={preview} alt="" />
-                  <p>{description}</p>
+                  <p className="label">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: description,
+                      }}
+                    />
+                  </p>
                 </div>
               ) : (
                 ""

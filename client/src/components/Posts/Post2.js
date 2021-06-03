@@ -62,7 +62,13 @@ export default function Post2({ data }) {
       </div>
       <div className="line"></div>
       <div className="right">
-        <p className="post-desc">{data.description}</p>
+        <p className="post-desc">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.description,
+            }}
+          />
+        </p>
         <div className="action-btn-container">
           {data.link && data.type != "Announcements" && (
             <a href={data.link} target="_blank">

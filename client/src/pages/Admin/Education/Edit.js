@@ -311,7 +311,13 @@ export default function AdminEduTour({ activityType }) {
             </div>
             <div className="tf-wrapper">
               <DescriptionIcon />
-              <p className="label">{instance.description}</p>
+              <p className="label">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: instance.description,
+                  }}
+                />
+              </p>
             </div>
             <div className="tf-wrapper">
               <LinkIcon />
@@ -377,7 +383,7 @@ export default function AdminEduTour({ activityType }) {
               <TextField
                 id={"tf10" + instance._id}
                 value={eventDate}
-                label="Event Date"
+                label="Event Date / Tagline"
                 variant="filled"
                 onChange={(e) => setEventDate(e.target.value)}
                 className="input"
@@ -388,7 +394,7 @@ export default function AdminEduTour({ activityType }) {
               <TextField
                 id={"tf2" + instance._id}
                 className="input"
-                label="Description"
+                label="Description ( HTML Editable )"
                 variant="filled"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}

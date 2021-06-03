@@ -19,7 +19,13 @@ export default function Post3({ data }) {
       </div>
       <div className="line"></div>
       <div className="right">
-        <p className="post-desc">{data.description}</p>
+        <p className="post-desc">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.description,
+            }}
+          />
+        </p>
         <div className="action-btn-container">
           <a href={data.link} target="_blank">
             <Button variant="contained" className="view mr">

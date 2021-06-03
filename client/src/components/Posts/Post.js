@@ -12,7 +12,15 @@ export default function Post({ data }) {
       </div>
       <div className="body">
         <img src={data.url} alt="" />
-        {data.description && <p>{data.description}</p>}
+        {data.description && (
+          <p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.description,
+              }}
+            />
+          </p>
+        )}
       </div>
       <div className="actions">
         <a href={data.link} target="_blank">
