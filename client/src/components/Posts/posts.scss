@@ -128,12 +128,22 @@
       }
       .register {
         background: $accent2;
+        @include responsive($tablet-portrait) {
+          font-size: x-small;
+        }
+        @include responsive($phone) {
+          font-size: xx-small;
+        }
       }
       .view {
         background: $accent;
         color: white;
+        @include responsive($tablet-portrait) {
+          font-size: x-small;
+        }
         @include responsive($phone) {
           margin-left: 0.6rem;
+          font-size: xx-small;
         }
       }
     }

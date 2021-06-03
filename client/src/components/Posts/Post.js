@@ -1,7 +1,27 @@
 import { Button, Paper } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import LinearProgress from "@material-ui/core/LinearProgress";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+  },
+}));
 
 export default function Post({ data }) {
+  const classes = useStyles();
+
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const handleImageLoaded = () => {
+    setImgLoaded(true);
+  };
+
+  const handleImageErrored = () => {
+    setImgLoaded(false);
+    alert("Couldn't load image, Please refresh");
+  };
+
   return (
     <Paper elevation={15} square className="post-card">
       <div className="title">
@@ -11,7 +31,19 @@ export default function Post({ data }) {
         </div>
       </div>
       <div className="body">
-        <img src={data.url} alt="" />
+        <img
+          onLoad={handleImageLoaded}
+          onError={handleImageErrored}
+          src={data.url}
+          alt="post-img"
+        />
+        {imgLoaded ? (
+          ""
+        ) : (
+          <div className={classes.root}>
+            <LinearProgress />
+          </div>
+        )}
         {data.description && (
           <p>
             <div

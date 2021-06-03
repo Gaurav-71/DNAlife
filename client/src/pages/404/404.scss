@@ -1,0 +1,20 @@
+.nf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 80vw;
+    height: auto;
+  }
+  h1 {
+    width: 100%;
+    padding: 3rem 0.8rem;
+    text-align: center;
+  }
+  .btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid orange;
+    padding: 0.8rem 2rem;
+  }
+}

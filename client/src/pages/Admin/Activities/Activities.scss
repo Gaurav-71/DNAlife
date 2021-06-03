@@ -111,9 +111,10 @@
         color: white;
         font-size: x-large;
         font-weight: bold;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         @include responsive($phone) {
-          display: flex;
-          align-items: center;
           font-size: large;
         }
       }

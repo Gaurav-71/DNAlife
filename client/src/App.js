@@ -52,6 +52,10 @@ import AdminActivities from "./pages/Admin/Activities/Activities.js";
 import AdminEducation from "./pages/Admin/Education/Education.js";
 import AdminPhotos from "./pages/Admin/Photos/Photos.js";
 
+// 404
+
+import E404 from "./pages/404/404.js";
+
 function App() {
   return (
     <Provider store={store}>
@@ -174,6 +178,7 @@ function App() {
                     path="/admin/photos"
                     component={AdminPhotos}
                   />
+                  <Route path="*" component={E404} />
                 </Switch>
               </ScrollToTop>
             </div>
