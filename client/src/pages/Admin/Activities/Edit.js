@@ -34,8 +34,6 @@ import UploadIcon from "@material-ui/icons/CloudUpload";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-import parse from "html-react-parser";
-
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });

@@ -1,4 +1,0 @@
-3. Updating landing page photos and about
-5. make all posts responsive ( done )
-6. add 404
-7. Parse html for description

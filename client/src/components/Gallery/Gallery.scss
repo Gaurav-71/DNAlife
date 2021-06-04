@@ -2,6 +2,7 @@
 
 .slider {
   height: 80vh;
+  // top: -40vh;
   @include responsive($tablet-landscape) {
     height: 50vh;
   }
