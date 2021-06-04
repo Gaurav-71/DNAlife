@@ -73,17 +73,55 @@
         width: 95%;
         display: flex;
         justify-content: space-between;
+        @include responsive($tablet-landscape) {
+          flex-direction: column;
+          align-items: center;
+        }
+        @include responsive($tablet-portrait) {
+          flex-direction: column;
+          align-items: center;
+        }
         @include responsive($phone) {
           flex-direction: column;
         }
         .tf-wrapper1 {
           margin-left: 3rem;
+          @include responsive($tablet-landscape) {
+            margin: 0;
+            width: 100%;
+            .upload-button {
+              width: 100%;
+              margin-bottom: 1.5rem;
+            }
+          }
+          @include responsive($tablet-portrait) {
+            margin: 0;
+            width: 100%;
+            .upload-button {
+              width: 100%;
+              margin-bottom: 1.5rem;
+            }
+          }
           @include responsive($phone) {
             margin: 0;
             .upload-button {
               width: 100%;
               margin-bottom: 1.5rem;
             }
+          }
+        }
+        @include responsive($tablet-landscape) {
+          .main-action {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        @include responsive($tablet-portrait) {
+          .main-action {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
           }
         }
         @include responsive($phone) {

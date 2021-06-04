@@ -54,7 +54,7 @@ export default function Home() {
         <section className="content">
           <Link
             to="/activities/educational-tours"
-            className="rect one parallax-container"
+            className="rect a-one parallax-container"
           >
             <div className="parallax-wrap">
               <div className="parallax-inner"></div>
@@ -72,7 +72,7 @@ export default function Home() {
           </Link>
           <Link
             to="/activities/educational-tours"
-            className="rect two parallax-container"
+            className="rect a-two parallax-container"
           >
             <div className="parallax-wrap">
               <div className="parallax-inner"></div>
@@ -90,7 +90,7 @@ export default function Home() {
           </Link>
           <Link
             to="/activities/educational-tours"
-            className="rect three parallax-container"
+            className="rect a-three parallax-container"
           >
             <div className="parallax-wrap">
               <div className="parallax-inner"></div>
@@ -108,7 +108,7 @@ export default function Home() {
           </Link>
           <Link
             to="/activities/educational-tours"
-            className="rect four parallax-container"
+            className="rect a-four parallax-container"
           >
             <div className="parallax-wrap">
               <div className="parallax-inner"></div>
@@ -291,7 +291,7 @@ export default function Home() {
               to the society with green initiatives to mitigate climate change
               and much more.
             </p>
-            <Link to="/about-us" className="about-button">
+            <Link to="/join-us" className="about-button">
               Become a member now
             </Link>
           </div>

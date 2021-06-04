@@ -19,7 +19,7 @@ export default function Post({ data }) {
 
   const handleImageErrored = () => {
     setImgLoaded(false);
-    alert("Couldn't load image, Please refresh");
+    console.log("Couldn't load image, Please refresh");
   };
 
   return (

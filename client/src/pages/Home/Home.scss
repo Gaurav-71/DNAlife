@@ -204,9 +204,9 @@
           }
         }
       }
-      .one {
+      .a-one {
         border-right: 1px solid $accent;
-        border-bottom: 1px solid $accent;
+        border-bottom: 1.5px solid $accent;
         @include responsive($phone) {
           border: none;
         }
@@ -217,9 +217,9 @@
           }
         }
       }
-      .two {
+      .a-two {
         border-left: 1px solid $accent;
-        border-bottom: 1px solid $accent;
+        border-bottom: 1.5px solid $accent;
         @include responsive($phone) {
           border: none;
         }
@@ -233,10 +233,12 @@
           }
         }
       }
-      .three {
+      .a-three {
         border-top: 1px solid $accent;
         border-right: 1px solid $accent;
-        border: none;
+        @include responsive($phone) {
+          border: none;
+        }
         .parallax-wrap {
           .parallax-inner {
             background-image: url("../../assets/Home/p2.jpg");
@@ -247,7 +249,7 @@
           }
         }
       }
-      .four {
+      .a-four {
         border-top: 1px solid $accent;
         border-left: 1px solid $accent;
         @include responsive($phone) {
