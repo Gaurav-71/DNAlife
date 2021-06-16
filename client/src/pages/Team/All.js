@@ -7,6 +7,8 @@ import nagendra from "../../assets/Team/nagendra.jpg";
 import pruthvi from "../../assets/Team/pruthvi.jpg";
 import raj from "../../assets/Team/raj.jpg";
 import sri from "../../assets/Team/srihari.jpg";
+import nuthan from "../../assets/Team/Nuthan.jpg";
+import krish from "../../assets/Team/Krishnamurthy.jpg";
 
 export const Members = [
   {
@@ -20,16 +22,18 @@ export const Members = [
     position: "Secretary & Trustee",
   },
   { name: "Dr. Pruthvi Chakravarthi", src: pruthvi, position: "Trustee" },
+  { name: "Dr. Nuthan Dighe", src: nuthan, position: "Trustee" },
+  { name: "Krishnamurthy", src: krish, position: "Trustee" },
   { name: "Nagendra M Chander", src: nagendra, position: "Trustee" },
   { name: "Dr. Raj Rajaram", src: raj, position: "Advisor, USA" },
   { name: "Fatima", src: fatima, position: "Scientist & Delhi Chapter Head" },
-  { name: "Gaurav V", src: gaurav, position: "Website Developer" },
-  { name: "Divya", src: divya, position: "Website Developer " },
   {
     name: "Srihari Prathapaneni",
     src: sri,
     position: "Team Leader, Karnataka",
   },
+  { name: "Gaurav V", src: gaurav, position: "Website Developer" },
+  { name: "Divya", src: divya, position: "Website Developer " },
 ];
 
 //{name: "", src: , position : ""},

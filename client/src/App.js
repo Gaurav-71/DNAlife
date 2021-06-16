@@ -19,6 +19,7 @@ import Team from "./pages/Team/Team.js";
 import Announcements from "./pages/Announcements/Announcements.js";
 import JoinUs from "./pages/JoinUs/JoinUs.js";
 import Gallery from "./pages/Gallery/Gallery.js";
+import Village from "./pages/Anuganalu/Anuganalu";
 
 // activities
 
@@ -146,6 +147,7 @@ function App() {
                     path="/activities/cleaning-movements/posts"
                     component={CleaningPosts}
                   />
+                  <Route exact path="/anuganalu-village" component={Village} />
                   <Route
                     exact
                     path="/announcements"

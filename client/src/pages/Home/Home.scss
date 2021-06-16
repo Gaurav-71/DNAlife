@@ -314,7 +314,8 @@
       }
     }
   }
-  .landing-nelson {
+  .landing-nelson,
+  .anuganalu {
     .parallax-wrap {
       .parallax-inner {
         background-image: url("../../assets/Home/center.jpg");
@@ -623,6 +624,13 @@
             background-origin: padding-box;
           }
         }
+      }
+    }
+  }
+  .anuganalu {
+    .parallax-wrap {
+      .parallax-inner {
+        background-image: url("../../assets/Village/village.webp");
       }
     }
   }

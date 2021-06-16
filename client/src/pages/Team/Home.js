@@ -1,6 +1,6 @@
 import malali from "../../assets/Team/malali.jpg";
 import mahantesh from "../../assets/Team/mahantesh.jpg";
-import nagendra from "../../assets/Team/nagendra.jpg";
+import nuthan from "../../assets/Team/Nuthan.jpg";
 import pruthvi from "../../assets/Team/pruthvi.jpg";
 
 export const Members = [
@@ -15,5 +15,5 @@ export const Members = [
     position: "Secretary & Trustee",
   },
   { name: "Dr. Pruthvi Chakravarthi", src: pruthvi, position: "Trustee" },
-  { name: "Nagendra M Chander", src: nagendra, position: "Trustee" },
+  { name: "Dr. Nuthan Dighe", src: nuthan, position: "Trustee" },
 ];
