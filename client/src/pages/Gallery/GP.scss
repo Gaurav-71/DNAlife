@@ -1,0 +1,21 @@
+@import "../../scss/custom.scss";
+.new-gallery-page {
+  .comp {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 3rem;
+    @include responsive($tablet-landscape) {
+      width: 125%;
+      height: 55vh;
+    }
+    @include responsive($tablet-portrait) {
+      width: 120%;
+      height: 32vh;
+    }
+    @include responsive($phone) {
+      width: 120%;
+      height: 20vh;
+      margin-bottom: 2rem;
+    }
+  }
+}
