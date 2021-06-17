@@ -1,3 +1,5 @@
 node_modules
 .DS_Store
 privateKeys.js
+access.pem
+Server.zip

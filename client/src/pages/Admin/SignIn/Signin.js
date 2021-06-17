@@ -44,8 +44,8 @@ export default function SignIn() {
     e.preventDefault();
     try {
       setLoading(true);
-      //await login(email, password);
-      await login("a@a.com", "123456"); // for dev
+      await login("dnalifegreen@gmail.com", password);
+      //await login("a@a.com", "123456"); // for dev
       history.push("/admin/dashboard");
     } catch {
       alert("Failed to log in");
@@ -69,18 +69,20 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
+              value="dnalifegreen@gmail.com"
               id="email"
               label="Email Address"
               name="email"
               autoComplete="email"
               autoFocus
-              onChange={(e) => setEmail(e.target.value)}
+              disabled
             />
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
+              autoFocus
               name="password"
               label="Password"
               type="password"
