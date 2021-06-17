@@ -635,6 +635,17 @@
     }
   }
   .gallery {
+    width: 100%;
+    @include responsive($tablet-landscape) {
+      width: 125%;
+    }
+    @include responsive($tablet-portrait) {
+      width: 120%;
+    }
+    @include responsive($phone) {
+      width: 120%;
+    }
+    margin-bottom: 6rem;
     .parallax-wrap {
       .parallax-inner {
         background-image: url("../../assets/Landing/pexels-pixabay-414171.jpg");

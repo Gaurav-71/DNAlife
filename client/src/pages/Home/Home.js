@@ -71,7 +71,7 @@ export default function Home() {
             </section>
           </Link>
           <Link
-            to="/activities/educational-tours"
+            to="/activities/eco-projects"
             className="rect a-two parallax-container"
           >
             <div className="parallax-wrap">
@@ -89,7 +89,7 @@ export default function Home() {
             </section>
           </Link>
           <Link
-            to="/activities/educational-tours"
+            to="/activities/plantation-drives"
             className="rect a-three parallax-container"
           >
             <div className="parallax-wrap">
@@ -107,7 +107,7 @@ export default function Home() {
             </section>
           </Link>
           <Link
-            to="/activities/educational-tours"
+            to="/activities/cleaning-movements"
             className="rect a-four parallax-container"
           >
             <div className="parallax-wrap">
@@ -220,7 +220,7 @@ export default function Home() {
         </div>
         <section className="content">
           <Link
-            to="/activities/educational-tours"
+            to="/education/internships"
             className="rect one parallax-container"
           >
             <div className="parallax-wrap">
@@ -238,7 +238,7 @@ export default function Home() {
             </section>
           </Link>
           <Link
-            to="/activities/educational-tours"
+            to="/education/trainings"
             className="rect two parallax-container"
           >
             <div className="parallax-wrap">
@@ -256,7 +256,7 @@ export default function Home() {
             </section>
           </Link>
           <Link
-            to="/activities/educational-tours"
+            to="/education/certificate-courses"
             className="rect three parallax-container"
           >
             <div className="parallax-wrap">
@@ -325,7 +325,7 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="common parallax-container black">
+      {/* <section className="common parallax-container black">
         <div className="parallax-wrap">
           <div className="parallax-inner"></div>
         </div>
@@ -344,8 +344,14 @@ export default function Home() {
             </Link>
           </div>
         </section>
-      </section>
+      </section> */}
       <section className="gallery parallax-container">
+        <section className="content">
+          <div className="title">
+            <h1>Gallery</h1>
+            <img src={line} alt="line" />
+          </div>
+        </section>
         <Gallery />
       </section>
     </div>

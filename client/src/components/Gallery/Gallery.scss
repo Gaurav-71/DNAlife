@@ -1,15 +1,20 @@
 @import "../../scss/custom.scss";
 
-.slider {
-  height: 80vh;
-  // top: -40vh;
-  @include responsive($tablet-landscape) {
-    height: 50vh;
-  }
-  @include responsive($tablet-portrait) {
-    height: 50vh;
-  }
-  @include responsive($phone) {
-    height: 60vh;
-  }
+// .slider {
+//   height: 80vh;
+//   // top: -40vh;
+//   @include responsive($tablet-landscape) {
+//     height: 50vh;
+//   }
+//   @include responsive($tablet-portrait) {
+//     height: 50vh;
+//   }
+//   @include responsive($phone) {
+//     height: 62.5vh;
+//   }
+// }
+
+.threeD {
+  //  margin-top: 1.8rem;
+  width: 100%;
 }

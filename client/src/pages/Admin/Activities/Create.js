@@ -66,7 +66,7 @@ export default function Create() {
   let isSuccess = useSelector((state) => state.announcementReducer.successful);
 
   const changeHandler = (event) => {
-    console.log("in change");
+    // console.log("in change");
     setSelectedFile(event.target.files[0]);
     handlePreview(event.target.files[0]);
     setIsFilePicked(true);

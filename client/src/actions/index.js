@@ -8,12 +8,12 @@ function singular(s) {
 }
 
 export const getData = (collection) => (dispatch) => {
-  console.log(baseUrl + collection);
+  //console.log(baseUrl + collection);
   axios
     .get(baseUrl + collection)
     .then((res) => {
       dispatch({ type: "get" + collection, payload: res.data });
-      console.log(res.data);
+      //console.log(res.data);
       dispatch({ type: "setSuccess", payload: "true" });
     })
     .catch((error) => {
@@ -23,7 +23,7 @@ export const getData = (collection) => (dispatch) => {
 };
 
 export const addData = (collection, announcement) => (dispatch) => {
-  console.log(baseUrl + collection);
+  //console.log(baseUrl + collection);
   axios
     .post(baseUrl + collection, announcement)
     .then((res) => {
