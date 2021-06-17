@@ -14,7 +14,7 @@ export const Members = [
   {
     name: "Prof. Malali Gowda",
     src: malali,
-    position: "Founding President & Trustee",
+    position: "Founder & President",
   },
   {
     name: "Mahantesh Veerapur",
@@ -24,7 +24,7 @@ export const Members = [
   { name: "Dr. Pruthvi Chakravarthi", src: pruthvi, position: "Trustee" },
   { name: "Dr. Nuthan Dighe", src: nuthan, position: "Trustee" },
   { name: "Krishnamurthy", src: krish, position: "Trustee" },
-  { name: "Nagendra M Chander", src: nagendra, position: "Trustee" },
+  { name: "Nagendra M Chander", src: nagendra, position: "Former Trustee" },
   { name: "Dr. Raj Rajaram", src: raj, position: "Advisor, USA" },
   { name: "Fatima", src: fatima, position: "Scientist & Delhi Chapter Head" },
   {
