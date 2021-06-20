@@ -30,7 +30,13 @@ export default function Team() {
           return (
             <Card elevation={10} className={classes.root} key={index}>
               <div className="details">
-                <h1>{member.name}</h1>
+                {member.link != null ? (
+                  <a href={member.link} target="_blank">
+                    <h1>{member.name}</h1>
+                  </a>
+                ) : (
+                  <h1>{member.name}</h1>
+                )}
                 <h4>{member.position}</h4>
               </div>
               <CardMedia

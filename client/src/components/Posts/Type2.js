@@ -6,6 +6,7 @@ import Post from "./Post2.js";
 import { getData } from "../../actions";
 
 import "./posts.scss";
+import Empty from "../Empty/Empty.js";
 
 export default function Type2({ type }) {
   const dispatch = useDispatch();
@@ -18,9 +19,11 @@ export default function Type2({ type }) {
   return (
     <div className="page type1">
       <div className="all-type1-posts">
-        {reducerData.map((rd) => (
-          <Post key={rd._id} data={rd} />
-        ))}
+        {reducerData.length <= 0 ? (
+          <Empty />
+        ) : (
+          reducerData.map((rd) => <Post key={rd._id} data={rd} />)
+        )}
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ import { getData } from "../../actions";
 
 import "./posts.scss";
 
+import Empty from "../Empty/Empty.js";
+
 export default function Type3() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,9 +18,11 @@ export default function Type3() {
   return (
     <div className="gallery-posts type1">
       <div className="all-type1-posts">
-        {reducerData.map((rd) => (
-          <Post key={rd._id} data={rd} />
-        ))}
+        {reducerData.length <= 0 ? (
+          <Empty />
+        ) : (
+          reducerData.map((rd) => <Post key={rd._id} data={rd} />)
+        )}
       </div>
     </div>
   );

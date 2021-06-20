@@ -38,6 +38,7 @@ import Slide from "@material-ui/core/Slide";
 import UploadIcon from "@material-ui/icons/CloudUpload";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Empty from "../../../../components/Empty/Empty";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -221,52 +222,58 @@ export default function AdminEduTour() {
   };
   return (
     <div>
-      {newss.map((news) => (
-        <Paper key={news._id} elevation={15} square className="paper">
-          <Typography variant="h6" className="paper-title" color="primary">
-            {news.title}
-          </Typography>
-          <div className="actions">
-            <Button
-              type="submit"
-              variant="contained"
-              className="action-btn mr"
-              startIcon={<ViewIcon />}
-              onClick={() => {
-                handleViewOpen(news);
-              }}
-            >
-              View
-            </Button>
-            <Button
-              type="submit"
-              className="action-btn mr"
-              style={{
-                backgroundColor: "#009688",
-                color: "white",
-              }}
-              variant="contained"
-              startIcon={<EditIcon />}
-              onClick={() => {
-                handleModalOpen(news);
-              }}
-            >
-              Edit
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              className="action-btn"
-              onClick={() => {
-                deleteNews(news._id, news.filename);
-              }}
-              startIcon={<DeleteForever />}
-            >
-              Delete
-            </Button>
-          </div>
-        </Paper>
-      ))}
+      {newss.length <= 0 ? (
+        <div style={{ marginTop: "1rem" }}>
+          <Empty />
+        </div>
+      ) : (
+        newss.map((news) => (
+          <Paper key={news._id} elevation={15} square className="paper">
+            <Typography variant="h6" className="paper-title" color="primary">
+              {news.title}
+            </Typography>
+            <div className="actions">
+              <Button
+                type="submit"
+                variant="contained"
+                className="action-btn mr"
+                startIcon={<ViewIcon />}
+                onClick={() => {
+                  handleViewOpen(news);
+                }}
+              >
+                View
+              </Button>
+              <Button
+                type="submit"
+                className="action-btn mr"
+                style={{
+                  backgroundColor: "#009688",
+                  color: "white",
+                }}
+                variant="contained"
+                startIcon={<EditIcon />}
+                onClick={() => {
+                  handleModalOpen(news);
+                }}
+              >
+                Edit
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                className="action-btn"
+                onClick={() => {
+                  deleteNews(news._id, news.filename);
+                }}
+                startIcon={<DeleteForever />}
+              >
+                Delete
+              </Button>
+            </div>
+          </Paper>
+        ))
+      )}
       <Dialog
         open={view}
         TransitionComponent={Transition}

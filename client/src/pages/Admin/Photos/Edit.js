@@ -27,6 +27,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
+import Empty from "../../../components/Empty/Empty";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -122,52 +123,58 @@ export default function Edit() {
   };
   return (
     <div>
-      {photos.map((photo) => (
-        <Paper key={photo._id} elevation={15} square className="paper">
-          <Typography variant="h6" className="paper-title" color="primary">
-            {photo.title}
-          </Typography>
-          <div className="actions">
-            <Button
-              type="submit"
-              className="action-btn mr"
-              variant="contained"
-              startIcon={<ViewIcon />}
-              onClick={() => {
-                handleViewOpen(photo);
-              }}
-            >
-              View
-            </Button>
-            <Button
-              type="submit"
-              className="action-btn mr"
-              style={{
-                backgroundColor: "#009688",
-                color: "white",
-              }}
-              variant="contained"
-              startIcon={<EditIcon />}
-              onClick={() => {
-                handleModalOpen(photo);
-              }}
-            >
-              Edit
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              className="action-btn"
-              onClick={() => {
-                deletePhoto(photo._id);
-              }}
-              startIcon={<DeleteForever />}
-            >
-              Delete
-            </Button>
-          </div>
-        </Paper>
-      ))}
+      {photos.length <= 0 ? (
+        <div style={{ marginTop: "1rem" }}>
+          <Empty />
+        </div>
+      ) : (
+        photos.map((photo) => (
+          <Paper key={photo._id} elevation={15} square className="paper">
+            <Typography variant="h6" className="paper-title" color="primary">
+              {photo.title}
+            </Typography>
+            <div className="actions">
+              <Button
+                type="submit"
+                className="action-btn mr"
+                variant="contained"
+                startIcon={<ViewIcon />}
+                onClick={() => {
+                  handleViewOpen(photo);
+                }}
+              >
+                View
+              </Button>
+              <Button
+                type="submit"
+                className="action-btn mr"
+                style={{
+                  backgroundColor: "#009688",
+                  color: "white",
+                }}
+                variant="contained"
+                startIcon={<EditIcon />}
+                onClick={() => {
+                  handleModalOpen(photo);
+                }}
+              >
+                Edit
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                className="action-btn"
+                onClick={() => {
+                  deletePhoto(photo._id);
+                }}
+                startIcon={<DeleteForever />}
+              >
+                Delete
+              </Button>
+            </div>
+          </Paper>
+        ))
+      )}
       <Dialog
         open={view}
         TransitionComponent={Transition}

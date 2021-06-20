@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Heading from "../Heading/Heading.js";
@@ -8,11 +8,14 @@ import { getData } from "../../actions";
 
 import "./posts.scss";
 
+import Empty from "../Empty/Empty.js";
+
 export default function Type1({ title, type }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getData(type));
   }, []);
+  const [ltitle, setLtitle] = useState("Fetching Data ...");
   const reducerData = useSelector((state) =>
     type === "Internships"
       ? state.internshipReducer.education
@@ -34,9 +37,11 @@ export default function Type1({ title, type }) {
     <div className="page type1">
       <Heading pageTitle={title} />
       <div className="all-type1-posts">
-        {reducerData.map((rd) => (
-          <Post key={rd._id} data={rd} />
-        ))}
+        {reducerData.length <= 0 ? (
+          <Empty />
+        ) : (
+          reducerData.map((rd) => <Post key={rd._id} data={rd} />)
+        )}
       </div>
     </div>
   );

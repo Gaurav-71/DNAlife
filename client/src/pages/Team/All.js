@@ -1,6 +1,6 @@
 import malali from "../../assets/Team/malali.jpg";
 import gaurav from "../../assets/Team/gaurav.jpg";
-import divya from "../../assets/Team/divya.jpg";
+import divya from "../../assets/Team/Divya.webp";
 import fatima from "../../assets/Team/fatima.jpg";
 import mahantesh from "../../assets/Team/mahantesh.webp";
 import nagendra from "../../assets/Team/nagendra.webp";
@@ -12,6 +12,8 @@ import krish from "../../assets/Team/Krishnamurthy.jpg";
 export const Members = [
   {
     name: "Prof. Malali Gowda",
+    link:
+      "https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/Profiles%2FBrief%20Profile%20of%20Malali%20Gowda%20-%20Environment.pdf?alt=media&token=41a46bed-786a-4658-a086-38a981857555",
     src: malali,
     position: "Founder & President",
   },
@@ -28,14 +30,30 @@ export const Members = [
     src: fatima,
     position: "Trustee & Web Content Curator",
   },
-  { name: "Dr. Raj Rajaram", src: raj, position: "Advisor, USA" },
+  {
+    name: "Dr. Raj Rajaram",
+    link:
+      "https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/Profiles%2FRaj-Resume_2020.pdf?alt=media&token=db34f5d2-90e5-4795-bf1d-ac36e20d099b",
+    src: raj,
+    position: "Advisor, USA",
+  },
   {
     name: "Nagendra M Chander",
     src: nagendra,
     position: "Former Trustee & Logo Designer",
   },
-  { name: "Gaurav V", src: gaurav, position: "Website Developer" },
-  { name: "Divya", src: divya, position: "Website Developer " },
+  {
+    name: "Gaurav V",
+    src: gaurav,
+    link: "https://www.linkedin.com/in/gaurav-v-8071/",
+    position: "Website Developer",
+  },
+  {
+    name: "Divya",
+    src: divya,
+    link: "https://www.linkedin.com/in/divya-2899/",
+    position: "Website Developer ",
+  },
 ];
 
 //{name: "", src: , position : ""},
