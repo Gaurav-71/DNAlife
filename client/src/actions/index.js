@@ -1,7 +1,11 @@
 // setup actions
 import axios from "axios";
 
+// production
 const baseUrl = "http://18.116.45.202/db/";
+
+// dev
+//const baseUrl = "http://localhost:80/db/";
 
 function singular(s) {
   return s.slice(0, -1);

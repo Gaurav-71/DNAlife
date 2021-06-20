@@ -1,23 +1,20 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 
 import { Link } from "react-router-dom";
 
-import Landing from "../../pages/Landing/Landing.js";
-import Gallery from "../../components/Gallery/Gallery.js";
-
 import "./Home.scss";
-
-import { Members } from "../Team/Home";
 
 import line from "../../assets/Home/line.png";
 
-//partners
+import Landing from "../../pages/Landing/Landing.js";
+import MSComp from "./MS.js";
+import VillageComp from "./Village.js";
+import PartnersComp from "./PartnersComp.js";
+import TeamComp from "./Team.js";
 
-import yene from "../../assets/Partners/yene.jpg";
-import bms from "../../assets/Partners/bms.jpg";
-import nelson from "../../assets/Partners/nelson.jpg";
-import rotary from "../../assets/Partners/rotary.jpg";
-import sgi from "../../assets/Partners/sgi.jpg";
+const Gallery = lazy(() => import("../../components/Gallery/Gallery.js"));
+const EducationComp = lazy(() => import("./EducationComp.js"));
+const ActivityComp = lazy(() => import("./ActivityComp.js"));
 
 export default function Home() {
   return (
@@ -47,234 +44,15 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="activities parallax-container">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="content">
-          <Link
-            to="/activities/educational-tours"
-            className="rect a-one parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Educational Tours</h2>
-              <div className="info-snippet">
-                <p>
-                  Join the adventure with DNA Life to understand different tools
-                  and techniques of farming
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-          <Link
-            to="/activities/eco-projects"
-            className="rect a-two parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Eco Projects</h2>
-              <div className="info-snippet">
-                <p>
-                  Together, we can heal our Planet and return its glory that is
-                  lost due to over exploitation and sheer negligence of ages.
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-          <Link
-            to="/activities/plantation-drives"
-            className="rect a-three parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Plantation Drives</h2>
-              <div className="info-snippet">
-                <p>
-                  Join The Tree Warriors To Increase India's Green Cover.
-                  Plantation Drive To Increase India's Green Cove.{" "}
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-          <Link
-            to="/activities/cleaning-movements"
-            className="rect a-four parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Cleaning Movements</h2>
-              <div className="info-snippet">
-                <p>
-                  Let's come together and adopt practices that promote
-                  sustainability, reuse, recycling and waste minimisation.
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-        </section>
-      </section>
-      <section className="partners-section parallax-container black">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="content">
-          <div className="title">
-            <h1>Partners</h1>
-            <img src={line} alt="line" />
-          </div>
-          <div className="body">
-            <p>
-              We have collaborated with various premier institutes for academics
-              as well as climate change mitigation e.g. environmental education,
-              practical learning through model villages and experienced farmers,
-              environmentalists, environmental engineers, afforestation, forest
-              farming, green development and sustainable architechture. We have
-              also partnered on mission green and cleaning activities, community
-              awareness etc.
-            </p>
-            <section className="partners">
-              <img src={yene} alt="partner" />
-              <img src={bms} alt="partner" />
-              <img src={rotary} alt="partner" />
-              <img src={nelson} alt="partner" />
-              <img src={sgi} alt="partner" />
-            </section>
-          </div>
-        </section>
-      </section>
-      <section className="landing-nelson parallax-container">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="nelson-content">
-          <h2>MS Program With Nelson Institute For Environmental Studies</h2>
-          <p>
-            The Nelson Institute is home to three interdisciplinary research
-            centers that serve as laboratories and incubators to solve today's
-            most challenging environmental issues through interdisciplinary
-            research through hands-on educational initiatives that bridge
-            classrooms and communities; and through public programs that foster
-            environmental conversation among people. The MS program spans 15
-            months: Courses in Madison,Wisconsin, at Nelson Institute, USA
-          </p>
-          <div className="btn-container">
-            <Link
-              to="/education/ms-program/nelson-institute-for-environmental-studies"
-              className="transparent-button"
-            >
-              Know More
-            </Link>
-          </div>
-        </section>
-      </section>
-      <section className="team parallax-container black">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="content">
-          <div className="title">
-            <h1>Team</h1>
-            <img src={line} alt="line" />
-          </div>
-          <div className="body">
-            <section className="members-wrap">
-              {Members.map((member, index) => {
-                return (
-                  <section className="member" key={index}>
-                    <img src={member.src} alt="team-member" />
-                    <h3>{member.name}</h3>
-                    <h5>{member.position}</h5>
-                  </section>
-                );
-              })}
-            </section>
-
-            <section className="more">
-              <Link className="link" to="/team">
-                Click here,
-              </Link>
-              <p>
-                to view the list of directors, members and activists who make us
-                a valuable team of professionals
-              </p>
-            </section>
-          </div>
-        </section>
-      </section>
-      <section className="education parallax-container ">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="content">
-          <Link
-            to="/education/internships"
-            className="rect one parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Internships</h2>
-              <div className="info-snippet">
-                <p>
-                  Get discovered. Introduce yourself, and we’ll get in touch
-                  with you if there’s a role that seems like a good match.
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-          <Link
-            to="/education/trainings"
-            className="rect two parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Trainings</h2>
-              <div className="info-snippet">
-                <p>
-                  Join us to learn and implement eco-friendly practices and
-                  contribute to the conservation of nature.
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-          <Link
-            to="/education/certificate-courses"
-            className="rect three parallax-container"
-          >
-            <div className="parallax-wrap">
-              <div className="parallax-inner"></div>
-            </div>
-            <section className="rect-content">
-              <h2>Certificate Courses</h2>
-              <div className="info-snippet">
-                <p>
-                  Prepare for a certification with our professional certificate
-                  programs.
-                </p>
-                <button className="transparent-button">View</button>
-              </div>
-            </section>
-          </Link>
-        </section>
-      </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ActivityComp />
+      </Suspense>
+      <PartnersComp />
+      <MSComp />
+      <TeamComp />
+      <Suspense fallback={<div>Loading...</div>}>
+        <EducationComp />
+      </Suspense>
       <section className="common parallax-container black">
         <div className="parallax-wrap">
           <div className="parallax-inner"></div>
@@ -297,35 +75,25 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="anuganalu parallax-container">
-        <div className="parallax-wrap">
-          <div className="parallax-inner"></div>
-        </div>
-        <section className="nelson-content">
-          <h2>Anuganalu - A Village Restored</h2>
-          <p>
-            Calm and serene, there lies a beautiful village Anuganalu located in
-            the foot steps of Seegegudda (about 12 km from Hassan, towards
-            Beluru) in the vicinity of Western Ghats in Hassan District,
-            Karnataka, India. Upon entering the village, the welcoming cool
-            breeze, pollution-free atmosphere and the flourishing fields impart
-            an enchanting experience. The village was deforested (less than 10%
-            vegetation) for agricultural purposes and people started facing
-            acute water problem and lost all the local biodiversity. Prof.
-            Malali Gowda formed a village self-help group to solve local
-            climatic problems and initiated planting on public land Goomala (a
-            rocky land which belongs to village community) and private (farmers
-            - 70 families) land. Rocky-land (90% granite) has been converted
-            into green land within 5 years.
-          </p>
-          <div className="btn-container">
-            <Link to="/anuganalu-village" className="transparent-button">
-              Know More
-            </Link>
+      <VillageComp />
+      <section className="gallery parallax-container">
+        <section className="content">
+          <div className="title">
+            <h1>Gallery</h1>
+            <img src={line} alt="line" />
           </div>
         </section>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Gallery />
+        </Suspense>
       </section>
-      {/* <section className="common parallax-container black">
+    </div>
+  );
+}
+
+// contact us
+{
+  /* <section className="common parallax-container black">
         <div className="parallax-wrap">
           <div className="parallax-inner"></div>
         </div>
@@ -344,16 +112,5 @@ export default function Home() {
             </Link>
           </div>
         </section>
-      </section> */}
-      <section className="gallery parallax-container">
-        <section className="content">
-          <div className="title">
-            <h1>Gallery</h1>
-            <img src={line} alt="line" />
-          </div>
-        </section>
-        <Gallery />
-      </section>
-    </div>
-  );
+      </section> */
 }

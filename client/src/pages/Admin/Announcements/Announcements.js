@@ -67,10 +67,18 @@ export default function AdminAnnouncements() {
   return (
     <div className="page admin-annoucements">
       <Heading pageTitle="Announcements" />
-      <AppBar style={{ zIndex: 10 }} position="static">
+      <AppBar
+        style={{
+          zIndex: 10,
+          backgroundColor: "rgb(46, 46, 46)",
+          color: "white",
+        }}
+        position="static"
+      >
         <Tabs
           value={value}
           onChange={handleChange}
+          TabIndicatorProps={{ style: { backgroundColor: "#91b710" } }}
           aria-label="simple tabs example"
         >
           <Tab label="Create" {...a11yProps(0)} />

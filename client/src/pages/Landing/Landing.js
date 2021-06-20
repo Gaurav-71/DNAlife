@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap, TweenLite } from "gsap";
 
-import logo from "../../assets/Logo/logo.png";
+import logo from "../../assets/Logo/works.png";
 
 import "./Landing.scss";
 
@@ -182,7 +182,7 @@ export default function Landing() {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(p.closest[i].x, p.closest[i].y);
-        ctx.strokeStyle = "rgba(18,73,65," + p.active + ")";
+        ctx.strokeStyle = "rgba(255,255,255," + p.active + ")";
         ctx.stroke();
       }
     }
@@ -201,7 +201,7 @@ export default function Landing() {
         if (!_this.active) return;
         ctx.beginPath();
         ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = "rgba(18,73,65," + _this.active + ")";
+        ctx.fillStyle = "rgba(255,255,255," + _this.active + ")";
         ctx.fill();
       };
     }

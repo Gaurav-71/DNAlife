@@ -5,6 +5,9 @@ const cors = require("cors");
 const app = express();
 
 const announcements = require("./routes/db/Announcements");
+const documentations = require("./routes/db/Documentations");
+const news = require("./routes/db/Newss");
+const resources = require("./routes/db/Resources");
 
 const educationalTours = require("./routes/db/EducationalTours");
 const cleaningMovements = require("./routes/db/CleaningMovements");
@@ -36,6 +39,10 @@ mongo
 
 // use routes
 app.use("/db/Announcements", announcements);
+app.use("/db/Documentations", documentations);
+app.use("/db/Newss", news);
+app.use("/db/Resources", resources);
+
 app.use("/db/EducationalTours", educationalTours);
 app.use("/db/CleaningMovements", cleaningMovements);
 app.use("/db/EcoProjects", ecoProjects);

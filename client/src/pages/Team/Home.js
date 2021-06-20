@@ -1,5 +1,5 @@
 import malali from "../../assets/Team/malali.jpg";
-import mahantesh from "../../assets/Team/mahantesh.jpg";
+import mahantesh from "../../assets/Team/mahantesh.webp";
 import nuthan from "../../assets/Team/Nuthan.jpg";
 import pruthvi from "../../assets/Team/pruthvi.jpg";
 
@@ -7,7 +7,7 @@ export const Members = [
   {
     name: "Prof. Malali Gowda",
     src: malali,
-    position: "Founding President & Trustee",
+    position: "Founder & President",
   },
   {
     name: "Mahantesh Veerapur",

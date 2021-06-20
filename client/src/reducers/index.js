@@ -12,6 +12,12 @@ import trainingReducer from "./Education/training";
 
 import photoReducer from "./photosReducer";
 
+import documentationReducer from "./documentationReducer";
+
+import newsReducer from "./newsReducer";
+
+import resourceReducer from "./resourceReducer";
+
 export default combineReducers({
   announcementReducer,
   cleaningMovementReducer,
@@ -22,4 +28,7 @@ export default combineReducers({
   trainingReducer,
   certificateCourseReducer,
   photoReducer,
+  documentationReducer,
+  newsReducer,
+  resourceReducer,
 });

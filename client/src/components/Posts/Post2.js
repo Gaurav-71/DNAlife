@@ -9,6 +9,9 @@ import cleaning from "../../assets/Announcements/cleaning.svg";
 import plantation from "../../assets/Announcements/plantation.svg";
 import eco from "../../assets/Announcements/eco.svg";
 import edu from "../../assets/Announcements/edu.svg";
+import doc from "../../assets/Announcements/document.png";
+import news from "../../assets/Announcements/newspaper.png";
+import resources from "../../assets/Announcements/resources.svg";
 
 import { Link } from "react-router-dom";
 
@@ -33,6 +36,12 @@ export default function Post2({ data }) {
             <img src={trainings} alt="icon" />
           ) : data.type == "Internships" ? (
             <img src={internships} alt="icon" />
+          ) : data.type == "Resources" ? (
+            <img src={resources} alt="icon" />
+          ) : data.type == "Newss" ? (
+            <img src={news} alt="icon" />
+          ) : data.type == "Documentations" ? (
+            <img src={doc} alt="icon" />
           ) : (
             "Announcement"
           )}
@@ -54,6 +63,12 @@ export default function Post2({ data }) {
             <h2>New Training Announced</h2>
           ) : data.type == "Internships" ? (
             <h2>New Internship Announced</h2>
+          ) : data.type == "Newss" ? (
+            <h2>News Announced</h2>
+          ) : data.type == "Resources" ? (
+            <h2>New Resource Added</h2>
+          ) : data.type == "Documentations" ? (
+            <h2>New Document Added</h2>
           ) : (
             "Announcement"
           )}
@@ -70,13 +85,31 @@ export default function Post2({ data }) {
           />
         </p>
         <div className="action-btn-container">
+          {data.link &&
+            data.type != "Announcements" &&
+            data.type != "Newss" &&
+            data.type != "Documentations" &&
+            data.type != "Resources" && (
+              <a href={data.link} target="_blank">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className="register mr"
+                >
+                  Register
+                </Button>
+              </a>
+            )}
           {data.link && data.type != "Announcements" && (
             <a href={data.link} target="_blank">
-              <Button
-                variant="contained"
-                color="secondary"
-                className="register mr"
-              >
+              <Button variant="contained" color="secondary" className="view">
+                View
+              </Button>
+            </a>
+          )}
+          {data.url && data.type != "Announcements" && (
+            <a href={data.url} target="_blank">
+              <Button variant="contained" color="secondary" className="view">
                 Register
               </Button>
             </a>

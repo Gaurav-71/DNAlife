@@ -11,10 +11,10 @@ function sendEmail(e) {
   console.log("e value : ", e);
   emailjs
     .sendForm(
-      "gmail",
-      "template_ic8mdm6",
+      "service_a1oi3mj",
+      "template_qd4mmi4",
       e.target,
-      "user_u19q2l59CP6NPNZ1o7IYA"
+      "user_Y0p4a5dRdCuQpcOjhhbaz"
     )
     .then(
       (result) => {

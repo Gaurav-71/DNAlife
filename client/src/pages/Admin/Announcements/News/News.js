@@ -1,0 +1,96 @@
+import React from "react";
+
+import Heading from "../../../../components/AdminHeading/Heading.js";
+
+import "../Announcements.scss";
+
+import Create from "./Create.js";
+import Edit from "./Edit.js";
+
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+
+//var parse = require("html-react-parser");
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <div>{children}</div>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+export default function AdminNews() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  return (
+    <div className="page admin-annoucements">
+      <Heading pageTitle="News" />
+      <AppBar
+        style={{
+          zIndex: 10,
+          backgroundColor: "rgb(46, 46, 46)",
+          color: "white",
+        }}
+        position="static"
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="simple tabs example"
+          TabIndicatorProps={{ style: { backgroundColor: "#91b710" } }}
+        >
+          <Tab label="Create" {...a11yProps(0)} />
+          <Tab label="View / Modify" {...a11yProps(1)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel style={{ width: "100%" }} value={value} index={0}>
+        <Create />
+      </TabPanel>
+      <TabPanel style={{ width: "100%" }} value={value} index={1}>
+        <Edit />
+      </TabPanel>
+    </div>
+  );
+}

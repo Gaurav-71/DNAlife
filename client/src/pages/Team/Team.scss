@@ -9,9 +9,9 @@
     display: flex;
     justify-content: space-around;
     align-items: stretch;
-    padding: 0 4rem;
-    padding-bottom: 3rem;
+    padding: 0 3rem 3rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
     @include responsive($tablet-portrait) {
       flex-wrap: wrap;
       justify-content: space-around;
@@ -40,5 +40,14 @@
         }
       }
     }
+  }
+}
+
+.ack {
+  width: 100%;
+  padding: 0.5rem 4rem 2.5rem;
+  li {
+    margin-bottom: 2.2rem;
+    line-height: 1.8rem;
   }
 }

@@ -622,6 +622,9 @@
           .parallax-inner {
             background-image: url("../../assets/Home/courses.jpg");
             background-origin: padding-box;
+            @include responsive($phone) {
+              background-position: 80%;
+            }
           }
         }
       }

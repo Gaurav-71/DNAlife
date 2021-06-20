@@ -19,7 +19,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
 
-import logo from "../../assets/Logo/whitelogo.png";
+import logo from "../../assets/Logo/nav2.png";
 
 import { useAuth } from "../../contexts/AuthContext";
 

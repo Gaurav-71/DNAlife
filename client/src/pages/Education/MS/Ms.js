@@ -189,7 +189,7 @@ export default function Ms() {
           <div className="admin">
             <img src={nathan} alt="admission officer" />
             <div className="admin-details">
-              <h1 className="name">Nathan chulfer</h1>
+              <h1 className="name">Nathan Schulfer</h1>
               <div className="position">Program Director</div>
               <div className="contact"></div>
               <div className="email">

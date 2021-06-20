@@ -54,13 +54,15 @@ export default function Post({ data }) {
           </p>
         )}
       </div>
-      <div className="actions">
-        <a href={data.link} target="_blank">
-          <Button fullWidth variant="contained" color="primary">
-            Register
-          </Button>
-        </a>
-      </div>
+      {data.link && (
+        <div className="actions">
+          <a href={data.link} target="_blank">
+            <Button fullWidth variant="contained" color="primary">
+              Register
+            </Button>
+          </a>
+        </div>
+      )}
     </Paper>
   );
 }
