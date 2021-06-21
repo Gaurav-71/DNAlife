@@ -7,14 +7,18 @@ import "./Home.scss";
 import line from "../../assets/Home/line.png";
 
 import Landing from "../../pages/Landing/Landing.js";
-import MSComp from "./MS.js";
-import VillageComp from "./Village.js";
-import PartnersComp from "./PartnersComp.js";
-import TeamComp from "./Team.js";
+//import MSComp from "./MS.js";
+//import VillageComp from "./Village.js";
+//import PartnersComp from "./PartnersComp.js";
+//import TeamComp from "./Team.js";
 
-const Gallery = lazy(() => import("../../components/Gallery/Gallery.js"));
-const EducationComp = lazy(() => import("./EducationComp.js"));
 const ActivityComp = lazy(() => import("./ActivityComp.js"));
+const PartnersComp = lazy(() => import("./PartnersComp.js"));
+const MSComp = lazy(() => import("./MS.js"));
+const TeamComp = lazy(() => import("./Team.js"));
+const VillageComp = lazy(() => import("./Village.js"));
+const EducationComp = lazy(() => import("./EducationComp.js"));
+const Gallery = lazy(() => import("../../components/Gallery/Gallery.js"));
 
 export default function Home() {
   return (
@@ -47,9 +51,15 @@ export default function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <ActivityComp />
       </Suspense>
-      <PartnersComp />
-      <MSComp />
-      <TeamComp />
+      <Suspense fallback={<div>Loading...</div>}>
+        <PartnersComp />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <MSComp />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TeamComp />
+      </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <EducationComp />
       </Suspense>
@@ -75,7 +85,9 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <VillageComp />
+      <Suspense fallback={<div>Loading...</div>}>
+        <VillageComp />
+      </Suspense>
       <section className="gallery parallax-container">
         <section className="content">
           <div className="title">

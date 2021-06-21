@@ -28,7 +28,7 @@ export default function Plantation() {
             }}
           />
           <p>
-            Plantation Drive To Increase India's Green Cove. Tree Plantation
+            Plantation Drive To Increase India's Green Cover. Tree Plantation
             drives combat many environmental issues like deforestation, erosion
             of soil, desertification in semi-arid areas, global warming and
             hence enhancing the beauty and balance of the environment

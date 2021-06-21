@@ -15,7 +15,7 @@ export default function JoinUs() {
           </div>
           <div className="right">
             <h1>Join Us. Be you.</h1>
-            <h4>Invitation to like mided people for being a member.</h4>
+            <h4>Invitation to like minded people for being a member.</h4>
             <Divider
               style={{
                 backgroundColor: "#919191",

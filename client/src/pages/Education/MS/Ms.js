@@ -43,8 +43,9 @@ export default function Ms() {
             hands-on education that bridges classrooms and communities, and
             public programs that foster environmental conversations among people
             from business, government, academia, and advocacy. We are a home to
-            three interdisciplinary research centers that serve as laboratories
-            and incubators to solve today's most challenging environmental.{" "}
+            four interdisciplinary research centers that serve as laboratories
+            and incubators to solve today's most challenging environmental
+            issues.
           </p>
         </article>
       </div>

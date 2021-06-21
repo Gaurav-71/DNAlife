@@ -32,7 +32,7 @@ export default function Eco() {
             due to over exploitation and sheer negligence of ages. We are strong
             when we are with nature! DNA Life Organisation is striving towards
             climate change mitigation through various projects and initiatives
-            based Good Agricultural Practices (GAP) to improve the safety and
+            based on Good Agricultural Practices (GAP) to improve the safety and
             quality of the produce while protecting the environment.
           </p>
           <Link to="/activities/eco-projects/posts" className="link-button btn">

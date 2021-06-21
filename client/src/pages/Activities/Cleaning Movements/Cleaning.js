@@ -28,14 +28,13 @@ export default function Cleaning() {
             }}
           />
           <p>
-            Today, our ecosystems are overflowing with plastics. It is immensely
-            painful to see, what we have made of Mother Nature! From sky to
-            oceans and the ground, anthropogenic activities are damaging our
-            Planet. Let's come together and adopt practices that promote
-            sustainability, reuse, recycling and waste minimisation. Every step
-            counts!
+            Today, our ecosystems are overflowing with waste materials like
+            plastics, sewage and industrial effluents. It is immensely painful
+            to see, what we have made of Mother Nature! From sky to oceans and
+            the ground, anthropogenic activities are damaging our Planet. Let's
+            come together and adopt practices that promote sustainability,
+            reuse, recycling and waste minimisation. Every step counts!
           </p>
-
           <Link
             to="/activities/cleaning-movements/posts"
             className="link-button btn"

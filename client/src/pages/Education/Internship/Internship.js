@@ -18,7 +18,7 @@ export default function Internship() {
         </div>
         <div className="right">
           <h1>Intern and Learn</h1>
-          <h4>An open invitation to open and innovative minds.</h4>
+          <h4>An open invitation to curious and innovative minds.</h4>
           <Divider
             style={{
               backgroundColor: "#919191",
@@ -34,8 +34,8 @@ export default function Internship() {
             opportunity to work in DNA Life projects.
           </p>
           <p>
-            Get discovered. Introduce yourself, and we’ll get in touch with you
-            if there’s a role that seems like a good match.
+            Get discovered. Introduce yourself, and we will get in touch with
+            you if there’s a role that seems like a good match.
           </p>
           <Link to="/education/internships/posts" className="link-button btn">
             View Oppurtunities
