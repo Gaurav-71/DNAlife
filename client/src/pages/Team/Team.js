@@ -67,8 +67,8 @@ export default function Team() {
         <li>
           Late Sri Ramenahalli Range Gowda’s family, relatives and friends for
           their priceless support and encouragement provided to Prof. Malali
-          Gowda (founder, DNA Life) for implanting DNA Life at Anuganalu
-          Village.
+          Gowda (founder, DNA Life) for implementing the afforestation work with
+          DNA Life at Anuganalu Village.
         </li>
         <li>
           Prof. Malali Gowda’s family and friends, specially his mother, Late
@@ -155,7 +155,7 @@ export default function Team() {
         <li>
           The Association for India’s Development (AID), Columbus Chapter
           (http://columbus.aidindia.org) at The Ohio State University Columbus,
-          which sponsored a project ($3000) on February 2006 to carryout
+          which sponsored a project ($3000) in February 2006 to carryout
           afforestation in seven villages around the DNA Life campus.
         </li>
         <li>
