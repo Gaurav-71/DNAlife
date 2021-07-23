@@ -9,6 +9,10 @@ import raj from "../../assets/Team/raj.jpg";
 import nuthan from "../../assets/Team/Nuthan.jpg";
 import krish from "../../assets/Team/Krishnamurthy.jpg";
 
+import mahima from "../../assets/Team/Mahima.jpg";
+import muthu from "../../assets/Team/Muthuswamy.jpg";
+import mittur from "../../assets/Team/Mittur.png";
+
 export const Members = [
   {
     name: "Prof. Malali Gowda",
@@ -36,6 +40,21 @@ export const Members = [
       "https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/Profiles%2FRaj-Resume_2020.pdf?alt=media&token=db34f5d2-90e5-4795-bf1d-ac36e20d099b",
     src: raj,
     position: "Advisor, USA",
+  },
+  {
+    name: "Mahima J Patel",
+    link:
+      "https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/Profiles%2FMahima%20J%20Patel.pdf?alt=media&token=4dcf0140-0b6d-4d3f-a761-8782fa5a21b3",
+    src: mahima,
+    position: "Advisor",
+  },
+  { name: "Dr. Mittur N Jagadish", src: mittur, position: "Advisor" },
+  {
+    name: "Sivaramakrishnan Muthuswamy",
+    link:
+      "https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/Profiles%2FSivaramakrishnan%20Muthuswamy.pdf?alt=media&token=c2a84e90-13c5-4687-a7eb-44d15c9713e2",
+    src: muthu,
+    position: "Advisor",
   },
   {
     name: "Nagendra M Chander",

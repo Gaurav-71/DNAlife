@@ -31,7 +31,11 @@ export default function Team() {
             <Card elevation={10} className={classes.root} key={index}>
               <div className="details">
                 {member.link != null ? (
-                  <a href={member.link} target="_blank">
+                  <a
+                    href={member.link}
+                    className="profile-link"
+                    target="_blank"
+                  >
                     <h1>{member.name}</h1>
                   </a>
                 ) : (
