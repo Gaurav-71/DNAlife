@@ -1,6 +1,6 @@
 {
   "name": "dna-life",
-  "homepage": "http://dnalife.org",
+  "homepage": "https://dnalife.org",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
