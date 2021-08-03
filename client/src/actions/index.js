@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // production
-const baseUrl = "https://18.116.45.202/db/";
+const baseUrl = "https://node.dnalife.org/db/";
 
 // dev
 //const baseUrl = "http://localhost:80/db/";

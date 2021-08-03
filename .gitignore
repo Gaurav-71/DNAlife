@@ -2,6 +2,7 @@ node_modules
 .DS_Store
 privateKeys.js
 access.pem
+sudo.pem
 Server.zip
 Client.zip
 build
