@@ -290,7 +290,7 @@ export default function Header() {
               <Link
                 style={linkStyle}
                 className="child-links"
-                to="/announcements"
+                to="/announcements/resources"
               >
                 Resources and Publications
               </Link>
@@ -299,7 +299,7 @@ export default function Header() {
               <Link
                 style={linkStyle}
                 className="child-links"
-                to="/announcements"
+                to="/announcements/news"
               >
                 News
               </Link>
@@ -308,7 +308,7 @@ export default function Header() {
               <Link
                 style={linkStyle}
                 className="child-links"
-                to="/announcements"
+                to="/announcements/docs"
               >
                 Documentation
               </Link>
@@ -531,12 +531,12 @@ export default function Header() {
                     </Link>
                   </StyledMenuItem>
                   <StyledMenuItem onClick={handleClose3}>
-                    <Link className="child-links" to="/announcements">
+                    <Link className="child-links" to="/announcements/resources">
                       Resouces and Publications
                     </Link>
                   </StyledMenuItem>
                   <StyledMenuItem onClick={handleClose3}>
-                    <Link className="child-links" to="/announcements">
+                    <Link className="child-links" to="/announcements/news">
                       News
                     </Link>
                   </StyledMenuItem>
@@ -544,7 +544,7 @@ export default function Header() {
                     <Link
                       style={linkStyle}
                       className="child-links"
-                      to="/announcements"
+                      to="/announcements/docs"
                     >
                       Documentation
                     </Link>

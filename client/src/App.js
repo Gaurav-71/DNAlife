@@ -16,7 +16,6 @@ import Home from "./pages/Home/Home.js";
 import ContactUs from "./pages/ContactUs/ContactUs.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Team from "./pages/Team/Team.js";
-import Announcements from "./pages/Announcements/TabHome.js";
 import JoinUs from "./pages/JoinUs/JoinUs.js";
 import Gallery from "./pages/Gallery/Gallery.js";
 import Village from "./pages/Anuganalu/Anuganalu";
@@ -31,6 +30,13 @@ import Eco from "./pages/Activities/Eco Projects/Eco.js";
 import EcoPosts from "./pages/Activities/Eco Projects/Posts.js";
 import Plantation from "./pages/Activities/Plantation Drives/Plantation.js";
 import PlantationPosts from "./pages/Activities/Plantation Drives/Posts.js";
+
+//announcements
+
+import Announcements from "./pages/Announcements/Announcements.js";
+import Resources from "./pages/Announcements/Resources.js";
+import Docs from "./pages/Announcements/Docs.js";
+import News from "./pages/Announcements/News.js";
 
 // education
 
@@ -153,6 +159,13 @@ function App() {
                     path="/announcements"
                     component={Announcements}
                   />
+                  <Route
+                    exact
+                    path="/announcements/resources"
+                    component={Resources}
+                  />
+                  <Route exact path="/announcements/news" component={News} />
+                  <Route exact path="/announcements/docs" component={Docs} />
                   <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
                   <PrivateRoute
