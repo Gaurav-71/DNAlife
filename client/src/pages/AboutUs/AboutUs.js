@@ -162,6 +162,11 @@ export default function AboutUs() {
               Life looks forward to a steady growth in this goodwill and
               camaraderie.
             </p>
+            <p>
+              Organisation and Biodiversity Conservation & Research Trust (BCRT)
+              are sister organisations. To create greener Earth, Prof Malali
+              Gowda founded BCRT in the year 2000 and DNA Life in the year 2016.
+            </p>
           </div>
         </div>
       </TabPanel>

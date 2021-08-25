@@ -73,7 +73,7 @@ export default function NewHome() {
           <Tab label="Announcements" {...a11yProps(0)} />
           <Tab label="Documentation" {...a11yProps(1)} />
           <Tab label="News" {...a11yProps(2)} />
-          <Tab label="Resources" {...a11yProps(3)} />
+          <Tab label="Resources and Publications" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel style={{ width: "100%" }} value={value} index={0}>

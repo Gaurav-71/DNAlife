@@ -143,13 +143,13 @@ export default function Create() {
       {isSuccess == "true" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="success">
-            Resource posted succesfully !
+            Resource/Publication posted succesfully !
           </Alert>
         </Snackbar>
       ) : isSuccess == "false" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Couldn't save resource, Please try again !
+            Couldn't save resource/publicaation, Please try again !
           </Alert>
         </Snackbar>
       ) : (

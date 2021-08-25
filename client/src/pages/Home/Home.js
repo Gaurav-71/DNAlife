@@ -80,7 +80,7 @@ export default function Home() {
               and much more.
             </p>
             <Link to="/join-us" className="about-button">
-              Become a member now
+              Become a volunteer now
             </Link>
           </div>
         </section>

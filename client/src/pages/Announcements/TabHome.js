@@ -75,7 +75,7 @@ export default function TabHome() {
           aria-label="scrollable auto tabs example"
         >
           <Tab label="Announcements" {...a11yProps(0)} />
-          <Tab label="Resources" {...a11yProps(1)} />
+          <Tab label="Resources and Publication" {...a11yProps(1)} />
           <Tab label="News" {...a11yProps(2)} />
           <Tab label="Documentation" {...a11yProps(3)} />
         </Tabs>

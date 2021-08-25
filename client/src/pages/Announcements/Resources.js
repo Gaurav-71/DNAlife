@@ -15,7 +15,7 @@ export default function Docs() {
   const reducerData = useSelector((state) => state.resourceReducer.resources);
   return (
     <div className="page announcements-page">
-      <Heading pageTitle={"Resources"} />
+      <Heading pageTitle={"Resources and Publications"} />
       <AllDocs data={reducerData} />
     </div>
   );

@@ -196,7 +196,7 @@ export default function Edit() {
           color="primary"
           id="alert-dialog-slide-title"
         >
-          View Resource
+          View Resource/Publication
         </DialogTitle>
         <DialogContent className="dialog-content">
           <form className="post-content">
@@ -239,7 +239,7 @@ export default function Edit() {
           color="primary"
           id="alert-dialog-slide-title"
         >
-          Edit Resource
+          Edit Resource/Publication
         </DialogTitle>
         <DialogContent className="dialog-content">
           <form onSubmit={onSubmit} className="post-content">
@@ -306,13 +306,13 @@ export default function Edit() {
       {isSuccess == "true" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="success">
-            Resource {action + "d"} succesfully !
+            Resource / Publication {action + "d"} succesfully !
           </Alert>
         </Snackbar>
       ) : isSuccess == "false" ? (
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            Couldn't {action} resource !
+            Couldn't {action} resource/publication !
           </Alert>
         </Snackbar>
       ) : (

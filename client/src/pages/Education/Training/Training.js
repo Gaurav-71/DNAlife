@@ -31,8 +31,9 @@ export default function Training() {
           <p>
             DNA Life Organisation offers training on environmental awareness,
             agricultural practices, social forestry, mixed farming and rural
-            livelihood. Join us to learn and implement eco-friendly practices
-            and contribute to the conservation of nature.
+            livelihood. We invite schools, colleges, NGOs, Housing Societies
+            etc. to join us to learn eco-friendly practices and contribute to
+            the conservation of nature.
           </p>
 
           <Link to="/education/trainings/posts" className="link-button btn">

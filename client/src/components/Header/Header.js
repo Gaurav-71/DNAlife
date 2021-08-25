@@ -105,6 +105,7 @@ export default function Header() {
   }, []);
 
   const [anchorEl1, setAnchorEl1] = React.useState(null); // activities
+  const [anchorEl3, setAnchorEl3] = React.useState(null); // announcements
   const [anchorEl2, setAnchorEl2] = React.useState(null); // education
 
   const handleClick1 = (event) => {
@@ -113,6 +114,10 @@ export default function Header() {
 
   const handleClick2 = (event) => {
     setAnchorEl2(event.currentTarget);
+  };
+
+  const handleClick3 = (event) => {
+    setAnchorEl3(event.currentTarget);
   };
 
   const handleClose1 = () => {
@@ -124,6 +129,10 @@ export default function Header() {
 
   const handleClose2 = () => {
     setAnchorEl2(null);
+  };
+
+  const handleClose3 = () => {
+    setAnchorEl3(null);
   };
 
   const StyledMenu = withStyles({
@@ -250,14 +259,61 @@ export default function Header() {
           </StyledMenu>
         </ListItem>
         <Divider style={dividerStyle} />
-        <ListItem
-          onClick={toggleDrawer(anchor, false)}
-          onKeyDown={toggleDrawer(anchor, false)}
-          style={customStyle}
-        >
-          <Link style={linkStyle} className="nav-links" to="/announcements">
+        <ListItem style={customStyle}>
+          <div
+            className="nav-links"
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick3}
+          >
             Announcements
-          </Link>
+          </div>
+          <StyledMenu
+            id="simple-menu"
+            anchorEl={anchorEl3}
+            keepMounted
+            open={Boolean(anchorEl3)}
+            onClose={handleClose3}
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+          >
+            <StyledMenuItem onClick={handleClose3}>
+              <Link
+                style={linkStyle}
+                className="child-links"
+                to="/announcements"
+              >
+                Announcements
+              </Link>
+            </StyledMenuItem>
+            <StyledMenuItem onClick={handleClose3}>
+              <Link
+                style={linkStyle}
+                className="child-links"
+                to="/announcements"
+              >
+                Resources and Publications
+              </Link>
+            </StyledMenuItem>
+            <StyledMenuItem onClick={handleClose3}>
+              <Link
+                style={linkStyle}
+                className="child-links"
+                to="/announcements"
+              >
+                News
+              </Link>
+            </StyledMenuItem>
+            <StyledMenuItem onClick={handleClose3}>
+              <Link
+                style={linkStyle}
+                className="child-links"
+                to="/announcements"
+              >
+                Documentation
+              </Link>
+            </StyledMenuItem>
+          </StyledMenu>
         </ListItem>
         <Divider style={dividerStyle} />
         <ListItem style={customStyle}>
@@ -453,9 +509,48 @@ export default function Header() {
                   </StyledMenuItem>
                 </StyledMenu>
               </div>
-              <Link className="nav-links" to="/announcements">
-                Announcements
-              </Link>
+              <div>
+                <div
+                  className="nav-links"
+                  aria-controls="simple-menu"
+                  aria-haspopup="true"
+                  onClick={handleClick3}
+                >
+                  Announcements
+                </div>
+                <StyledMenu
+                  id="simple-menu"
+                  anchorEl={anchorEl3}
+                  keepMounted
+                  open={Boolean(anchorEl3)}
+                  onClose={handleClose3}
+                >
+                  <StyledMenuItem onClick={handleClose3}>
+                    <Link className="child-links" to="/announcements">
+                      Announcements
+                    </Link>
+                  </StyledMenuItem>
+                  <StyledMenuItem onClick={handleClose3}>
+                    <Link className="child-links" to="/announcements">
+                      Resouces and Publications
+                    </Link>
+                  </StyledMenuItem>
+                  <StyledMenuItem onClick={handleClose3}>
+                    <Link className="child-links" to="/announcements">
+                      News
+                    </Link>
+                  </StyledMenuItem>
+                  <StyledMenuItem onClick={handleClose3}>
+                    <Link
+                      style={linkStyle}
+                      className="child-links"
+                      to="/announcements"
+                    >
+                      Documentation
+                    </Link>
+                  </StyledMenuItem>
+                </StyledMenu>
+              </div>
               <div>
                 <div
                   className="nav-links"

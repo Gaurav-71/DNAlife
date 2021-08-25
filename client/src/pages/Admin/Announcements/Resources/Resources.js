@@ -66,7 +66,7 @@ export default function AdminAnnouncements() {
   };
   return (
     <div className="page admin-annoucements">
-      <Heading pageTitle="Resources" />
+      <Heading pageTitle="Resources and Publications" />
       <AppBar
         style={{
           zIndex: 10,
