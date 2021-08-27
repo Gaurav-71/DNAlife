@@ -605,8 +605,8 @@ export default function Header() {
               <Link className="nav-links" to="/contact-us">
                 Contact Us
               </Link>
-              <Link className="nav-links btn" to="/join-us">
-                Join Us
+              <Link className="nav-links btn" to="/donate">
+                Donate
               </Link>
             </div>
           )}

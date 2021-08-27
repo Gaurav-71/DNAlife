@@ -14,6 +14,8 @@ import high from "../../../assets/MS/high.jpg";
 import course from "../../../assets/MS/course.jpg";
 import why from "../../../assets/MS/why.jpg";
 
+import globe from "../../../assets/MS/globe.png";
+
 import fatima from "../../../assets/Team/fatima.jpg";
 import malali from "../../../assets/Team/malali.jpg";
 import nathan from "../../../assets/MS/nathan.jpg";
@@ -148,6 +150,9 @@ export default function Ms() {
             </ul>
           </div>
         </Card>
+      </div>
+      <div className="globe-section">
+        <img className="biodiv" src={globe} alt="img" />
       </div>
       <div className="admissions">
         <h1>Admissions</h1>

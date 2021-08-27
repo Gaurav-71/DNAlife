@@ -7,12 +7,56 @@ import {
   InstagramIcon,
   TelegramIcon,
   TwitterIcon,
+  EnvelopeOpenTextIcon,
+  HandsHelpingIcon,
+  HandHoldingHeartIcon,
+  ArrowRightIcon,
 } from "react-line-awesome";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <div>
+      <div className="footer-banner">
+        <div className="banner-component get-involved">
+          <div>
+            <h2>Get Involved</h2>
+          </div>
+          <div className="banner-icon">
+            <ArrowRightIcon />
+          </div>
+        </div>
+        <div className="banner-component get-in-touch">
+          <Link className="no-underline" to="/contact-us">
+            <div className="banner-icon">
+              <EnvelopeOpenTextIcon />
+            </div>
+            <div>
+              <h3>Get In Touch</h3>
+            </div>
+          </Link>
+        </div>
+        <div className="banner-component volunteer">
+          <Link className="no-underline" to="/join-us">
+            <div className="banner-icon">
+              <HandsHelpingIcon />
+            </div>
+            <div>
+              <h3>Become A Volunteer</h3>
+            </div>
+          </Link>
+        </div>
+        <div className="banner-component donate">
+          <Link className="no-underline" to="/donate">
+            <div className="banner-icon">
+              <HandHoldingHeartIcon />
+            </div>
+            <div>
+              <h3>Donate Now</h3>
+            </div>
+          </Link>
+        </div>
+      </div>
       <section className="footer">
         <div className="black-fill">
           <div className="footer-information-container">

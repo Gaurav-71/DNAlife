@@ -45,6 +45,14 @@ export default function Home() {
             <Link to="/about-us" className="about-button">
               Read more
             </Link>
+            <a
+              href="https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/General%2FDNA%20Life%20One%20Page.pdf?alt=media&token=abc69452-3949-4d47-861f-a2539ddd0870"
+              className="about-button"
+              download
+              target="_blank"
+            >
+              Download Brochure
+            </a>
           </div>
         </section>
       </section>
