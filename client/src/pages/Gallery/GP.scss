@@ -3,10 +3,10 @@
   .comp {
     width: 100%;
     height: 70vh;
-    margin-bottom: 3rem;
+    margin: 2rem 0;
     @include responsive($tablet-landscape) {
       width: 125%;
-      height: 55vh;
+      height: 35vh;
     }
     @include responsive($tablet-portrait) {
       width: 120%;
