@@ -1,5 +1,6 @@
 import { Button, Paper } from "@material-ui/core";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
@@ -8,6 +9,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
 }));
+
+function truncateString(longString) {
+  return longString.substring(0, 100) + "...";
+}
 
 export default function Post({ data }) {
   const classes = useStyles();
@@ -48,9 +53,15 @@ export default function Post({ data }) {
           <p>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.description,
+                __html: truncateString(data.description),
               }}
             />
+            <Link
+              to={"/education/trainings/post:" + data.id}
+              className="read-more-link"
+            >
+              Read More.
+            </Link>
           </p>
         )}
       </div>

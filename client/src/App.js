@@ -59,6 +59,9 @@ import AdminActivities from "./pages/Admin/Activities/Activities.js";
 import AdminEducation from "./pages/Admin/Education/Education.js";
 import AdminPhotos from "./pages/Admin/Photos/Photos.js";
 
+//testing
+import PostDetailed from "./components/Posts/PostDetailed.js";
+
 // 404
 
 import E404 from "./pages/404/404.js";
@@ -168,6 +171,11 @@ function App() {
                   <Route exact path="/announcements/docs" component={Docs} />
                   <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
+                  <Route
+                    exact
+                    path="/education/trainings/post:id"
+                    component={PostDetailed}
+                  />
                   <PrivateRoute
                     exact
                     path="/admin/dashboard"
