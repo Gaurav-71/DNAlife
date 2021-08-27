@@ -32,11 +32,36 @@ export default function PartnersComp() {
             awareness etc.
           </p>
           <section className="partners">
-            <img src={yene} alt="partner" />
-            <img src={bms} alt="partner" />
-            <img src={rotary} alt="partner" />
-            <img src={nelson} alt="partner" />
-            <img src={sgi} alt="partner" />
+            <div>
+              <img src={yene} alt="partner" />
+              <a href="" className="read-more-link" download target="_blank">
+                See MoU
+              </a>
+            </div>
+            <div>
+              <img src={bms} alt="partner" />
+              <a href="" className="read-more-link" download target="_blank">
+                See MoU
+              </a>
+            </div>
+            <div>
+              <img src={rotary} alt="partner" />
+              <a href="" className="read-more-link" download target="_blank">
+                See MoU
+              </a>
+            </div>
+            <div>
+              <img src={nelson} alt="partner" />
+              <a href="" className="read-more-link" download target="_blank">
+                See MoU
+              </a>
+            </div>
+            <div>
+              <img src={sgi} alt="partner" />
+              <a href="" className="read-more-link">
+                See MoU
+              </a>
+            </div>
           </section>
         </div>
       </section>

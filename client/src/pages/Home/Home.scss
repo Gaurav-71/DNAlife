@@ -295,23 +295,34 @@
             animation: marquee-phone 9s linear infinite;
           }
           padding-right: 0rem !important;
-          img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            @include responsive($tablet-landscape) {
-              height: 100px;
-              width: 100px;
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 150px;
+              height: 150px;
+              margin-bottom: 10px;
+              border-radius: 50%;
+              @include responsive($tablet-landscape) {
+                height: 100px;
+                width: 100px;
+              }
+              @include responsive($tablet-portrait) {
+                height: 100px;
+                width: 100px;
+                margin: 0 2rem;
+              }
+              @include responsive($phone) {
+                height: 80px;
+                width: 80px;
+                margin: 0 2rem;
+              }
             }
-            @include responsive($tablet-portrait) {
-              height: 100px;
-              width: 100px;
-              margin: 0 2rem;
-            }
-            @include responsive($phone) {
-              height: 80px;
-              width: 80px;
-              margin: 0 2rem;
+            a {
+              margin-top: 10px;
+              color: $accent;
             }
           }
         }
