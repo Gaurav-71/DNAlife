@@ -7,14 +7,12 @@ import "./Home.scss";
 import line from "../../assets/Home/line.png";
 
 import Landing from "../../pages/Landing/Landing.js";
-//import MSComp from "./MS.js";
-//import VillageComp from "./Village.js";
-//import PartnersComp from "./PartnersComp.js";
-//import TeamComp from "./Team.js";
 
 const ActivityComp = lazy(() => import("./ActivityComp.js"));
 const PartnersComp = lazy(() => import("./PartnersComp.js"));
 const MSComp = lazy(() => import("./MS.js"));
+const DonateComp = lazy(() => import("./Donate.js"));
+const AwardsComp = lazy(() => import("./Awards.js"));
 const TeamComp = lazy(() => import("./Team.js"));
 const VillageComp = lazy(() => import("./Village.js"));
 const EducationComp = lazy(() => import("./EducationComp.js"));
@@ -93,6 +91,12 @@ export default function Home() {
           </div>
         </section>
       </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <DonateComp />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <AwardsComp />
+      </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <VillageComp />
       </Suspense>

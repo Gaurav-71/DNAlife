@@ -1,0 +1,129 @@
+@import "../../scss/custom.scss";
+
+.donate-page {
+  .page-content {
+    width: 100%;
+    height: calc(100vh - 11rem - 80px);
+    display: flex;
+    align-items: center;
+    @include responsive($tablet-portrait) {
+      height: min-content;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-top: 3rem;
+    }
+    @include responsive($phone) {
+      height: max-content;
+      flex-direction: column;
+      padding: 3rem 0;
+    }
+    .left {
+      flex-basis: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      @include responsive($phone) {
+        flex-basis: 100%;
+        padding: 0 1.5rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .right {
+      flex-basis: 60%;
+      height: 100%;
+      padding: 0 3rem;
+      padding-top: 10rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      @include responsive($phone) {
+        flex-basis: 100%;
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2.8rem;
+        color: $accent;
+        @include responsive($phone) {
+          font-size: 2.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      h4 {
+        color: $accent2;
+        font-weight: normal;
+        margin-top: 0.25rem;
+      }
+      p {
+        line-height: 1.8rem;
+        a {
+          color: $accent;
+        }
+      }
+      .card-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 2rem 0;
+        div {
+          width: 50%;
+          margin: 0.5rem;
+          height: 200px;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          transition: all 0.5s ease;
+          .la-arrow-right {
+            margin-top: 1rem;
+            font-size: 50px;
+          }
+        }
+        div:hover {
+          .la-arrow-right {
+            font-size: 60px;
+          }
+        }
+        .card-1 {
+          background-color: $primary;
+        }
+        .card-1:hover {
+          filter: brightness(120%);
+        }
+        .card-2 {
+          background-color: rgb(1, 117, 163);
+        }
+        .card-2:hover {
+          filter: brightness(120%);
+        }
+        @include responsive($tablet-landscape) {
+          flex-direction: column;
+          div {
+            width: 100%;
+          }
+        }
+        @include responsive($tablet-portrait) {
+          flex-direction: column;
+          div {
+            width: 100%;
+          }
+        }
+        @include responsive($phone) {
+          flex-direction: column;
+          div {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,9 @@
       padding: 1rem;
       line-height: 2rem;
       text-align: justify;
+      a {
+        color: $accent;
+      }
     }
   }
 }

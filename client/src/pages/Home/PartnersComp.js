@@ -34,13 +34,23 @@ export default function PartnersComp() {
           <section className="partners">
             <div>
               <img src={yene} alt="partner" />
-              <a href="" className="read-more-link" download target="_blank">
+              <a
+                href="https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/MOUs%2FMoU%20YU%20DNA%20Life.pdf?alt=media&token=4fc71857-51e0-4d70-be2f-db66f13f33f4"
+                className="read-more-link"
+                download
+                target="_blank"
+              >
                 See MoU
               </a>
             </div>
             <div>
               <img src={bms} alt="partner" />
-              <a href="" className="read-more-link" download target="_blank">
+              <a
+                href="https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/MOUs%2FMoU%20between%20BMS%20School%20of%20Architecture%20and%20DNA%20Life.pdf?alt=media&token=c9284861-9766-4084-8376-80cf0c47c56f"
+                className="read-more-link"
+                download
+                target="_blank"
+              >
                 See MoU
               </a>
             </div>
@@ -52,7 +62,12 @@ export default function PartnersComp() {
             </div>
             <div>
               <img src={nelson} alt="partner" />
-              <a href="" className="read-more-link" download target="_blank">
+              <a
+                href="https://firebasestorage.googleapis.com/v0/b/dnalife-website.appspot.com/o/MOUs%2FUW-Nelson-DNALife-IN-Agreement-2020-final-signed.pdf?alt=media&token=d0a9c0cc-84fa-456d-a2e3-f60a807caa07"
+                className="read-more-link"
+                download
+                target="_blank"
+              >
                 See MoU
               </a>
             </div>

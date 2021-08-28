@@ -271,7 +271,8 @@
       }
     }
   }
-  .partners-section {
+  .partners-section,
+  .awards-section {
     background: inherit;
     .content {
       .body {
@@ -283,13 +284,13 @@
             font-size: medium;
           }
         }
-        .partners {
+        .partners,
+        .awards {
           display: flex;
           justify-content: space-between;
           margin-top: 2rem;
           @include responsive($tablet-portrait) {
             animation: marquee 7s linear infinite;
-            //justify-content: center;
           }
           @include responsive($phone) {
             animation: marquee-phone 9s linear infinite;
@@ -298,7 +299,6 @@
           div {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             img {
               width: 150px;
@@ -321,8 +321,50 @@
               }
             }
             a {
-              margin-top: 10px;
               color: $accent;
+              margin-top: 10px;
+            }
+            .view-button {
+              background: transparent;
+              text-decoration: none;
+              padding: 0.5rem 2rem;
+              color: $accent2;
+              border-radius: 2rem;
+              border: 2px solid $accent;
+              cursor: pointer;
+              font-size: small;
+              text-transform: uppercase;
+              margin: 0 2rem 0 0;
+              @include responsive($phone) {
+                margin: 1rem;
+              }
+            }
+            .view-button:hover {
+              background: $accent;
+              color: white;
+              transition: all 0.4s ease-in;
+            }
+          }
+        }
+      }
+    }
+  }
+  .awards-section {
+    .content {
+      .body {
+        padding-top: 0;
+        padding-bottom: 0;
+        .awards {
+          margin: 0;
+          div {
+            min-width: 500px;
+            @include responsive($phone) {
+              min-width: 400px;
+            }
+            div {
+              min-height: 250px;
+              align-items: center;
+              text-align: center;
             }
           }
         }
@@ -330,13 +372,15 @@
     }
   }
   .landing-nelson,
+  .landing-donate,
   .anuganalu {
     .parallax-wrap {
       .parallax-inner {
         background-image: url("../../assets/Home/center.jpg");
       }
     }
-    .nelson-content {
+    .nelson-content,
+    .donate-content {
       padding: 6rem 0;
       width: 100%;
       height: 100%;
@@ -652,6 +696,15 @@
       }
     }
   }
+
+  .landing-donate {
+    .parallax-wrap {
+      .parallax-inner {
+        background-image: url("../../assets/Home/forest.jpg");
+      }
+    }
+  }
+
   .gallery {
     width: 100%;
     @include responsive($tablet-landscape) {

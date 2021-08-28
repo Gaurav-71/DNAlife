@@ -17,6 +17,7 @@ import ContactUs from "./pages/ContactUs/ContactUs.js";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Team from "./pages/Team/Team.js";
 import JoinUs from "./pages/JoinUs/JoinUs.js";
+import Donate from "./pages/Donate/Donate.js";
 import Gallery from "./pages/Gallery/Gallery.js";
 import Village from "./pages/Anuganalu/Anuganalu";
 
@@ -171,6 +172,7 @@ function App() {
                   <Route exact path="/announcements/docs" component={Docs} />
                   <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
+                  <Route exact path="/donate" component={Donate} />
                   <Route
                     exact
                     path="/education/trainings/post:id"
