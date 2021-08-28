@@ -1,6 +1,6 @@
 @import "../../scss/custom.scss";
 .footer-banner {
-  min-height: 8rem;
+  min-height: 5rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -20,12 +20,18 @@
   }
 
   .banner-component {
-    height: 8rem;
+    height: 5rem;
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 15px;
+    }
     .banner-icon {
       color: white;
       display: flex;
@@ -33,22 +39,22 @@
       align-items: center;
     }
     .la-arrow-right {
-      margin: 0 0 0 1rem;
-      font-size: 3rem;
+      margin: 0 0 0 0.5rem;
+      font-size: 2rem;
     }
     .la-envelope-open-text {
-      font-size: 3rem;
-      margin: 0 0 1rem 0;
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
       transition: all 0.2s ease;
     }
     .la-hands-helping {
-      font-size: 3rem;
-      margin: 0 0 1rem 0;
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
       transition: all 0.2s ease;
     }
     .la-hand-holding-heart {
-      font-size: 3rem;
-      margin: 0 0 1rem 0;
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
       transition: all 0.2s ease;
     }
     div {
@@ -63,13 +69,13 @@
   }
   .banner-component:hover {
     .la-envelope-open-text {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
     }
     .la-hands-helping {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
     }
     .la-hand-holding-heart {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
     }
   }
   .get-involved {
@@ -111,7 +117,7 @@
   z-index: -1;
   .black-fill {
     width: 100%;
-    padding: 6rem 0 0;
+    padding: 2rem 0 0 0;
     background: rgba($color: #000000, $alpha: 0.5);
     .footer-information-container {
       display: flex;
@@ -250,8 +256,7 @@
       align-items: center;
       justify-content: center;
       font-size: small;
-      margin: 0;
-      margin-top: 5rem;
+      margin: 2rem 0 0 0;
       padding: 1rem 0;
       @include responsive($phone) {
         font-size: xx-small;

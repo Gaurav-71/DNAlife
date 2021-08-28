@@ -15,7 +15,7 @@ export default function Donate() {
           Green Mission to revive rainforests, sustainable forest farming,
           conducting research, educating and creating awareness among the
           masses! Every Plant, Every Penny makes a difference, Your gift is
-          INVALUABLE!
+          Invaluable!
         </p>
         <div className="btn-container">
           <Link to="/donate" className="transparent-button">

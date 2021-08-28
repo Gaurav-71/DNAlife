@@ -40,7 +40,7 @@ export default function PartnersComp() {
                 download
                 target="_blank"
               >
-                See MoU
+                View
               </a>
             </div>
             <div>
@@ -51,13 +51,13 @@ export default function PartnersComp() {
                 download
                 target="_blank"
               >
-                See MoU
+                View
               </a>
             </div>
             <div>
               <img src={rotary} alt="partner" />
               <a href="" className="read-more-link" download target="_blank">
-                See MoU
+                View
               </a>
             </div>
             <div>
@@ -68,13 +68,13 @@ export default function PartnersComp() {
                 download
                 target="_blank"
               >
-                See MoU
+                View
               </a>
             </div>
             <div>
               <img src={sgi} alt="partner" />
               <a href="" className="read-more-link">
-                See MoU
+                View
               </a>
             </div>
           </section>

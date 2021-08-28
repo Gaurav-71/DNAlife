@@ -1,0 +1,151 @@
+@import "../../scss/custom.scss";
+
+.account-details-page {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2rem;
+  flex: 1 1;
+  color: white;
+
+  @include responsive($phone) {
+    padding: 0.5rem;
+  }
+
+  @include responsive($tablet-portrait) {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  @include responsive($phone) {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .account {
+    flex: 1;
+    width: 50%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include responsive($tablet-portrait) {
+      width: 90%;
+      margin: 1rem 0;
+    }
+    @include responsive($phone) {
+      width: 90%;
+      margin: 1rem 0;
+      padding: 0;
+    }
+    @include responsive($small-phone) {
+      width: 90%;
+      width: 100%;
+    }
+    p {
+      text-align: justify;
+      margin: 1rem 0 2rem 0;
+    }
+
+    .account-table {
+      width: 80%;
+      tr {
+        padding: 1rem;
+        border: 2pt solid rgb(255, 255, 255);
+        .detail-name {
+          width: 50%;
+          h5 {
+            color: $accent;
+          }
+        }
+        td {
+          h5 {
+            font-size: 20px;
+            margin: 7px 0;
+            font-weight: 500;
+
+            @include responsive($phone) {
+              font-size: 15px;
+            }
+
+            @include responsive($small-phone) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .reciept-request {
+    flex: 1;
+    width: 50%;
+    margin: 1rem;
+    @include responsive($tablet-portrait) {
+      width: 90%;
+      margin: 1rem 0;
+      h1 {
+        margin: 2rem 0;
+      }
+    }
+    @include responsive($phone) {
+      width: 90%;
+      margin: 1rem 0;
+      padding: 0;
+      h1 {
+        margin: 2rem 0;
+      }
+    }
+    @include responsive($small-phone) {
+      width: 100%;
+      h1 {
+        margin: 2rem 0;
+      }
+    }
+  }
+
+  .reciept-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input {
+      height: 3rem;
+      width: 90%;
+      margin: 1rem;
+      padding: 0 0.5rem;
+      font-family: "Raleway", sans-serif;
+      align-items: flex-start;
+
+      @include responsive($small-phone) {
+        width: 100%;
+      }
+    }
+
+    .textarea-message {
+      height: 5rem;
+      width: 90%;
+      margin: 1rem;
+      padding: 0.5rem;
+      font-family: "Raleway", sans-serif;
+      align-items: flex-start;
+
+      @include responsive($small-phone) {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      margin: 1rem 0;
+    }
+  }
+}

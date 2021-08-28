@@ -532,7 +532,7 @@ export default function Header() {
                   </StyledMenuItem>
                   <StyledMenuItem onClick={handleClose3}>
                     <Link className="child-links" to="/announcements/resources">
-                      Resouces and Publications
+                      Resources and Publications
                     </Link>
                   </StyledMenuItem>
                   <StyledMenuItem onClick={handleClose3}>

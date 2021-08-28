@@ -33,7 +33,7 @@ export default function Donate() {
             </p>
             <p>
               Every Plant, Every Penny makes a difference, Your gift is
-              INVALUABLE!
+              Invaluable!
             </p>
             <div className="card-container">
               <div className="card-1">
@@ -41,18 +41,18 @@ export default function Donate() {
                   Online Payments through Credit/Debit Cards, UPI, Payment
                   Wallet transactions
                 </p>
-                <a>
+                <Link to="">
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
               <div className="card-2">
                 <p>
                   Account Details for NEFT/RTGS/IMPS Transactions and Reciept
                   request.
                 </p>
-                <a>
+                <Link to="donate/account-details">
                   <ArrowRightIcon />
-                </a>
+                </Link>
               </div>
             </div>
             <p>

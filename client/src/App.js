@@ -21,6 +21,11 @@ import Donate from "./pages/Donate/Donate.js";
 import Gallery from "./pages/Gallery/Gallery.js";
 import Village from "./pages/Anuganalu/Anuganalu";
 
+// donation
+
+import AccountDetails from "./pages/Donate/AccountDetails.js";
+import CompletedDonation from "./pages/Donate/CompletedDonation";
+
 // activities
 
 import Cleaning from "./pages/Activities/Cleaning Movements/Cleaning.js";
@@ -173,6 +178,16 @@ function App() {
                   <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
                   <Route exact path="/donate" component={Donate} />
+                  <Route
+                    exact
+                    path="/donate/account-details"
+                    component={AccountDetails}
+                  />
+                  <Route
+                    exact
+                    path="/donate/donation-complete"
+                    component={CompletedDonation}
+                  />
                   <Route
                     exact
                     path="/education/trainings/post:id"
