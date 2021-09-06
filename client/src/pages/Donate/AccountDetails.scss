@@ -54,12 +54,17 @@
     }
 
     .account-table {
-      width: 80%;
+      width: 90%;
+      .table-row {
+        border-top: 1pt solid rgba(255, 255, 255, 0.75);
+      }
       tr {
         padding: 1rem;
-        border: 2pt solid rgb(255, 255, 255);
+        border-bottom: 1pt solid rgba(255, 255, 255, 0.75);
+        display: flex;
+        align-items: flex-start;
         .detail-name {
-          width: 50%;
+          width: 40%;
           h5 {
             color: $accent;
           }
@@ -132,7 +137,7 @@
     }
 
     .textarea-message {
-      height: 5rem;
+      height: 3rem;
       width: 90%;
       margin: 1rem;
       padding: 0.5rem;

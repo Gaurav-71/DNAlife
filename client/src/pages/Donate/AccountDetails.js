@@ -30,15 +30,15 @@ function sendEmail(e) {
 export default function AccountDetails() {
   return (
     <div className="page">
-      <Heading pageTitle={"Contact Us"} />
+      <Heading pageTitle={"Account Details and Request Reciept"} />
       <div className="account-details-page">
         <div className="account">
           <h1>Account Details</h1>
           <p>
-            You can make a donation by doing a NEFT / RTGC / ICMP Transaction
-            through your Bank or any other offline-means and request a reciept
-            through the adjacent section thereafter. We will reach out to you
-            with your donation reciept once the payment is confirmed.
+            You can make a donation by doing a NEFT / RTGC / ICMP / other
+            Transaction through your Bank or any other offline-means and request
+            a reciept through the adjacent section thereafter. We will reach out
+            to you with your donation reciept once the payment is confirmed.
           </p>
           <table className="account-table">
             <tr className="table-row">
@@ -49,7 +49,7 @@ export default function AccountDetails() {
                 <h5>35972258354</h5>
               </td>
             </tr>
-            <tr className="table-row">
+            <tr>
               <td className="detail-name">
                 <h5>Account Name :</h5>
               </td>
@@ -57,7 +57,7 @@ export default function AccountDetails() {
                 <h5>DNA Life Organisation</h5>
               </td>
             </tr>
-            <tr className="table-row">
+            <tr>
               <td className="detail-name">
                 <h5>IFSC :</h5>
               </td>
@@ -65,7 +65,7 @@ export default function AccountDetails() {
                 <h5>SBIN0041203</h5>
               </td>
             </tr>
-            <tr className="table-row">
+            <tr>
               <td className="detail-name">
                 <h5>MICR :</h5>
               </td>
@@ -73,13 +73,15 @@ export default function AccountDetails() {
                 <h5>560002581</h5>
               </td>
             </tr>
-            <tr className="table-row">
+            <tr>
               <td className="detail-name">
                 <h5>Bank :</h5>
               </td>
               <td>
-                <h5>State Bank of India, Ananthapura Gate, </h5>
-                <h5>Bangalore, Karnataka, India</h5>
+                <h5>State Bank of India,</h5>
+                <h5>Ananthapura Gate,</h5>
+                <h5>Bangalore, Karnataka,</h5>
+                <h5>India</h5>
                 <h5>PIN : 560064</h5>
               </td>
             </tr>
@@ -123,11 +125,18 @@ export default function AccountDetails() {
             placeholder="Donation Amount"
           />
           <input
-            id="transaction"
+            id="transactionType"
             type="text"
             className="input"
-            name="transaction"
-            placeholder="Transaction Reference Number"
+            name="transactionType"
+            placeholder="Transaction Type (NEFT/RTGC/ICMP/Other)"
+          />
+          <input
+            id="transactionID"
+            type="text"
+            className="input"
+            name="transactionID"
+            placeholder="Transaction Reference Number/ID"
           />
           <textarea
             id="address"
