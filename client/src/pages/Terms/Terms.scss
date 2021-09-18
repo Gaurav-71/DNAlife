@@ -1,0 +1,23 @@
+@import "../../scss/custom.scss";
+
+.terms-page {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  h2 {
+    padding: 1rem 0;
+    color: $accent;
+  }
+  p {
+    line-height: 2rem;
+    text-align: justify;
+  }
+  .common-routes {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    .divider {
+      margin: 0 1rem;
+    }
+  }
+}

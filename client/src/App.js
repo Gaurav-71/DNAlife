@@ -57,6 +57,12 @@ import AdminPhotos from "./pages/Admin/Photos/Photos.js";
 
 import E404 from "./pages/404/404.js";
 
+// T & C
+
+import Terms from "./pages/Terms/Terms.js";
+import Privacy from "./pages/Terms/Privacy";
+import Refund from "./pages/Terms/Refund";
+
 function App() {
   return (
     <Provider store={store}>
@@ -155,6 +161,9 @@ function App() {
                   />
                   <Route exact path="/gallery" component={Gallery} />
                   <Route exact path="/signIn" component={SignIn} />
+                  <Route exact path="/termsandconditions" component={Terms} />
+                  <Route exact path="/privacypolicy" component={Privacy} />
+                  <Route exact path="/refund" component={Refund} />
                   <PrivateRoute
                     exact
                     path="/admin/dashboard"
